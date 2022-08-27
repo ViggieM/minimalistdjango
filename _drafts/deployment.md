@@ -5,5 +5,6 @@ date:   2022-08-04 12:00:00 +0200
 published: true
 ---
 
-    * heroku
-    * divio
+* heroku
+* divio
+* https://github.com/jdbit/django-auto-deploy
