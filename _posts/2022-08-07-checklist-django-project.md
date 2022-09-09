@@ -12,7 +12,7 @@ Every web project, independently of whether it is written in Django or not, need
 1) **Dependency management**: 
 Make sure all your installed third party library versions are pinned because of version incompatibilities between them or backwards incompatible versions.
 Don't bother with `pip install` and `virtualenv venv` anymore.
-Learn and use [poetry][todo-poetry].
+Learn and use [poetry][poetry].
 
 2) **Version control**: 
 Use git, commit often and push your code to a remote repository like _GitHub_.
@@ -57,7 +57,7 @@ Unless nobody else should ever see your code and you want to work alone, you sho
 Just read the words written in bold letters.
 
 [todo-security]: <>
-[todo-poetry]: <>
+[poetry]: {% post_url 2022-09-08-poetry %}
 [todo-error-pages]: <>
 [todo-staticfiles]: <>
 [todo-mediafiles]: <>
