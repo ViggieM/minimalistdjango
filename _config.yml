@@ -28,7 +28,7 @@ twitter_username: ViggieSmalls5
 github_username:  movileanuv
 
 # Build settings
-theme: minima
+theme: jekyll-theme-so-simple
 plugins:
   - jekyll-feed
 

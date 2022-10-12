@@ -59,6 +59,7 @@ So make sure to write tests for all essential parts of your code in case you wan
     python manage.py runserver
     ```
 
+
 [1]: https://realpython.com/dependency-management-python-poetry/
 [2]: https://www.b-list.org/weblog/2022/may/13/boring-python-dependencies/
 [install-poetry]: https://python-poetry.org/docs/#installation
