@@ -13,5 +13,13 @@ published: true
 * upgrade Django
 * run again the `check`, `runserver` and `test` commands to make sure that your code is still running
 
+Caveats:
+* change use zoneinfo.ZoneInfo("UTC") instead of pyty.UTC, see https://github.com/mozilla/ichnaea/issues/1440
+* DetailView.delete() method has been removed
+
 Optional:
 * Install and run `django-upgrade`. This does not change any critical stuff, but it makes your code a bit cleaner
+  ```
+  python -m pip install django-upgrade
+  git ls-files -- '*.py' | xargs django-upgrade --target-version 4.1
+  ```
