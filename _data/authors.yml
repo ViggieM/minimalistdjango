@@ -1,0 +1,14 @@
+victor:
+  name: Victor Movileanu
+  picture: /images/me.jpg  # 150 x 150 px
+  twitter: ViggieSmalls5
+  links:
+    - title: Twitter
+      url: https://twitter.com/ViggieSmalls5
+      icon: fab fa-twitter-square
+    - title: Instagram
+      url: https://instagram.com/vickym.rulez
+      icon: fab fa-instagram
+    - title: GitHub
+      url: https://github.com/movileanuv
+      icon: fab fa-github-square

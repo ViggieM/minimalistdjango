@@ -21,9 +21,10 @@
 title: Minimalist Django
 email: victor@minimalistdjango.com
 description: >- # this means to ignore newlines until "baseurl:"
-  The minimalist way of creating a Django website
+  The minimalist way of web development
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://minimalistdjango.com" # the base hostname & protocol for your site, e.g. http://example.com
+logo: "images/django-rocket.svg"
 twitter_username: ViggieSmalls5
 github_username:  movileanuv
 
@@ -51,3 +52,5 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+search_full_content: true
