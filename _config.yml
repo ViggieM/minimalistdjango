@@ -54,3 +54,8 @@ plugins:
 #   - vendor/ruby/
 
 search_full_content: true
+
+collections:
+  articles:
+    output: true
+    permalink: /:collection/:path/

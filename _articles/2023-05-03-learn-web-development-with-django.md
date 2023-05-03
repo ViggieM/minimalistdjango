@@ -1,17 +1,21 @@
 ---
 layout: page
-title:  "Learning Web Development with Django"
+title:  "Learn Web Development with Django"
 date:   2022-08-02 12:00:00 +0200
 published: true
+image: 
+  path: /images/Django-logo.png
+  thumbnail: /images/Django-logo.png
+
 ---
 
-Django is a remarkable web framework that is written in Python, one of the most accessible programming languages to learn. 
-As such, it is the perfect starting point for those who wish to delve into web development. 
-One of Django's most impressive features is its specificity towards web development. 
-As with other software frameworks, it provides a framework for organizing your project, but it also makes it effortless to tailor your application to your exact specifications. 
-Moreover, Django comes with built-in performance optimizations, ensuring that your application runs smoothly, while also taking care of the most common security issues that you may not even be aware of.
+Django is a remarkable web framework that is written in Python, and the perfect starting point for those who wish to delve into web development. 
 
-{% include toc %}
+<style>
+    .page-image img {
+        width: auto;
+    }
+</style>
 
 ## Applications on the Web
 
