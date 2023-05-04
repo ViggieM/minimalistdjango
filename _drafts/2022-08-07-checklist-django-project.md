@@ -57,7 +57,6 @@ Unless nobody else should ever see your code and you want to work alone, you sho
 Just read the words written in bold letters.
 
 [todo-security]: <>
-[poetry]: {% post_url 2022-09-08-dependency-management %}
 [todo-error-pages]: <>
 [todo-staticfiles]: <>
 [todo-mediafiles]: <>
