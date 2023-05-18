@@ -16,7 +16,7 @@ These are in my opinion the 3 things every django project should have. You can i
 ```
 poetry add django-extenstions
 poetry add bpython
-poetry add with -dev pre-commit
+poetry add -G dev pre-commit
 pre-commit install
 ```
 
