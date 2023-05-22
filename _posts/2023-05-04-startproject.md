@@ -7,6 +7,7 @@ author: victor
 tags:
   - Django
   - poetry
+  - novice
 categories:
   - Development setup
 ---

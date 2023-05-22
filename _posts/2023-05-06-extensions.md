@@ -4,6 +4,8 @@ title: "3rd party packages"
 date: 2023-05-06
 published: true
 author: victor
+tags:
+  - novice
 categories:
   - Development setup
 ---
