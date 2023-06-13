@@ -20,10 +20,10 @@ Together with ansible it will help you learn how to automate your deployment.
 
 1. Download a Ubuntu iso image and use it to set up a VM.
 2. Install [VirtualBox](https://www.virtualbox.org/).
-   a. Create a virtual machine. It is important to select "Bridged Adapter" in the Network options. This will allow your host to communicate with the VM via TCP/IP. Configure other options (memory, disk size, etc.) as desired.
-   b. Optionally, I would suggest to install the Guest Additions. This allows you to resize the screen to the window size. First, select from the menu "Insert Guest Additions CD", then after mounting it you need to execute `autorun.sh`. After reboot you can activate from the menu "View > Autoresize Guest Display"
-   c. Optionally, I would also activate the bidirectional Drag and Drop from the menu.
-3. Next, you need to add your user to the sudoers group, which is not done by default on installation. For this, follow [following instructions](https://superuser.com/questions/1623376/how-can-i-make-my-own-account-a-sudoers-on-virtualbox/1755286#1755286):
+   - **Create a virtual machine**. It is important to **select "Bridged Adapter" in the Network options**. This will allow your host to communicate with the VM via TCP/IP. Configure other options (memory, disk size, etc.) as desired.
+   - Optionally, I would suggest to **install the Guest Additions**. This allows you to resize the screen to the window size. First, select from the menu "Insert Guest Additions CD", then after mounting it you need to execute `autorun.sh`. After reboot you can activate from the menu "View > Autoresize Guest Display"
+   - Optionally, I would also activate the **bidirectional Drag and Drop** from the menu.
+3. Next, you need to **add your user to the sudoers group**, which is not done by default on installation. For this, you need to follow [these instructions](https://superuser.com/questions/1623376/how-can-i-make-my-own-account-a-sudoers-on-virtualbox/1755286#1755286):
    ```
    su -
    sudo adduser <username> sudo
