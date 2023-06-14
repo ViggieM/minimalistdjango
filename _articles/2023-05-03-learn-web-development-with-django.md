@@ -1,7 +1,7 @@
 ---
 layout: page
 title:  "Learn Web Development with Django"
-date:   2022-08-02 12:00:00 +0200
+date:   2023-05-03 12:00:00 +0200
 published: true
 image: 
   path: /images/Django-logo.png
@@ -10,12 +10,6 @@ image:
 ---
 
 Django is a remarkable web framework that is written in Python, and the perfect starting point for those who wish to delve into web development. 
-
-<style>
-    .page-image img {
-        width: auto;
-    }
-</style>
 
 ## Applications on the Web
 
