@@ -7,10 +7,25 @@ sitemap: false
 
 @import "so-simple";
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
 .site-logo-img {
-    background-color: white
+  background-color: white;
+  animation-name: fadeInUp;
 }
 
 .page-image img {
-    width: auto;
+  width: auto;
 }
