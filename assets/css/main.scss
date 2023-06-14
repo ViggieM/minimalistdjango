@@ -29,3 +29,9 @@ sitemap: false
 .page-image img {
   width: auto;
 }
+
+.youtube-iframe {
+  max-width: 560px;
+  width: 100%;
+  aspect-ratio: 560/315;
+}
