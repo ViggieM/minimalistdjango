@@ -22,11 +22,22 @@ Starting a new project is very exciting and you want to get it right from the st
 [Pyenv][pyenv-install] allows you to easily manage multiple Python versions on your system, which is particularly useful when working with different Django projects that require specific versions of Python. 
 
 You can easily install pyenv with curl:
+
 ```bash
 curl https://pyenv.run | bash
 ```
 
+Then add the following lines to your `.bashrc`:
+
+```bash
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+
 To use a specific python version for your project, execute
+
 ```bash
 pyenv install 3.11.3
 pyenv local 3.11.3
