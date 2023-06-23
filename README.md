@@ -8,5 +8,8 @@ Link to website: [minimalistdjango.com][1]
 
 Run project: `bundle exec jekyll serve`
 
+## Markdown Cheatsheet
+* https://www.markdownguide.org/extended-syntax/
+
 
 [1]: https://minimalistdjango.com/

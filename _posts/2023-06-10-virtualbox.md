@@ -13,7 +13,7 @@ categories:
 ---
 
 Having a virtual machine (VM) locally is extremely useful to test provisioning your remote host.
-This can be really useful when you plan to host your application on an external provider like [DigitalOcean](https://m.do.co/c/c40e38c3b079).
+This can be really useful when you plan to host your application on an external provider like [DigitalOcean](https://m.do.co/c/c40e38c3b079){:rel="sponsored"}{:target="_blank"}.
 Together with ansible it will help you learn how to automate your deployment.
 
 ## Setup VirtualBox
@@ -71,4 +71,4 @@ Together with ansible it will help you learn how to automate your deployment.
   `VBoxManage modifyhd <absolute path including the name and extension> --resize 20480`
 
 
-<a href="https://www.digitalocean.com/?refcode=c40e38c3b079&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge"><img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt="DigitalOcean Referral Badge" /></a>
+<a href="https://www.digitalocean.com/?refcode=c40e38c3b079&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge" rel="sponsored" target="_blank"><img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt="DigitalOcean Referral Badge" /></a>
