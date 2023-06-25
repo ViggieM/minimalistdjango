@@ -4,18 +4,12 @@ title:  "How to set up a Django Project"
 date:   2023-06-14 12:00:00 +0200
 published: true
 image: 
-  path: /images/DjangoRocket.gif
+  path: /images/Django-logo.png
   thumbnail: /images/DjangoRocket.gif
 
 ---
 
 Starting a new project is very exciting and you want to get it right from the start.
-
-<style>
-    header.masthead > div.wrap {
-        display: none;
-    }
-</style>
 
 ## Choose your Python version with *pyenv*
 

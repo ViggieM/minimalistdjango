@@ -2,7 +2,7 @@
 layout: post
 title:  "Checklist Django Project"
 date:   2022-08-07 10:25:00 +0200
-published: true
+published: false
 ---
 
 ## The _must_

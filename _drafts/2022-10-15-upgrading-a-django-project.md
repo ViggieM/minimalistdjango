@@ -2,7 +2,7 @@
 layout: post
 title:  "Upgrading a Django Project to a new major version"
 date:   2022-10-15
-published: true
+published: false
 ---
 
 * make sure that your project is still running on the old version, or set up the project

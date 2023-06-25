@@ -26,12 +26,21 @@ sitemap: false
   animation-name: fadeInUp;
 }
 
-.page-image img {
-  width: auto;
+.page-image {
+  width: fit-content;
+  margin: -75px auto 2em;
 }
 
 .youtube-iframe {
   max-width: 560px;
   width: 100%;
   aspect-ratio: 560/315;
+}
+
+::selection {
+  background: #C9F0DD;
+}
+
+.entry-image.u-photo {
+  border-radius: 4px;
 }
