@@ -13,6 +13,10 @@ categories:
 
 # Create a bash script that executes your django app
 
+- https://stackoverflow.com/questions/19331497/set-environment-variables-from-file-of-key-value-pairs
+.env variables with space not exported
+- http://veithen.io/2014/11/16/sigterm-propagation.html
+
 
 # Install Supervisor
 
