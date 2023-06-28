@@ -13,8 +13,10 @@ image:
 There are dozens of alternatives, all we have to decide is what to do with the tools that are given to us.
 
 The web got a long way [since it's invention in 1989](https://home.cern/science/computing/birth-web/short-history-web).
-It is part of our daily lives, and we became so dependent on it, that our society will probably break down into chaos if the internet will shut down from one day to the other.
-Nevertheless, on a more positive note, the tooling and learning resources around building websites has improved so much over the years, that basically everybody can create their own website after watching some YouTube tutorials.
+The tooling and learning resources around building websites has improved so much over the years, that basically everybody can create their own website, not only Tim.
+
+Hier muss ein bisschen mehr zu anderen Frameworks stehen. Oder eine besser überleitung.
+{:style="background-color: red"}
 
 Ultimately, the decision to use Django or any other web framework should be based on the specific needs and requirements of the project at hand.
 
