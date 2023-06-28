@@ -44,3 +44,18 @@ sitemap: false
 .entry-image.u-photo {
   border-radius: 4px;
 }
+
+.terminal-content {
+  border: 1px solid black; 
+  line-height: 1.1 !important;
+
+  .nv {
+    user-select: none;
+  }
+}
+
+.tip-content {
+  background-color: #C9F0DD;
+  border-left: none;
+  border-radius: 4px;
+}

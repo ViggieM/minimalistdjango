@@ -4,7 +4,7 @@ title:  "Why Django?"
 date:   2023-05-03 12:00:00 +0200
 published: true
 image: 
-  path: /images/tim-berners-lee.jpg
+  path: /images/tim-berners-lee-django.jpg
   thumbnail: /images/meme-django.jpg
   caption: Tim Berners Lee starting his first Django project in 1989
 ---

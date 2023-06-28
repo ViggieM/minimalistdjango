@@ -21,7 +21,8 @@ The nice thing aboout a bash script is that you can easily extend it to more tha
 
 Let's create a `run` file inside our project `src/` directory:
 
-```
+```bash
+$ tree -L 1
 .
 ├── gunicorn.conf.py
 ├── manage.py
@@ -33,7 +34,7 @@ Let's create a `run` file inside our project `src/` directory:
 │   └── wsgi.py
 └── run                 <--- create here
 ```
-{:style="border: 1px solid black; line-height: 1.1"}
+{:class="terminal-content"}
 
 and make it executable with `chmod +x run`.
 
@@ -51,6 +52,7 @@ set +a
 
 exec $VIRTUAL_ENV/bin/gunicorn project.wsgi
 ```
+{:class="file-content"}
 
 The nice thing about the usage of the `$VIRTUAL_ENV` environment variable is that **it is automatically set when you activate your virtual environment**, or you can set it externally with *Supervisor* or *Systemd*.
 
@@ -60,22 +62,26 @@ Now you can execute `./run` in your shell, with your virtual environment activat
 
 ## Supervisor
 
-The nice thing about *Supervisor* is that it is easy to configure, and it provides some nice additional features such as **log rotation** [^logrotate].
+The nice thing about *Supervisor* is that it is easy to configure and it provides some nice additional features such as **log rotation** [^logrotate].
 
 To install *Supervisor* you need to execute
 
 ```bash
-sudo apt-get -y install supervisor
-sudo systemctl enable supervisor
-sudo systemctl start supervisor
+$ sudo apt-get -y install supervisor
+$ sudo systemctl enable supervisor
+$ sudo systemctl start supervisor
 ```
+{:class="terminal-content"}
 
+Place your *Django* application under `/srv` [^srv] inside a directory called **`my_app`**.
+Create your virtual environment inside the same directory in a directory called **`.venv`**.
 Now you can create a new file inside `/etc/supervisor/conf.d/` called `my_app.conf`:
 
 ```init
 [program:my_app]
 directory=/srv/%(program_name)s
 command=/srv/%(program_name)s/run
+environment=/srv/%(program_name)s/.venv
 stderr_logfile=/var/log/supervisor/%(program_name)s_stderr.log
 stdout_logfile=/var/log/supervisor/%(program_name)s_stdout.log
 ```
@@ -84,11 +90,12 @@ stdout_logfile=/var/log/supervisor/%(program_name)s_stdout.log
 After you saved the file, you can instruct *Supervisor* to reload the configuration:
 
 ```bash
-sudo supervisorctl reread
-sudo supervisorctl update
+$ sudo supervisorctl reread
+$ sudo supervisorctl update
 ```
+{:class="terminal-content"}
 
-Now your app is up and running on the port specified by the *Gunicorn* **bind** address.
+Now your app is up and running on the port specified by the *Gunicorn* **bind** address inside the **`gunicorn.conf.py`** file.
 
 > ## 🤫 Tip
 > *Supervisor* comes with an HTTP server to monitor your services. You can enable it by specifying the [[inet_http_server]](http://supervisord.org/configuration.html#inet-http-server-section-values) setting inside `/etc/supervisor/supervisord.conf`:
@@ -96,11 +103,56 @@ Now your app is up and running on the port specified by the *Gunicorn* **bind** 
 > [inet_http_server]
 > port = 9001
 > ```
-> and restarting the service with `sudo supervisorctl reload`.
+> and restarting the service with `sudo supervisorctl reload`. It's a nice gimmick, you shouldn't expose it on the internet though.
+{:class="tip-content"}
 
 ## Systemd
+
+The downside of *Supervisor* is that there is no way you can bind your application to any **privileged ports < 1024**.
+*Systemd* allows you to do that with the `AmbientCapabilities=CAP_NET_BIND_SERVICE` setting.
+You can also specify an environment file for your application, instead of loading them inside of the `run` script.
+Here is how your service configuration file would look like:
+
+```
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+EnvironmentFile=/srv/my_app/.env
+WorkingDirectory=/srv/my_app/
+ExecStart=/srv/my_app/run
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+User=victor
+Group=victor
+
+[Install]
+WantedBy=multi-user.target
+```
+{:class="file-content"}
+
+* The `[Unit]` section is used to specify metadata and dependencies. It has a description and an instruction to start after the [network is up](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/).
+* The `[Service]` section specifies your service configuration. The values are self explanatory and the user is set to me, to demonstrate that *Gunicorn* application can bind to port 80.
+* The `[Install]` section tells *Systemd* at which moment during the boot process this service should be started.
+
+
+### TODO
+* Now you need to change the `gunicorn.conf.py` file to bind to the address `127.0.0.1:80`.
+* start service
+* read logs
+* mention logrotate
+* final words on systemd
+
+
+## Further Reading
+* [Digitalocean](digitalocean): Comprehensive tutorial on how to set up a *Django* application with *Gunicorn* and *Nginx*
+* [simpleisbetterthancomplex.com](simpleisbetterthancomplex): Last step of an overall great Django tutorial that also shows how to configure Gunicorn and Nginx for production deployment
+
+[digitalocean]: https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04
+[simpleisbetterthancomplex]: https://simpleisbetterthancomplex.com/series/2017/10/16/a-complete-beginners-guide-to-django-part-7.html
 
 
 [^envfile]: See [this post on *stackoverflow*](https://stackoverflow.com/questions/19331497/set-environment-variables-from-file-of-key-value-pairs) for different alternatives on how to read environment variables from a file. Note that variables with space will not be exported, so you have to put them in quotes.
 [^exec]: [How to propagate SIGTERM to a child process in a Bash script](http://veithen.io/2014/11/16/sigterm-propagation.html)
 [^logrotate]: By default, *Supervisor* rotates your log files, but you can also configure it to run with [*Logrotate*](https://medium.com/@doodyp/easy-logging-with-logrotate-and-supervisord-16b72b79ded0).
+[^srv]: This is the recommended location, according to the [Filesystem Hierarchy Standard](https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html)
