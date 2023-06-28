@@ -29,7 +29,7 @@ twitter_username: ViggieSmalls5
 github_username:  movileanuv
 disqus:
   shortname: minimalistdjango
-google_analytics: G-PP61HM8LXR
+
 # Build settings
 theme: jekyll-theme-so-simple
 plugins:
