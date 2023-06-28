@@ -4,9 +4,9 @@ title:  "How to set up a Django Project"
 date:   2023-06-14 12:00:00 +0200
 published: true
 image: 
-  path: /images/Django-logo.png
+  path: /images/xkcd-startling.png
   thumbnail: /images/DjangoRocket.gif
-
+  caption: <a href="https://xkcd.com/354/">https://xkcd.com/354/</a>
 ---
 
 Starting a new project is very exciting and you want to get it right from the start.
