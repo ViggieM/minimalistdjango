@@ -6,7 +6,7 @@ published: true
 image: 
   path: /images/xkcd-startling.png
   thumbnail: /images/DjangoRocket.gif
-  caption: <a href="https://xkcd.com/354/">https://xkcd.com/354/</a>
+  caption: <a href="https://xkcd.com/354/" target="_blank">https://xkcd.com/354/</a>
 ---
 
 Starting a new project is very exciting and you want to get it right from the start.
