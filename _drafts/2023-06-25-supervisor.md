@@ -34,7 +34,7 @@ $ tree -L 1
 │   └── wsgi.py
 └── run                 <--- create here
 ```
-{:class="terminal-content"}
+{: .terminal-content}
 
 and make it executable with `chmod +x run`.
 
@@ -52,7 +52,7 @@ set +a
 
 exec $VIRTUAL_ENV/bin/gunicorn project.wsgi
 ```
-{:class="file-content"}
+{: .file-content}
 
 The nice thing about the usage of the `$VIRTUAL_ENV` environment variable is that **it is automatically set when you activate your virtual environment**, or you can set it externally with *Supervisor* or *Systemd*.
 
@@ -71,7 +71,7 @@ $ sudo apt-get -y install supervisor
 $ sudo systemctl enable supervisor
 $ sudo systemctl start supervisor
 ```
-{:class="terminal-content"}
+{: .terminal-content}
 
 Place your *Django* application under `/srv` [^srv] inside a directory called **`my_app`**.
 Create your virtual environment inside the same directory in a directory called **`.venv`**.
@@ -85,7 +85,7 @@ environment=/srv/%(program_name)s/.venv
 stderr_logfile=/var/log/supervisor/%(program_name)s_stderr.log
 stdout_logfile=/var/log/supervisor/%(program_name)s_stdout.log
 ```
-{:class="file-content"}
+{: .file-content}
 
 After you saved the file, you can instruct *Supervisor* to reload the configuration:
 
@@ -93,7 +93,7 @@ After you saved the file, you can instruct *Supervisor* to reload the configurat
 $ sudo supervisorctl reread
 $ sudo supervisorctl update
 ```
-{:class="terminal-content"}
+{: .terminal-content}
 
 Now your app is up and running on the port specified by the *Gunicorn* **bind** address inside the **`gunicorn.conf.py`** file.
 
@@ -104,7 +104,7 @@ Now your app is up and running on the port specified by the *Gunicorn* **bind** 
 > port = 9001
 > ```
 > and restarting the service with `sudo supervisorctl reload`. It's a nice gimmick, you shouldn't expose it on the internet though.
-{:class="tip-content"}
+{: .tip-content}
 
 ## Systemd
 
@@ -129,7 +129,7 @@ Group=victor
 [Install]
 WantedBy=multi-user.target
 ```
-{:class="file-content"}
+{: .file-content}
 
 * The `[Unit]` section is used to specify metadata and dependencies. It has a description and an instruction to start after the [network is up](https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/).
 * The `[Service]` section specifies your service configuration. The values are self explanatory and the user is set to me, to demonstrate that *Gunicorn* application can bind to port 80.

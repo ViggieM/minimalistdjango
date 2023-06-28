@@ -1,6 +1,6 @@
 ---
 layout: page
-title:  "How to set up a Django Project"
+title:  "How to set up a Django project"
 date:   2023-06-14 12:00:00 +0200
 published: true
 image: 
@@ -13,7 +13,7 @@ Starting a new project is very exciting and you want to get it right from the st
 
 ## Choose your Python version with *pyenv*
 
-[Pyenv][pyenv-install] allows you to easily manage multiple Python versions on your system, which is particularly useful when working with different Django projects that require specific versions of Python. 
+[*Pyenv*][pyenv-install]{:target="_blank"} allows you to easily manage multiple Python versions on your system, which is particularly useful when working with different Django projects that require specific versions of Python. 
 
 You can easily install pyenv with curl:
 
@@ -43,7 +43,7 @@ You can verify by executing `python --version`.
 ## Manage your dependencies with *poetry*
 
 Dependency management is important because external libraries can change over time, and upgrading them without proper management can potentially crash your application.
-[Poetry][poetry-install]{:target="_blank"} incorporates everything you need to isolate your project and manage your dependencies.
+[*Poetry*][poetry-install]{:target="_blank"} incorporates everything you need to isolate your project and manage your dependencies.
 
 You can install poetry outside your project's directory with
 
@@ -60,16 +60,16 @@ Here are some useful commands that you will always come across:
 
 > ## 🤫 Tip
 > Create a `requirements/` directory to separate development, test and production requirements.
+{: .tip-content}
 
-## Create a new Django project with *pyenv* and *poetry*
+## TL;DR
 
 Here is a quick run-through on how to set up a new Django project after having successfully installed *pyenv* and *poetry*:
 
 <script src="https://gist.github.com/movileanuv/56fcce4d2351ab096cbd10e97211782f.js"></script>
 
-
-
 ## Further Reading
+
 * [RealPython][1]{:target="_blank"}: More details on how to work with poetry
 * [Boring Python: dependency management][2]{:target="_blank"}: Great article that describes how to work with tools like "pip" and "venv" and what you have to look out for
 
