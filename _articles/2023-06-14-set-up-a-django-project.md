@@ -72,6 +72,7 @@ Here is a quick run-through on how to set up a new Django project after having s
 
 * [RealPython][1]{:target="_blank"}: More details on how to work with poetry
 * [Boring Python: dependency management][2]{:target="_blank"}: Great article that describes how to work with tools like "pip" and "venv" and what you have to look out for
+* [Youtube: Bootstrapping Your Local Python Environment](https://www.youtube.com/watch?v=-YEUFGFHWgQ)
 
 
 

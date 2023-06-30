@@ -151,6 +151,7 @@ On the other hand, it is much more powerful than *Supervisor*, more widespreaded
 ## Further Reading
 * [Digitalocean][digitalocean]{:target="_blank"}: Comprehensive tutorial on how to set up a *Django* application with *Gunicorn* and *Nginx*
 * [simpleisbetterthancomplex.com][simpleisbetterthancomplex]{:target="_blank"}: Last step of an overall great Django tutorial, that also shows how to configure Gunicorn and Nginx for production deployment
+* [Understanding systemd at startup on Linux](https://opensource.com/article/20/5/systemd-startup): More on *Systemd*
 
 
 [^envfile]: See [this post on *stackoverflow*](https://stackoverflow.com/questions/19331497/set-environment-variables-from-file-of-key-value-pairs) for different alternatives on how to read environment variables from a file. Note that variables with space will not be exported, so you have to put them in quotes.
