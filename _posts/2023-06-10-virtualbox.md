@@ -58,17 +58,39 @@ Together with ansible it will help you learn how to automate your deployment.
 
 ## Setup Ansible
 
-1. [Install Ansible](https://www.google.com/search?q=install+ansible){:target="_blank"}
-2. Here is a simple ansible playbook inspired by [Sample Ansible setup](https://docs.ansible.com/ansible/latest/tips_tricks/sample_setup.html#sample-setup) that installs `pyenv` in the `/opt` directory:
-    <script src="https://gist.github.com/movileanuv/835a2c5e287dd1ce5b192da7f503dd3b.js"></script>
+First things first, you need to install *Ansible* on your local machine. 
+I would recommend to install globally, using *pip*, but the one provided by your local *pyenv* installation.
+You could also install it with your package manager, but it might not be the latest version and would be harder to upgrade.
 
-> ## 🥳 
-> Now you can execute `ansible-playbook -i development site.yml` to install *pyenv* via ansible on your VM!
+Let's take a look at following two files: our inventory **development** and our playbook **playbook.yml**:
+
+<script src="https://gist.github.com/movileanuv/835a2c5e287dd1ce5b192da7f503dd3b.js"></script>
+
+The inventory specifies a hostname that is addressed in the playbook as `hosts: vbox`. This tells Ansible which hosts to run this playbook on.
+There are three other parameters specified for the host:
+* **ansible_host**: this is the IP address of the node that ansible will ssh to to execute the playbook
+* **ansible_port**: this is the port for the ssh connection
+* **ansible_become**: this instructs ansible to become a specific user on the remote host during playbook execution. By default this is **root**. Since most of the commands require superuser privileges, I would rather specify it here than for each task repeatedly, and only in case I need less privileges to perform an action, I specify it per task level.
+
+The playbook goes through the installation process of pyenv step by step
+1. It uptates the apt packages list (for debian/ubuntu obviously)
+2. It installs the packages required by *pyenv* for building
+3. It installs *pyenv* via an install script
+4. It updates the `.profile` of the user to initialize *pyenv* correctly.
+
+There is a required environment variable `{{ user }}`, that can be specified with the flag `-e` on playbook execution, which controls for which user *pyenv* should be installed. Here is how you would execute the playbook:
+
+```bash
+ansible-playbook -i development -e user=victor playbook.yml
+```
+
+This command will install *pyenv* for the specified user on the VM and you can check it by logging in as the user on the VM and typing `pyenv` into the terminal, which should output all *pyenv* actions available.
 
 ## Further reading:
 
-* [Resize the Virtual Drive of a VM](https://forums.virtualbox.org/viewtopic.php?f=35&t=50661): 
-  `VBoxManage modifyhd <absolute path including the name and extension> --resize 20480`
+* [Resize the Virtual Drive of a VM](https://forums.virtualbox.org/viewtopic.php?f=35&t=50661){:target="_blank"}: By default, the VM might not have enough hard disk space. So this command might be pretty helpful to resize it to the desired size:
+    `VBoxManage modifyhd <absolute path including the name and extension> --resize 20480`
+* [Sample Ansible setup](https://docs.ansible.com/ansible/latest/tips_tricks/sample_setup.html#sample-setup){:target="_blank"}: Suggestions how to organize your inventories, playbooks and roles.
 
 
 <a href="https://www.digitalocean.com/?refcode=c40e38c3b079&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge" rel="sponsored" target="_blank"><img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt="DigitalOcean Referral Badge" /></a>
