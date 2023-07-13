@@ -12,6 +12,7 @@ image:
 Starting a new project is very exciting and you want to get it right from the start.
 
 ## Choose your Python version with *pyenv*
+{:id="install-pyenv"}
 
 [*Pyenv*][pyenv-install]{:target="_blank"} allows you to easily manage multiple Python versions on your system, which is particularly useful when working with different Django projects that require specific versions of Python. 
 
