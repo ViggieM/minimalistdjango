@@ -2,7 +2,7 @@
 layout: page
 title:  "Django Project Structure"
 date:   2023-08-02
-published: true
+published: false
 # image: 
 #   path: /images/tim-berners-lee-django.jpg
 #   thumbnail: /images/meme-django.jpg
