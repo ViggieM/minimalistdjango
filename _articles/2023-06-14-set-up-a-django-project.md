@@ -9,7 +9,7 @@ image:
   caption: <a href="https://xkcd.com/354/" target="_blank">https://xkcd.com/354/</a>
 ---
 
-Starting a new project is very exciting and you want to get it right from the start.
+Start a Django project the right way
 
 ## Choose your Python version with *pyenv*
 {:id="install-pyenv"}

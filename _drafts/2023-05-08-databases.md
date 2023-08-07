@@ -15,10 +15,9 @@ categories:
   - Development setup
 ---
 
-* Use SQLite for small projects. You can easily sync it's content and backup (to aws, etc.)
-* Use Postgres for projects with many users and lots of data
-* Choose another database only if you have very good reasons
-<!--why is it good to run sqlite over postgres in a django project?-->
+* Use SQLite for regular projects. You can easily sync it's content and backup (to aws, etc.)
+* Use Postgres for projects with **many** users and lots of data. But DO consider SQLite first!
+* Only choose another relational DB like MySQL if you have a good reason, because Postgres can cover a lot of use cases (fulltext, json, etc.) and there is a big community building tools and packages around it.
 
 # SQLite
 
