@@ -110,3 +110,6 @@ repos:
 * django debug toolbar 
   * https://gist.github.com/movileanuv/a6e31cb31c2684883c75d89aeceba512
 
+
+## Links
+* [Structuring Your Project — The Hitchhiker's Guide to Python](https://docs.python-guide.org/writing/structure/)
