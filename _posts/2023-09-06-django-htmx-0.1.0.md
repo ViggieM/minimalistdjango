@@ -7,7 +7,7 @@ author: victor
 tags:
   - htmx
 categories:
-  - Development
+  - Frontend
 ---
 
 How to create a form wizard with Django and HTMX, without saving any intermediate data to the database or session.
@@ -16,12 +16,9 @@ How to create a form wizard with Django and HTMX, without saving any intermediat
 
 ## The task
 
-> * Create a django form (arbitrary fields)
-> * Make a view where you can edit the form
-> * When the form is submitted, a preview of the form and its submitted values is rendered
-> * Provide a *back* button to re-edit the form, or press *submit* to submit the form
+> Develop a Django form with customizable fields, implement a view for form editing, display a preview of the form with submitted values upon submission, and offer options to either return to form editing with a "back" button or submit the form for processing.
 
-### Build the edit view
+## Build the edit view
 
 We start off with a regular django form
 
@@ -78,7 +75,7 @@ It makes use of the **hx-target** attribute to swap the div with the id **awesom
 {% endraw %}
 ```
 
-### Build the preview view
+## Build the preview view
 
 When the "Preview" button is pressed, then a POST request is made to the preview view.
 It only accepts POST requests, because if the form is not valid, we want to render the `_edit_form.html` partial with the form errrors.
@@ -125,6 +122,3 @@ def submit_form(request):
 
 * This method will not work for file uploads because we can't keep them between POST requests. 
   For this, we probably have to do some javascript magic to keep them in the local storage, until the final form submission.
-
-## Resources
-
