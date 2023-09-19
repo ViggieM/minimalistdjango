@@ -7,7 +7,6 @@ author: victor
 tags:
   - VirtualBox
   - ansible
-  - advanced
 categories:
   - Production deployment
 ---

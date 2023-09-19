@@ -48,7 +48,3 @@ I know you might be busy, you have a lot of new features to build (or a lot of b
 [1]: https://www.thinkful.com/blog/why-learning-to-code-is-so-damn-hard/?ref=minimalistdjango.com
 [2]: https://www.swyx.io/learn-in-public/
 [3]: https://changelog.com/podcast/467
-
-[todo-learning-material]: # (create a page with learnin material links)
-[todo-feedback]: # (Form for feedback)
-[todo]: # (Welcome to the django header)

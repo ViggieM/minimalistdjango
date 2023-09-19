@@ -7,7 +7,6 @@ author: victor
 tags:
   - supervisor
   - systemd
-  - basics
 categories:
   - Production deployment
 ---

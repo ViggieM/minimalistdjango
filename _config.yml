@@ -27,8 +27,6 @@ url: "https://minimalistdjango.com" # the base hostname & protocol for your site
 logo: "images/django-rocket.svg"
 twitter_username: ViggieSmalls5
 github_username:  movileanuv
-disqus:
-  shortname: minimalistdjango
 
 # Build settings
 theme: jekyll-theme-so-simple

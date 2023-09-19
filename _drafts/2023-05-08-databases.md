@@ -9,8 +9,6 @@ tags:
   - docker
   - postgres
   - sqlite
-  - novice
-  - advanced
 categories:
   - Development setup
 ---
@@ -85,25 +83,3 @@ Source: https://towardsdatascience.com/how-to-run-postgresql-and-pgadmin-using-d
 
 # More Resources:
 * [How To Install and Use Docker on Ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)
-
-<!--
-Running SQLite over PostgreSQL in a Django project can have certain advantages in specific scenarios, but it ultimately depends on the requirements and constraints of your project. Here are some reasons why one might choose SQLite over PostgreSQL in certain cases:
-
-1. Simplicity and Lightweight: SQLite is a file-based database system, meaning it doesn't require a separate database server process like PostgreSQL. This simplicity makes it easy to set up and use, especially for small projects or development environments. It is also lightweight and has minimal resource requirements.
-
-2. Development Convenience: SQLite is the default database backend in Django, so it requires minimal configuration to get started. It allows developers to quickly iterate and prototype their applications without the need for complex database setup.
-
-3. Portability: Since SQLite is a single file-based database, it can be easily moved and shared across different environments. This can be useful in cases where you need to distribute your Django project with its database bundled together or when you want to seamlessly switch between development machines.
-
-4. Testing: SQLite is often used for running tests in Django due to its speed and convenience. It allows for fast test execution and can easily recreate the database state for each test case, leading to efficient and isolated testing.
-
-Despite these advantages, it's important to consider the limitations of SQLite compared to PostgreSQL:
-
-1. Scalability: SQLite may not be suitable for high-traffic or large-scale applications due to its limited concurrency and write-locking mechanisms. PostgreSQL is designed to handle complex and heavy workloads, providing better scalability and performance optimizations.
-
-2. Advanced Features: PostgreSQL offers a wide range of advanced features, such as support for advanced SQL queries, JSONB data type, full-text search capabilities, and various indexing options. If your project requires advanced database functionality, PostgreSQL may be a better choice.
-
-3. Production Environment Considerations: In a production environment, where data integrity, reliability, and security are critical, PostgreSQL provides more robust features, transactional support, and better data consistency guarantees compared to SQLite.
-
-In summary, running SQLite over PostgreSQL in a Django project can be beneficial for small-scale projects, development environments, prototyping, and testing purposes. However, for larger and more demanding applications with higher concurrency, scalability, and advanced database requirements, PostgreSQL is generally recommended.
--->
