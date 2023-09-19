@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Django and HTMX v0.1.0"
+title: "Django and HTMX"
 date: 2023-09-06
 published: true
 author: victor

@@ -9,7 +9,7 @@ tags:
   - serverless
   - s3
 categories:
-  - Frontend
+  - Development
 ---
 
 How to create an S3 bucket locally and connect it to a Django application.
