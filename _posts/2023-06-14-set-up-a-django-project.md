@@ -1,15 +1,19 @@
 ---
-layout: page
+layout: post
 title:  "How to set up a Django project"
 date:   2023-06-14 12:00:00 +0200
 published: true
-image: 
-  path: /images/xkcd-startling.png
-  thumbnail: /images/DjangoRocket.gif
-  caption: <a href="https://xkcd.com/354/" target="_blank">https://xkcd.com/354/</a>
+author: victor
+tags:
+  - pyenv
+  - poetry
+categories:
+  - Development
+excerpt: "How to start a Django project the right way"
 ---
 
-Start a Django project the right way
+![xkcd meme on regular repetitive tasks](/images/xkcd-startling.png)
+<a href="https://xkcd.com/354/" target="_blank">https://xkcd.com/354/</a>
 
 ## Choose your Python version with *pyenv*
 {:id="install-pyenv"}

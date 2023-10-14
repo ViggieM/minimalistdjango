@@ -57,7 +57,7 @@ In case your repository is **private**, you have two options:
 
 ## Set up the python environment
 
-I assume you have already [installed *pyenv*]({% link _articles/2023-06-14-set-up-a-django-project.md %}#install-pyenv) inside your VM.
+I assume you have already [installed *pyenv*]({% link _posts/2023-06-14-set-up-a-django-project.md %}#install-pyenv) inside your VM.
 Now you can set up a virtual environment for your application with:
 
 ```bash

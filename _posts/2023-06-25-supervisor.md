@@ -156,6 +156,6 @@ On the other hand, it is much more powerful than *Supervisor*, more widespreaded
 [^exec]: [How to propagate SIGTERM to a child process in a Bash script](http://veithen.io/2014/11/16/sigterm-propagation.html)
 [^logrotate]: By default, *Supervisor* rotates your log files, but you can also configure it to run with [*Logrotate*](https://medium.com/@doodyp/easy-logging-with-logrotate-and-supervisord-16b72b79ded0).
 [^srv]: This is the recommended location, according to the [Filesystem Hierarchy Standard](https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html)
-[^virtualenv]: In [this article]({% link _articles/2023-06-14-set-up-a-django-project.md %})  I describe how to generally set up a virtual environment for your *Django* project. It is not the same way as you would do it on a remote host, which will be described in a later post.
+[^virtualenv]: In [this article]({% link _posts/2023-06-14-set-up-a-django-project.md %})  I describe how to generally set up a virtual environment for your *Django* project. It is not the same way as you would do it on a remote host, which will be described in a later post.
 [digitalocean]: https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-16-04
 [simpleisbetterthancomplex]: https://simpleisbetterthancomplex.com/series/2017/10/16/a-complete-beginners-guide-to-django-part-7.html
