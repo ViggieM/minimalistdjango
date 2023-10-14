@@ -7,6 +7,12 @@ sitemap: false
 
 @import "so-simple";
 
+:root {
+  /* https://www.djangoproject.com/styleguide/#colors */
+  --green-light: #93D7B7;
+  --color-text: #0C3C26;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -63,4 +69,67 @@ sitemap: false
 .tree-content {
   border: 1px solid black; 
   line-height: 1.1 !important;
+}
+
+.entry {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.entry-title {
+  margin-bottom: 0;
+}
+
+.entry-date {
+  font-family: "Lora", serif;
+  font-style: italic;
+  white-space: nowrap;
+  font-size: 0.75em;
+}
+
+.entry-excerpt {
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+.entry-meta {
+  display: flex;
+  align-items: center;
+  font-family: "Lora", serif;
+  font-style: italic;
+  white-space: nowrap;
+  font-size: 0.75em;
+}
+
+.entry-tags-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 5px;
+}
+
+.entry-tag {
+  display: inline-block;
+  border-radius: 3px;
+  padding: .2em .5em .3em;
+  border-radius: 2px;
+  background: var(--green-light);
+  color: var(--color-text);
+  font-weight: 600;
+  margin: .25em .1em
+}
+
+.entry-tag::before {
+  content: "#";
+  margin-right: 1px;
+}
+
+.p-summary {
+  margin-bottom: 0.5rem;
+}
+
+.p-summary p {
+  margin: 0;
 }

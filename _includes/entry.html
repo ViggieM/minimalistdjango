@@ -1,0 +1,18 @@
+<article class="entry">
+    <header>
+        <h3 class="entry-title">
+            <a href="{{ entry.url | relative_url }}" rel="bookmark">{{ entry.title }}</a>
+        </h3>
+        {% include entry-date.html %}
+    </header>
+    <div class="entry-excerpt p-summary">
+        {{ entry.excerpt | markdownify }}
+    </div>
+    <footer class="entry-meta">
+        <ul class="entry-tags-list">
+            {%- for tag in entry.tags -%}
+                <li class="entry-tag">{{ tag }}</li>
+            {%- endfor- %}
+        </ul>
+    </footer>
+</article>

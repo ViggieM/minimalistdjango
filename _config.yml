@@ -55,3 +55,4 @@ plugins:
 #   - vendor/ruby/
 
 search_full_content: true
+search_placeholder_text: "Search posts"
