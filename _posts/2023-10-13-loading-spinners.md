@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Loading spinners"
-date: 2023-09-20
+date: 2023-10-13
 published: true
 author: victor
 tags:
@@ -9,9 +9,8 @@ tags:
   - tailwindcss
 categories:
   - Frontend
+excerpt: "How to create loading spinners with htmx and tailwindcss"
 ---
-
-How to create loading spinners with htmx and tailwindcss.
 
 Htmx is pretty awesome for [forms]({% link _posts/2023-09-06-django-htmx.md %}) and you can handle some pretty complex things with just a few attributes.
 Sometimes when you submit a form, the response comes very fast from the server, and you don't even notice the delay, especially during local development.

@@ -10,9 +10,8 @@ tags:
   - s3
 categories:
   - Development
+excerpt: "How to create an S3 bucket locally and connect it to a Django application"
 ---
-
-How to create an S3 bucket locally and connect it to a Django application.
 
 ![aws meme, bear trap, fly trap](/images/aws-meme.png)
 

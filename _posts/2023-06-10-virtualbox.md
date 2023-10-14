@@ -9,6 +9,7 @@ tags:
   - ansible
 categories:
   - Production deployment
+excerpt: "How to run a virtual host locally to test your automatic provisioning"
 ---
 
 Having a virtual machine (VM) locally is extremely useful to test provisioning your remote host.

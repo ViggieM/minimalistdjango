@@ -9,9 +9,8 @@ tags:
   - css
 categories:
   - Frontend
+excerpt: "How to create floating labels with Tailwindcss"
 ---
-
-How to create floating labels with Tailwindcss.
 
 Floating labels look amazing. Everybody likes them.
 I am not a designer, and I have no idea about their downsides, but as a developer it is useful to know how to build them.

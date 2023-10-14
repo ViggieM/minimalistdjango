@@ -10,9 +10,8 @@ tags:
   - pm2
 categories:
   - Frontend
+excerpt: "How to include tailwindcss in a Django project with *django-tailwind* and automatically run both npm and runserver during development"
 ---
-
-How to include tailwindcss in a Django project with *django-tailwind* and automatically run both npm and runserver during development.
 
 ## Why django-tailwind?
 

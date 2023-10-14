@@ -8,9 +8,8 @@ tags:
   - htmx
 categories:
   - Frontend
+excerpt: "How to create a form wizard with Django and HTMX, without saving any intermediate data to the database or session"
 ---
-
-How to create a form wizard with Django and HTMX, without saving any intermediate data to the database or session.
 
 ![django and htmx make my day meme](/images/django-htmx.png)
 

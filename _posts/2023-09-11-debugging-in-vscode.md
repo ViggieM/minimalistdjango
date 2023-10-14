@@ -9,9 +9,8 @@ tags:
   - debugging
 categories:
   - Know your tools
+excerpt: "How to debug a python application in VSCode"
 ---
-
-How to debug a python application in VSCode.
 
 The advantage of using **debugpy** and VSCode is the simplicity.
 Whether you have your application locally or inside a Docker container, as long as you can reach the port exposed

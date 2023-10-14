@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Deploy your app on a VM"
+title: "Deploy a Django app on a VM (manually)"
 date: 2023-07-03
 published: true
 author: victor
@@ -8,13 +8,14 @@ tags:
   - pyenv
   - pip
   - git
+  - gunicorn
+  - systemd
 categories:
   - Production deployment
+excerpt: "All manual steps required to transfer the code on the remote host and set up a systemd service that executes your Django application"
 ---
 
-There are a few things remaining to deploy our app to the VM.
-We will cover those here and later we will automate everything with *Ansible*.
-Besides, if you don't know how to do it *without* Ansible, then Ansible won't help you either.
+> If you don't know how to do it *without* Ansible, then Ansible won't help you either.
 
 ## Transfor your code to the VM
 {:id="transfor-your-code-to-the-vm"}

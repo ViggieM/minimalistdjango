@@ -7,12 +7,11 @@ author: victor
 tags:
   - supervisor
   - systemd
+  - gunicorn
 categories:
   - Production deployment
+excerpt: "How to run your Django application as a background process"
 ---
-
-In the previous post we explored how to serve your *Django* application through a WSGI server such as *Gunicorn*.
-Now we will learn how to run this as a backgroud process.
 
 ## Create a bash script that executes your django app
 
