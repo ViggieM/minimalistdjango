@@ -34,44 +34,45 @@ excerpt: "How to dynamically add and remove forms in django formsets with Alpine
 
 ```js
 Alpine.data('formset', () => ({
-  get totalFormsInput() {
-    return this.$root.querySelector(`input[name$='-TOTAL_FORMS']`)
+  init() {
+    this.template = this.$root.querySelector('template')
+    this.formsContainer = this.$root.querySelector('.forms')
+    this.totalFormsInput = this.$root.querySelector(`input[name$='-TOTAL_FORMS']`)
+    this.initialFormsInput = this.$root.querySelector('input[name$="-INITIAL_FORMS"]')
   },
   addForm() {
-    const template = this.$root.querySelector('template')
-    const formsContainer = this.$root.querySelector('.forms')
-    const form = template.content.cloneNode(true)
+    const newForm = this.template.content.cloneNode(true)
 
     // replace __prefix__ with the correct index
-    for (let el of form.querySelectorAll('input, select, textarea')) {
+    for (let el of newForm.querySelectorAll('input, select, textarea')) {
       if (el.name.includes('__prefix__')) {
-        el.name = el.name.replace('__prefix__', formsContainer.children.length)
+        el.name = el.name.replace('__prefix__', this.formsContainer.children.length)
       }
       if (el.id.includes('__prefix__')) {
-        el.id = el.id.replace('__prefix__', formsContainer.children.length)
+        el.id = el.id.replace('__prefix__', this.formsContainer.children.length)
       }
     }
-    const labels = form.querySelectorAll('label')
+    const labels = newForm.querySelectorAll('label')
     for (let el of labels) {
       if (el.htmlFor.includes('__prefix__')) {
-        el.htmlFor = el.htmlFor.replace('__prefix__', formsContainer.children.length)
+        el.htmlFor = el.htmlFor.replace('__prefix__', this.formsContainer.children.length)
       }
     }
 
-    formsContainer.appendChild(form)
+    // add the new form to the dom
+    this.formsContainer.appendChild(newForm)
+
+    // adjust the management form inputs
     this.totalFormsInput.value = parseInt(this.totalFormsInput.value) + 1
+    this.initialFormsInput.value = parseInt(this.initialFormsInput.value) + 1
   },
   deleteForm() {
-    // adjust the total forms input
-    this.totalFormsInput.value = parseInt(this.totalFormsInput.value) - 1
+    // remove the element from the dom
+    this.$el.closest('.form').remove()
 
     // adjust the ids of the remaining inputs
-    const formsContainer = this.$root.querySelector('.forms')
-    const form = this.$el.closest('.form')
-    form.remove()
-
-    for (let i = 0; i < formsContainer.children.length; i++) {
-      const form = formsContainer.children[i]
+    for (let i = 0; i < this.formsContainer.children.length; i++) {
+      const form = this.formsContainer.children[i]
       const inputs = form.querySelectorAll('input, select, textarea')
       for (let el of inputs) {
         el.name = el.name.replace(/\d+/, i)
@@ -82,6 +83,10 @@ Alpine.data('formset', () => ({
         el.htmlFor = el.htmlFor.replace(/\d+/, i)
       }
     }
+
+    // adjust the management form inputs
+    this.totalFormsInput.value = Math.max(0, parseInt(this.totalFormsInput.value) - 1)
+    this.initialFormsInput.value = Math.min(0, parseInt(this.initialFormsInput.value) - 1)
   }
 }))
 ```
