@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Dynamic formsets with Alpine.js"
-date: 2023-11-18
-published: false
+date: 2023-12-12
+published: true
 author: victor
 tags:
   - Alpine.js
@@ -19,8 +19,16 @@ Django admin for example also takes care of this interactivity with **jQuery**.
 We could obviously also write plain Javascript to accomplish that.
 But the locality of behaviour principle can be accomplished very nicely with **Alpine.js**.
 
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="yLZrwea" data-user="viggiesmalls" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/viggiesmalls/pen/yLZrwea">
+  Formset</a> by ViggieSmalls (<a href="https://codepen.io/viggiesmalls">@viggiesmalls</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
-# Starting point
+<br>
+
+## Starting point
 
 Let's start with a simple formset, that is rendered with django templates.
 We will use the [ArticleFormSet](https://docs.djangoproject.com/en/4.2/topics/forms/formsets/) example from the django documentation.
@@ -198,87 +206,3 @@ I have also learned that the usage of `x-ref` should be restricted very carefull
 We could have also worked with `x-ref` attributes like `x-ref="forms"` or `x-ref="managementForm"` instead of querySelector.
 But I had a discussion on the Alpine.js Discord chanel, and I was told that `x-ref` is probably a correct choice only in 1/100 cases, and that only for external libraries that rely on a React-style reference.
 It's obvious that for our use case it is not necessary.
-
-<!--
-
-```html
-{% raw %}<form x-data="formset">
-  <template>
-    <div class="form">
-      {{ formset.empty_form }}
-      <button type="button" @click="deleteForm()">Delete form</button>
-    </div>
-  </template>
-  <button type="button" @click="addForm()">Add form</button>
-  {{ formset.management_form }}
-  <div class="forms">
-    {% for form in formset %}
-    <div class="form">
-      {{ form }}
-      <button type="button" @click="deleteForm()">Delete form</button>
-    </div>
-    {% endfor %}
-  </div>
-</form>{% endraw %}
-```
-
-```js
-Alpine.data('formset', () => ({
-  init() {
-    this.template = this.$root.querySelector('template')
-    this.formsContainer = this.$root.querySelector('.forms')
-    this.totalFormsInput = this.$root.querySelector(`input[name$='-TOTAL_FORMS']`)
-    this.initialFormsInput = this.$root.querySelector('input[name$="-INITIAL_FORMS"]')
-  },
-  addForm() {
-    const newForm = this.template.content.cloneNode(true)
-
-    // replace __prefix__ with the correct index
-    for (let el of newForm.querySelectorAll('input, select, textarea')) {
-      if (el.name.includes('__prefix__')) {
-        el.name = el.name.replace('__prefix__', this.formsContainer.children.length)
-      }
-      if (el.id.includes('__prefix__')) {
-        el.id = el.id.replace('__prefix__', this.formsContainer.children.length)
-      }
-    }
-    const labels = newForm.querySelectorAll('label')
-    for (let el of labels) {
-      if (el.htmlFor.includes('__prefix__')) {
-        el.htmlFor = el.htmlFor.replace('__prefix__', this.formsContainer.children.length)
-      }
-    }
-
-    // add the new form to the dom
-    this.formsContainer.appendChild(newForm)
-
-    // adjust the management form inputs
-    this.totalFormsInput.value = parseInt(this.totalFormsInput.value) + 1
-    this.initialFormsInput.value = parseInt(this.initialFormsInput.value) + 1
-  },
-  deleteForm() {
-    // remove the element from the dom
-    this.$el.closest('.form').remove()
-
-    // adjust the ids of the remaining inputs
-    for (let i = 0; i < this.formsContainer.children.length; i++) {
-      const form = this.formsContainer.children[i]
-      const inputs = form.querySelectorAll('input, select, textarea')
-      for (let el of inputs) {
-        el.name = el.name.replace(/\d+/, i)
-        el.id = el.id.replace(/\d+/, i)
-      }
-      const labels = form.querySelectorAll('label')
-      for (let el of labels) {
-        el.htmlFor = el.htmlFor.replace(/\d+/, i)
-      }
-    }
-
-    // adjust the management form inputs
-    this.totalFormsInput.value = Math.max(0, parseInt(this.totalFormsInput.value) - 1)
-    this.initialFormsInput.value = Math.min(0, parseInt(this.initialFormsInput.value) - 1)
-  }
-}))
-```
-
--->
