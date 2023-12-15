@@ -196,7 +196,7 @@ for (let i = 0; i < this.formsContainer.children.length; i++) {
 
 // adjust the management form inputs
 totalFormsInput.value = Math.max(0, parseInt(this.totalFormsInput.value) - 1)
-initialFormsInput.value = Math.min(0, parseInt(this.initialFormsInput.value) - 1)
+initialFormsInput.value = Math.max(0, parseInt(this.initialFormsInput.value) - 1)
 ```
 
 ## Final thoughts
