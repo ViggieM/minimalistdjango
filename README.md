@@ -1,14 +1,9 @@
 # minimalistdjango
 
-Public personal thoughts on Django on [minimalistdjango.com][1].
+[![a blog on Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)](https://docs.djangoproject.com/)
+[![hosted on cloudflare pages](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white)](https://pages.cloudflare.com/)
 
-## dev setup
-* [Install Ruby and Jekyll](https://jekyllrb.com/docs/installation/ubuntu/)
-* `bundle install`
-* Run project with `bundle exec jekyll serve`
-
-## Markdown Cheatsheet
-* https://www.markdownguide.org/extended-syntax/
+Public personal thoughts on Django, hosted at [minimalistdjango.com][1].
 
 
 [1]: https://minimalistdjango.com/
