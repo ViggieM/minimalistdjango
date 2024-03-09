@@ -56,3 +56,12 @@ plugins:
 
 search_full_content: true
 search_placeholder_text: "Search posts"
+
+defaults:
+  # Posts defaults
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: page
+      share: true

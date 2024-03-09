@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Loading spinners"
 date: 2023-10-13
 published: true

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Simulate an S3 Bucket locally with LocalStack"
 date: 2023-09-08
 published: true

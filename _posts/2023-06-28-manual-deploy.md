@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Deploy a Django app on a VM (manually)"
 date: 2023-07-03
 published: true
@@ -11,7 +10,7 @@ tags:
   - gunicorn
   - systemd
 categories:
-  - Production deployment
+  - Running in Production
 excerpt: "All manual steps required to transfer the code on the remote host and set up a systemd service that executes your Django application"
 ---
 

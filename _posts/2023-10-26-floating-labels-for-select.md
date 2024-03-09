@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Floating labels for select fields"
 date: 2023-10-26
 published: true

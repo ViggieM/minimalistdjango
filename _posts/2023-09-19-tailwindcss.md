@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Include tailwindcss in a Django project"
 date: 2023-09-19
 published: true

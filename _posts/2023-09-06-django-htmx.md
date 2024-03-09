@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Django and HTMX"
 date: 2023-09-06
 published: true

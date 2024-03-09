@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Dynamic formsets with Alpine.js"
 date: 2023-12-12
 published: true

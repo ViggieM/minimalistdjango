@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Manage background processes with Supervisor or Systemd"
 date: 2023-06-29
 published: true
@@ -9,7 +8,7 @@ tags:
   - systemd
   - gunicorn
 categories:
-  - Production deployment
+  - Running in Production
 excerpt: "How to run your Django application as a background process"
 ---
 

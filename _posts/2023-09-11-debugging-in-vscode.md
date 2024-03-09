@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Debugging with VSCode"
 date: 2023-09-11
 published: true

@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Floating labels with Tailwindcss"
 date: 2023-09-20
 published: true

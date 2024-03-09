@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Set up a VirtualBox VM"
 date: 2023-06-10
 published: true
@@ -8,7 +7,7 @@ tags:
   - VirtualBox
   - ansible
 categories:
-  - Production deployment
+  - Running in Production
 excerpt: "How to run a virtual host locally to test your automatic provisioning"
 ---
 
