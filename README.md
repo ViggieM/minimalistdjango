@@ -9,4 +9,15 @@
 Perfection is achieved, not when there is nothing more to add, <br> but when there is nothing left to take away.
 </p>
 
+## Articles
+
 * [How to set up a Django project](pages/create-a-django-project.md)
+
+
+## TIL
+
+
+
+## Tools
+
+* [Docker](pages/docker.md)

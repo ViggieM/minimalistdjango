@@ -1,13 +1,16 @@
+# Makefile
 
 ## Conditionals
 
-I got this one from a [sample Makefile for Localstack](https://github.com/localstack-samples/sample-notes-app-dynamodb-lambda-apigateway/blob/main/Makefile), and I thought I might need it some day:
+I got this one from
+a [sample Makefile for Localstack](https://github.com/localstack-samples/sample-notes-app-dynamodb-lambda-apigateway/blob/main/Makefile),
+and I thought I might need it some day:
 
-```yaml
+```makefile
 ## Install dependencies
 install:
-		@which localstack || pip install localstack
-		@which awslocal || pip install awscli-local
+    @which localstack || pip install localstack
+    @which awslocal || pip install awscli-local
 ```
 
 It checks whether localstack or awslocal is installed, and if not, it executes the pip install command.
