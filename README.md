@@ -5,8 +5,8 @@
 
 <h1 align="center">Minimalist Django</h1>
 
-<cite align="center">
+<p align="center">
 Perfection is achieved, not when there is nothing more to add, <br> but when there is nothing left to take away.
-</cite>
+</p>
 
 * [How to set up a Django project](pages/create-a-django-project.md)
