@@ -1,6 +1,7 @@
 # Supervisor
 
 > Supervisor is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems.
+
 > -- <cite><a target="blank" href="http://supervisord.org/">Supervisor: A Process Control System — Supervisor 4.2.5 documentation</a></cite>
 
 ### Pros
