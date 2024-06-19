@@ -12,10 +12,49 @@ At some point in time you might want to set up a [cookiecutter](https://github.c
 But these types of templates are not useful if you are just starting out as a Django developer.
 Nor is it useful for an advanced developer to copy code from somewhere else, without understanding what it does.
 
-I wanted to sum up my thought process and experiences from many django projects into an article, and explain my decisions.
-And maybe in future projects I can copy-paste parts of it myself. The text is just for you.
+In this article I try to sum up my thought process and experiences from many django projects into an article, and explain my decisions for every step.
 
-## Set up a virtual environment with Pyenv
+## TL;DR
+
+```bash
+PROJECT_NAME=my-awesome-project
+cd $PROJECT_NAME
+pyenv virtualenv 3.11.6 $PROJECT_NAME
+pyenv local $PROJECT_NAME
+pip install Django~=4.2
+mkdir src
+django-admin startproject config src
+```
+
+[Configure your project settings](#configure-project-settings) then continue:
+
+```bash
+# create .env file
+touch src/.env
+echo "DJANGO_SECRET_KEY='$(openssl rand -base64 35)'" >> src/.env
+echo "DJANGO_DEBUG=1" >> src/.env
+
+# .editorconfig
+curl -O https://raw.githubusercontent.com/ViggieM/minimalistdjango/main/templates/.editorconfig
+
+# git
+git init
+curl -O https://raw.githubusercontent.com/ViggieM/minimalistdjango/main/templates/.gitignore
+git add -A
+
+# pre-commit hooks
+curl -O https://raw.githubusercontent.com/ViggieM/minimalistdjango/main/templates/.pre-commit-config.yaml
+pip install pre-commit
+pre-commit autoupdate
+pre-commit install
+pre-commit run --all-files
+
+git commit -m "Initial commit"
+```
+
+## Manual step-by-step guide
+
+### Set up a virtual environment with Pyenv
 
 My recommended way of setting up a Django project is to use [Pyenv](pyenv.md).
 It has the advantage that it is easily recognized by your IDE and allows you to easily navigate the source code of Django and other third party packages.
@@ -35,7 +74,7 @@ When it is not yet clear what the outcome of your project might be, you might wa
 You can switch to Poetry for dependency management at any point in time later (see optional section).
 
 
-## Install Django
+### Install Django
 
 Now that we have our virtual environment set up, we can set up our Django project.
 Let's install the current stable release[^1] of Django:
@@ -89,7 +128,7 @@ ALLOWED_HOSTS = os.environ.get(
 ).split()
 ```
 
-### Manage environment variables
+#### Manage environment variables
 
 Environment variables can be kept inside a `.env` file and be read at project startup with a package like `dotenv`.
 Platforms like Heroku or Fly.io allow you to configure your environment variables from a dashboard or via command line on a per-project basis.
@@ -115,7 +154,7 @@ load_dotenv(BASE_DIR / ".env")
 Now you can access the environment variables as described in the previous section.
 
 
-## Version control
+### Version control
 
 Version control is one of the most important things to set up early.
 
@@ -139,7 +178,7 @@ curl -O https://gist.githubusercontent.com/movileanuv/4b07ee13e33915a80e6db84a94
 
 Feel free to create your own `.gitignore` or extend existing ones as needed.
 
-### pre-commit hooks
+#### pre-commit hooks
 
 Pre-commit hooks are executed, as the name says, before a commit is created.
 If they fail, the changes are not committed.
@@ -210,7 +249,7 @@ git add -A
 git commit -m "Initial commit"
 ```
 
-## EditorConfig
+### EditorConfig
 
 EditorConfig is another simple method to maintain consistent code formatting and is supported by various editors and IDEs.
 It does not cost anything to set up, and it is a great addition to the pre-commit hooks.
@@ -231,43 +270,6 @@ You can check [http://editorconfig.org](http://editorconfig.org){:target="_blank
 - configure statics folder
 - dependency management with Poetry
 - create a requirements.txt
-
-
-## TL;DR
-
-```bash
-pyenv virtualenv 3.11.6 my-awesome-project
-pyenv local my-awesome-project
-pip install Django~=4.2
-mkdir src
-django-admin startproject config src
-```
-
-[Configure your project settings](#configure-project-settings) then continue:
-
-```bash
-# create .env file
-touch src/.env
-echo "DJANGO_SECRET_KEY='$(openssl rand -base64 35)'" >> src/.env
-echo "DJANGO_DEBUG=1" >> src/.env
-
-# .editorconfig
-curl -O https://gist.githubusercontent.com/movileanuv/4b07ee13e33915a80e6db84a94a2cc21/raw/07cbdf15b872991e7ef95d438f6ce0e84eb6497d/.editorconfig
-
-# git
-git init
-# .gitignore example
-curl -O https://gist.githubusercontent.com/movileanuv/4b07ee13e33915a80e6db84a94a2cc21/raw/07cbdf15b872991e7ef95d438f6ce0e84eb6497d/.gitignore
-pip install pre-commit
-# .pre-commit-config.yaml example
-curl -O https://gist.githubusercontent.com/movileanuv/4b07ee13e33915a80e6db84a94a2cc21/raw/07cbdf15b872991e7ef95d438f6ce0e84eb6497d/.pre-commit-config.yaml
-pre-commit autoupdate
-pre-commit install
-pre-commit run --all-files
-git add -A
-git commit -m "Initial commit"
-
-```
 
 ## Further Reading
 
