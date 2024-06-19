@@ -1,4 +1,10 @@
-![https://xkcd.com/354/](../images/xkcd-startling.png)
+<p align="center">
+  <img src="../images/xkcd-startling.png" alt="Startling">
+ <br>
+  <a href="https://xkcd.com/354/">https://xkcd.com/354/</a>
+</p>
+
+# How to create a Django Project
 
 Every now and then you need to set up a new project, and every time you have to go through the same thought process.
 Sometimes I forget about stuff myself, and I go across the internet and my notes to gather all the information and code snippets that I thought of as useful and want to keep them as part of my workflow.
