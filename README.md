@@ -17,6 +17,7 @@ Perfection is achieved, not when there is nothing more to add, <br> but when the
 ## TIL
 
 * [Create a custom logging filter](pages/2024-06-05-python-logging-custom-filter.md)
+* [Keywords search with numpy](pages/2024-04-25-keywords-search-with-numpy.ipynb)
 
 ## Tools
 
