@@ -27,3 +27,4 @@ Perfection is achieved, not when there is nothing more to add, <br> but when the
 ## Topics
 
 * [Performance](pages/performance.md)
+* [Tips & Tricks](pages/tips-and-tricks.md)
