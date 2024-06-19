@@ -6,7 +6,7 @@
 <h1 align="center">Minimalist Django</h1>
 
 <p align="center">
-Perfection is achieved, not when there is nothing more to add, <br> but when there is nothing left to take away.
+  <i>Perfection is achieved, not when there is nothing more to add, <br> but when there is nothing left to take away.</i>
 </p>
 
 ## Articles
@@ -26,8 +26,8 @@ Perfection is achieved, not when there is nothing more to add, <br> but when the
 * [VSCode](pages/vscode.md)
 * [PyCharm](pages/pycharm.md)
 
-
 ## Topics
 
 * [Performance](pages/performance.md)
 * [Tips & Tricks](pages/tips-and-tricks.md)
+* [FAQs](pages/faqs.md)
