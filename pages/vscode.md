@@ -1,5 +1,25 @@
+# VSCode
 
-## Debugging
+## TL;DR
+
+### Pros
+
+* lightweight
+* easy to set up debugging
+* free
+* Dev Containers
+
+### Cons
+
+* worse code navigation compared to [PyCharm](pycharm.md)
+* worse tooling for working with git (with free plugins)
+
+### Tips & Tricks
+
+* GitHub has a nice feature when inside a repository. Press the key `.` (period) on your keyboard, to open a VSCode editor of the project inside your Browser
+
+
+## Debug a Django application
 
 Setting up Debugging with VSCode is really easy.
 Whether you have your application locally or inside a Docker container, as long as you can reach the port exposed
