@@ -21,3 +21,9 @@ Perfection is achieved, not when there is nothing more to add, <br> but when the
 ## Tools
 
 * [Docker](pages/docker.md)
+* [Supervisor](pages/supervisor.md)
+
+
+## Topics
+
+* [Performance](pages/performance.md)
