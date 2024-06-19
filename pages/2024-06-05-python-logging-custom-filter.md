@@ -1,8 +1,25 @@
-# Create a custom logging filter to  
+---
+tags:
+  - logging
+---
 
-Django's `django.http.response.Http404` exception can be used to easily return a 404 in a view. 
-The downside is that a log entry is created every time the Http404 Exception is raised.
-This can overpollute your logs.
+# Create a custom logging filter
+
+Django's `django.http.response.Http404` exception is a shortcut to return a 404 to the user if a page does not exist.
+
+```python
+from django.http.response import Http404
+
+def test_view(request):
+    raise Http404
+```
+
+but it creates a "WARNING" log message every time, which can pollute your logs in certain cases.
+This is why I decided to create a custom log filter that can exclude some of these warnings bases on certain regex url patterns, for example:
+
+```
+r'^/(de|en)/some-sub-page/.+$'
+```
 
 ## The custom logging filter
 
@@ -47,15 +64,12 @@ LOGGING = {
             "format": "{levelname} {module} {message}",
             "style": "{",
         },
-        "verbose2": {
-            "format": "%(asctime)s %(levelname)-8s %(name)-15s %(message)s",
-        },
     },
     "filters": {
         "filter_http_404": {
             "()": "custom_logging.Http404Filter",
             'url_patterns': [
-                r'^/(de|en)/jobs/.+$',
+                r'^/(de|en)/some-sub-page/.+$',
                 r'^/favicon\.ico$',
                 r'^/robots\.txt$',
             ],
@@ -67,11 +81,6 @@ LOGGING = {
             "formatter": "verbose",
             "filters": ["filter_http_404"],
         },
-        "console2": {
-            "class": "logging.StreamHandler",
-            "formatter": "verbose2",
-            "filters": ["filter_http_404"],
-        },
     },
     "root": {
         "handlers": ["console"],
@@ -79,7 +88,7 @@ LOGGING = {
     },
     "loggers": {
         "django": {
-            "handlers": ["console2"],
+            "handlers": ["console"],
             "level": os.getenv("DJANGO_LOG_LEVEL", "WARNING"),
             "propagate": False,
         },

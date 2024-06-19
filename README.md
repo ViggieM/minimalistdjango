@@ -16,12 +16,14 @@ Perfection is achieved, not when there is nothing more to add, <br> but when the
 
 ## TIL
 
-
+* [Create a custom logging filter](pages/2024-06-05-python-logging-custom-filter.md)
 
 ## Tools
 
 * [Docker](pages/docker.md)
 * [Supervisor](pages/supervisor.md)
+* [VSCode](pages/vscode.md)
+* [PyCharm](pages/pycharm.md)
 
 
 ## Topics
