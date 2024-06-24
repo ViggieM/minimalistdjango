@@ -25,6 +25,7 @@
 * [Supervisor](pages/supervisor.md)
 * [VSCode](pages/vscode.md)
 * [PyCharm](pages/pycharm.md)
+* [SQLite](pages/sqlite.md)
 
 ## Topics
 
