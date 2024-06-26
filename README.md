@@ -26,6 +26,7 @@
 * [VSCode](pages/vscode.md)
 * [PyCharm](pages/pycharm.md)
 * [SQLite](pages/sqlite.md)
+* [Git](pages/git.md)
 
 ## Topics
 
