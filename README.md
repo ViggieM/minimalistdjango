@@ -36,3 +36,4 @@
 * [Tips & Tricks](pages/tips-and-tricks.md)
 * [FAQs](pages/faqs.md)
 * [Dependency Management](pages/dependency-management.md)
+* [Async](pages/async.md)
