@@ -274,6 +274,7 @@ You can check [http://editorconfig.org](http://editorconfig.org){:target="_blank
 ## Further Reading
 
 * [Python Project-Local Virtualenv Management Redux](https://hynek.me/articles/python-virtualenv-redux/?utm_campaign=Django%2BNewsletter&utm_medium=email&utm_source=Django_Newsletter_226)
+* [20 Django Packages That I Use in Every Project](https://learndjango.com/tutorials/20-django-packages-i-use-every-project?utm_campaign=Django%2BNewsletter&utm_medium=email&utm_source=Django_Newsletter_219)
 
 
 [^1]: If you wish the latest version of Django in order to use the latest features, you can omit the `^=4.2`.

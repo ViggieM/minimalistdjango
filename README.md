@@ -29,10 +29,13 @@
 * [PyCharm](pages/pycharm.md)
 * [SQLite](pages/sqlite.md)
 * [Git](pages/git.md)
+* [HTML](pages/HTML.md)
+* [LLMs](pages/LLMs.md)
 
 ## Topics
 
 * [Performance](pages/performance.md)
 * [Tips & Tricks](pages/tips-and-tricks.md)
-* [FAQs](pages/faqs.md)
+* [FAQs](pages/FAQs)
 * [Dependency Management](pages/dependency-management.md)
+* [Meta](pages/meta.md)

@@ -123,4 +123,9 @@ Then you can configure your connection to the Database like in the image:
 
 ![pgadmin](../images/pgadmin.png)
 
+## References
+
+* [Playing with Postgres NOTIFY/LISTEN using Python asyncio and psycopg2 | The-Fonz blog](https://the-fonz.gitlab.io/posts/postgres-notify/)
+
+
 [^listennotify]: Here is an example of a package that uses this feature, and can replace the need of a package like Celery: [PaulGilmartin/django-pgpubsub: A distributed task processing framework for Django built on top of the Postgres NOTIFY/LISTEN protocol.](https://github.com/PaulGilmartin/django-pgpubsub)
