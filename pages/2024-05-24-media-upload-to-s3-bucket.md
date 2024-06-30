@@ -1,7 +1,4 @@
----
-title: Upload media files to an S3 Bucket
-description: How to use S3 buckets to store user uploaded files
----
+# Upload media files to an S3 Bucket
 
 Let's take this Django model:
 

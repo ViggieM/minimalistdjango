@@ -16,8 +16,10 @@
 
 ## TIL
 
-* [Create a custom logging filter](pages/2024-06-05-python-logging-custom-filter.md)
 * [Keywords search with numpy](pages/2024-04-25-keywords-search-with-numpy.ipynb)
+* [Upload media files to an S3 Bucket](pages/2024-05-24-media-upload-to-s3-bucket.md)
+* [Set up Cloudfront as a CDN to serve media files](pages/2024-05-27-serve-media-files-from-s3-bucket-through-cloudfront.md)
+* [Create a custom logging filter](pages/2024-06-05-python-logging-custom-filter.md)
 
 ## Tools
 
