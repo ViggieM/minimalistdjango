@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img width="200" src="https://raw.githubusercontent.com/ViggieM/minimalistdjango/main/images/django-rocket.svg" alt="django rocket">
+  <img width="200" src="https://raw.githubusercontent.com/ViggieM/minimalistdjango/main/media/django-rocket.svg" alt="django rocket">
 </div>
 
 <h1 align="center">Minimalist Django</h1>
