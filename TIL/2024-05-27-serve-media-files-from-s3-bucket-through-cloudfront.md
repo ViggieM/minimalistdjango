@@ -1,6 +1,6 @@
 # Set up Cloudfront as a CDN to serve media files
 
-[Previously](2024-05-24-media-upload-to-s3-bucket.md) I wrote about how to set up media file upload for a Django application to S3 Bucket.
+[Previously](/TIL/2024-05-24-media-upload-to-s3-bucket.md) I wrote about how to set up media file upload for a Django application to S3 Bucket.
 Serving them from the s3 bucket directly would also be feasible, if your website does not have a lot of traffic, and the visitors of your website are close to the geographic region of your S3 bucket.
 The advantage is that you have less complexity for the set-up.
 
