@@ -1,0 +1,8 @@
+# minimal working service that installs dependencies and runs the dev server
+node:
+  user: node
+  image: node:lts
+  volumes:
+    - ./src:/app
+  working_dir: /app
+  command: bash -c "npm ci && npm run dev:watch"
