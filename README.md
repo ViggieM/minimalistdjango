@@ -11,7 +11,7 @@
 
 ## Articles
 
-* [How to set up a Django project](pages/create-a-django-project.md)
+* [How to set up a Django project](articles/create-a-django-project.md)
 
 
 ## TIL

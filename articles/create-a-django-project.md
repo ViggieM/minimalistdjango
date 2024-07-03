@@ -1,20 +1,30 @@
+# How to create a Django Project
+
 <p align="center">
   <img src="../images/xkcd-startling.png" alt="Startling">
  <br>
   <a href="https://xkcd.com/354/">https://xkcd.com/354/</a>
 </p>
 
-# How to create a Django Project
+Projects such as [django-cookiecutter](https://github.com/cookiecutter/cookiecutter-django) are useful, as long as you are comfortable with every single setting that is generated for you.
+I find it particularly useful as a source of inspiration on how to structure your code.
+At some point you might want to create your own cookiecutter template, or simply a GitHub repository that you can copy to get you started with a new project.
 
-Every now and then you need to set up a new project, and every time you have to go through the same thought process.
-Sometimes I forget about stuff myself, and I go across the internet and my notes to gather all the information and code snippets that I thought of as useful and want to keep them as part of my workflow.
-At some point in time you might want to set up a [cookiecutter](https://github.com/cookiecutter/cookiecutter-django) project yourself, or simply a GitHub repository that you can copy to get you started with a new project.
-But these types of templates are not useful if you are just starting out as a Django developer.
-Nor is it useful for an advanced developer to copy code from somewhere else, without understanding what it does.
+But using such templates provided by other people are only useful if you know every part of it, or you built it yourself.
 
-In this article I try to sum up my thought process and experiences from many django projects into an article, and explain my decisions for every step.
+Here I want to sum up the most essential steps (in my opinion) when creating a new Django project manually with `django-admin startproject`.
 
 ## TL;DR
+
+Following shell commands will:
+
+* create a virtual environment
+* create a new Django project
+* create a .env file where you can keep your secrets that should not be pushed to git
+* create a `.editorconfig` for minimal code formatting
+* initialize a git repository
+* install pre-commit hooks for automatic code formatting
+* generate the initial commit
 
 ```bash
 PROJECT_NAME=my-awesome-project
@@ -35,15 +45,15 @@ echo "DJANGO_SECRET_KEY='$(openssl rand -base64 35)'" >> src/.env
 echo "DJANGO_DEBUG=1" >> src/.env
 
 # .editorconfig
-curl -O https://raw.githubusercontent.com/ViggieM/minimalistdjango/main/templates/.editorconfig
+curl -O https://raw.githubusercontent.com/ViggieM/minimalistdjango/main/snippets/.editorconfig
 
 # git
 git init
-curl -O https://raw.githubusercontent.com/ViggieM/minimalistdjango/main/templates/.gitignore
+curl -O https://raw.githubusercontent.com/ViggieM/minimalistdjango/main/snippets/.gitignore
 git add -A
 
 # pre-commit hooks
-curl -O https://raw.githubusercontent.com/ViggieM/minimalistdjango/main/templates/.pre-commit-config.yaml
+curl -O https://raw.githubusercontent.com/ViggieM/minimalistdjango/main/snippets/.pre-commit-config.yaml
 pip install pre-commit
 pre-commit autoupdate
 pre-commit install
@@ -56,7 +66,7 @@ git commit -m "Initial commit"
 
 ### Set up a virtual environment with Pyenv
 
-My recommended way of setting up a Django project is to use [Pyenv](pyenv.md).
+My recommended way of setting up a Django project is to use [Pyenv](../pages/pyenv.md).
 It has the advantage that it is easily recognized by your IDE and allows you to easily navigate the source code of Django and other third party packages.
 It also creates a `.python-version` file in your project directory which is used by Pyenv, so every time you enter your project directory, the python environment ist automatically active, which I believe is a great feature.
 
@@ -173,7 +183,7 @@ You can take a look at the django-cookiecutter gitignore for some more inspirati
 I will take my own `.gitignore` from one of my GitHub gists as an example[^3]:
 
 ```bash
-curl -O https://gist.githubusercontent.com/movileanuv/4b07ee13e33915a80e6db84a94a2cc21/raw/07cbdf15b872991e7ef95d438f6ce0e84eb6497d/.gitignore
+curl -O https://raw.githubusercontent.com/ViggieM/minimalistdjango/main/snippets/.gitignore
 ```
 
 Feel free to create your own `.gitignore` or extend existing ones as needed.
@@ -255,25 +265,12 @@ EditorConfig is another simple method to maintain consistent code formatting and
 It does not cost anything to set up, and it is a great addition to the pre-commit hooks.
 Here is a minimal example of an `.editorconfig` file:
 
-{% snippet 'editorconfig' %}
-
 I personally like to have my html and Javascript files indented by two spaces.
 
-You can check [http://editorconfig.org](http://editorconfig.org){:target="_blank"} for more information.
-
-## Misc
-
-- `django-extensions` never miss in my django projects
-- split `INSTALLED_APPS`
-- set up Logging
-- configure Templates folder
-- configure statics folder
-- dependency management with Poetry
-- create a requirements.txt
+You can check [http://editorconfig.org](http://editorconfig.org) for more information.
 
 ## Further Reading
 
-* [Python Project-Local Virtualenv Management Redux](https://hynek.me/articles/python-virtualenv-redux/?utm_campaign=Django%2BNewsletter&utm_medium=email&utm_source=Django_Newsletter_226)
 * [20 Django Packages That I Use in Every Project](https://learndjango.com/tutorials/20-django-packages-i-use-every-project?utm_campaign=Django%2BNewsletter&utm_medium=email&utm_source=Django_Newsletter_219)
 
 
