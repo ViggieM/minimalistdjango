@@ -1,6 +1,6 @@
 # SQLite in Production
 
-I was inspired by a talk at [_DjangoCon_][1] that I attended in 2023, so I decided to look a bit more into SQLite in combination with Django.
+I was inspired by a talk at [_DjangoCon_](https://youtu.be/yTicYJDT1zE) that I attended in 2023, so I decided to look a bit more into SQLite in combination with Django.
 
 Here are the key points that were made in the YouTube video:
 
@@ -58,25 +58,7 @@ def activate_foreign_keys(sender, connection, **kwargs):
 connection_created.connect(activate_foreign_keys)
 ```
 
+## References
 
-## Back up a SQLite Database with Litestream
-
-The documentation is pretty straightforward, so I will link to the necessary steps on the official [litestream](https://litestream.io) web page.
-
-* [Install](https://litestream.io/install/)
-* [Replicating to Amazon S3](https://litestream.io/guides/s3/)
-* [Running as a Systemd service](https://litestream.io/guides/systemd/)
-* [Tips & Caveats](https://litestream.io/guides/systemd/)
-
-If you wish to learn more about Litestream, there is an amazing episode on [_The Changelog_][2] podcast with the creator of litestream.
-
-## Further reading
-
-* [https://tailscale.com/blog/database-for-2022/](https://tailscale.com/blog/database-for-2022/)
-* [https://blog.expensify.com/2018/01/08/scaling-sqlite-to-4m-qps-on-a-single-server/](https://blog.expensify.com/2018/01/08/scaling-sqlite-to-4m-qps-on-a-single-server/)
-* [https://simonwillison.net/2022/Oct/23/datasette-gunicorn/](https://simonwillison.net/2022/Oct/23/datasette-gunicorn/)
-* [https://github.com/tomdyson/django-sqlite-load-tests](https://github.com/tomdyson/django-sqlite-load-tests)
-* [Optimizing SQLite for servers](https://kerkour.com/sqlite-for-servers?utm_source=changelog-news): Super nice read, with more details on parameters you can adjust in SQLite to run in production.
-
-[1]: https://youtu.be/yTicYJDT1zE
-[2]: https://changelog.com/podcast/433
+- [DjangoCon Europe 2023 | Use SQLite in production - YouTube](https://www.youtube.com/watch?v=yTicYJDT1zE)
+- [tomdyson/django-sqlite-load-tests](https://github.com/tomdyson/django-sqlite-load-tests)

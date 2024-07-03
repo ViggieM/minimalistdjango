@@ -31,6 +31,7 @@
 * [Git](tools/git.md)
 * [HTML](tools/HTML.md)
 * [LLMs](tools/LLMs.md)
+* [Litestream](tools/litestream.md)
 
 ## Snippets
 
@@ -45,6 +46,7 @@
 
 ## TIL
 
+* [SQLite in Production](TIL/2023-06-18-sqlite-in-production.md)
 * [Keyword search on a list of documents (with scikit-learn)](TIL/2024-04-25-search-documents-with-scikit-learn.ipynb)
 * [Upload media files to an S3 Bucket](TIL/2024-05-24-media-upload-to-s3-bucket.md)
 * [Set up Cloudfront as a CDN to serve media files](TIL/2024-05-27-serve-media-files-from-s3-bucket-through-cloudfront.md)
