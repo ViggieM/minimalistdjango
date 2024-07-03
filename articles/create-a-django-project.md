@@ -263,7 +263,7 @@ git commit -m "Initial commit"
 
 EditorConfig is another simple method to maintain consistent code formatting and is supported by various editors and IDEs.
 It does not cost anything to set up, and it is a great addition to the pre-commit hooks.
-[Here](/snippets/.editorconfig) is a minimal example of an `.editorconfig` file. 
+[Here](/snippets/.editorconfig) is a minimal example of an `.editorconfig` file.
 
 I personally like to have my html and Javascript files indented by two spaces.
 
@@ -272,6 +272,7 @@ You can check [http://editorconfig.org](http://editorconfig.org) for more inform
 ## Further Reading
 
 * [20 Django Packages That I Use in Every Project](https://learndjango.com/tutorials/20-django-packages-i-use-every-project?utm_campaign=Django%2BNewsletter&utm_medium=email&utm_source=Django_Newsletter_219)
+* [GitHub - kokospapa8/majestic-monolith-django: Starter Django project strive for majestic monolith](https://github.com/kokospapa8/majestic-monolith-django)
 
 
 [^1]: If you wish the latest version of Django in order to use the latest features, you can omit the `^=4.2`.

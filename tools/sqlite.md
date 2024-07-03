@@ -22,3 +22,4 @@
 * [Optimizing SQLite for servers](https://kerkour.com/sqlite-for-servers?utm_source=changelog-news)
 * [Weeknotes: DjangoCon, SQLite in Django, datasette-gunicorn](https://simonwillison.net/2022/Oct/23/datasette-gunicorn/)
 * [Optimizing SQLite for servers](https://kerkour.com/sqlite-for-servers?utm_source=changelog-news): Super nice read, with more details on parameters you can adjust in SQLite to run in production.
+* [Django, SQLite, and the Database is Locked Error](https://blog.pecar.me/django-sqlite-dblock?utm_campaign=Django%2BNewsletter&utm_medium=email&utm_source=Django_Newsletter_215)

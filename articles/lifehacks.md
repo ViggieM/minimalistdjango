@@ -15,3 +15,8 @@ a comment is appropriate, it highlights it as important.
 
 Self documenting code is great. And having diagrams of your architecture, database schema, or processes directly next to your code can be sometimes very helpful.
 [ASCIIFlow](https://asciiflow.com/) is a great tool for that.
+
+#### Use strings as key for choices instead of integers
+
+Avoid using integers as keys for model field [choices](https://docs.djangoproject.com/en/5.0/ref/models/fields/#choices) (or any other Enum).
+They convey more information, without looking back at the code, in case you are required to work with them for example in templates, or in JavaScript.

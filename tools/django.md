@@ -21,4 +21,6 @@
 
 ## Community
 
-* [Django: Join the community on Mastodon - Adam Johnson](https://adamj.eu/tech/2024/02/10/django-join-community-mastodon/?utm_campaign=Django%2BNewsletter&utm_medium=email&utm_source=Django_Newsletter_219)
+- [Django: Join the community on Mastodon - Adam Johnson](https://adamj.eu/tech/2024/02/10/django-join-community-mastodon/?utm_campaign=Django%2BNewsletter&utm_medium=email&utm_source=Django_Newsletter_219)
+- https://forum.djangoproject.com/
+- https://www.djangoproject.com/community/
