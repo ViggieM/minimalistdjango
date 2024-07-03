@@ -37,13 +37,15 @@
 * [.editorconfig](snippets/.editorconfig)
 * [.gitignore](snippets/.gitignore)
 * [.pre-commit-config.yaml](snippets/.pre-commit-config.yaml)
-* Docker compose
-  * [simple node service](snippets/docker-compose-node.yaml)
-  * [postgres & pgadmin](snippets/docker-compose-postgres.yaml)
+
+### Docker compose
+
+* [simple node service](snippets/docker-compose-node.yaml)
+* [postgres & pgadmin](snippets/docker-compose-postgres.yaml)
 
 ## TIL
 
-* [Keywords search with numpy](TIL/2024-04-25-keywords-search-with-numpy.ipynb)
+* [Keyword search on a list of documents (with scikit-learn)](TIL/2024-04-25-search-documents-with-scikit-learn.ipynb)
 * [Upload media files to an S3 Bucket](TIL/2024-05-24-media-upload-to-s3-bucket.md)
 * [Set up Cloudfront as a CDN to serve media files](TIL/2024-05-27-serve-media-files-from-s3-bucket-through-cloudfront.md)
 * [Create a custom logging filter](TIL/2024-06-05-python-logging-custom-filter.md)
