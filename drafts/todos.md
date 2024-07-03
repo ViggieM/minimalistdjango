@@ -11,7 +11,8 @@
   - split installed apps
   - add comments to your settings file
   -
-
+- umbenennen zu lifehacks
+- faq: how should I structure my Django project? 
 
 ## Supervisor setup
 
