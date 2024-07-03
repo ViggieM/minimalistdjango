@@ -12,14 +12,14 @@
 ## Articles
 
 * [How to set up a Django project](articles/create-a-django-project.md)
+* [Lifehacks](articles/lifehacks.md)
+* [FAQs](articles/FAQs.md)
+* [Meta](articles/meta.md)
 
 ## Topics
 
 * [Performance](topics/performance.md)
-* [Tips & Tricks](articles/tips-and-tricks.md)
-* [FAQs](articles/FAQs.md)
 * [Dependency Management](topics/dependency-management.md)
-* [Meta](articles/meta.md)
 
 ## Tools
 
