@@ -4,8 +4,8 @@ title:  "Django Project Structure"
 date:   2023-08-02
 published: false
 image:
-  path: /images/xkcd-standards.png
-  thumbnail: /images/meme-project-structure.jpg
+  path: /media/xkcd-standards.png
+  thumbnail: /media/meme-project-structure.jpg
   caption: <a href="https://xkcd.com/927/" target="_blank">https://xkcd.com/927/</a>
 ---
 

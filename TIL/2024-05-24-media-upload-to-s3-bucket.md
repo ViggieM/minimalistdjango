@@ -4,7 +4,7 @@ Let's take this Django model:
 
 ```python
 class Profile(models.Model):
-    image = models.ImageField(upload_to="images/")
+    image = models.ImageField(upload_to="media/")
 ```
 
 The easiest way to save the uploaded files to disk would be by setting the `MEDIA_ROOT` and `MEDIA_URL` settings,

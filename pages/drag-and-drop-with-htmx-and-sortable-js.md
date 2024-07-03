@@ -1,6 +1,6 @@
 ---
 title: Drag and Drop with HTMX and Sortable.js
-heroimage: 'images/drag-and-drop-with-htmx-and-sortable-js.png'
+heroimage: 'media/drag-and-drop-with-htmx-and-sortable-js.png'
 heroimage_caption: 'This is how it looks like in the end'
 ---
 
