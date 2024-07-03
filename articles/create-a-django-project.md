@@ -263,7 +263,7 @@ git commit -m "Initial commit"
 
 EditorConfig is another simple method to maintain consistent code formatting and is supported by various editors and IDEs.
 It does not cost anything to set up, and it is a great addition to the pre-commit hooks.
-Here is a minimal example of an `.editorconfig` file:
+[Here](/snippets/.editorconfig) is a minimal example of an `.editorconfig` file. 
 
 I personally like to have my html and Javascript files indented by two spaces.
 
