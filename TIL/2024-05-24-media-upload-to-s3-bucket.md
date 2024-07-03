@@ -26,7 +26,7 @@ urlpatterns = [
 ```
 
 However, this is [only suitable for development](https://docs.djangoproject.com/en/5.0/howto/static-files/#serving-files-uploaded-by-a-user-during-development).
-Serving the media files in production requires a dedicated server, such as [nginx](../pages/nginx.md).
+Serving the media files in production requires a dedicated server, such as [nginx](/tools/nginx.md).
 Or, in this case, we can make use of S3 to store the uploaded media files, and let AWS serve them for us.
 
 ## Upload files with curl
@@ -84,11 +84,11 @@ urlpatterns = [
 
 ## Simulate and S3 Bucket with Localstack
 
-I installed [Localstack](../pages/localstack.md) with `pip install localstack` in my virtual environment and launched it with `localstack start`.
+I installed [Localstack](../tools/localstack.md) with `pip install localstack` in my virtual environment and launched it with `localstack start`.
 Last time I wrote about it, I used [serverless](https://www.serverless.com/) to set up a s3 Bucket locally.
 But now I realized it requires an account, and login, to run a serverless script.
 
-So I wrote a small [Terraform](../pages/terraform.md) file to provision an S3 bucket (`main.tf`):
+So I wrote a small [Terraform](../tools/terraform.md) file to provision an S3 bucket (`main.tf`):
 
 ```tf
 resource "aws_s3_bucket" "test-bucket" {

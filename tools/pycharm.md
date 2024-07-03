@@ -1,7 +1,5 @@
 # PyCharm
 
-## TL;DR
-
 ### Pros
 
 * great code navigation and indexing

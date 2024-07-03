@@ -1,8 +1,6 @@
----
-title: Drag and Drop with HTMX and Sortable.js
-heroimage: 'media/drag-and-drop-with-htmx-and-sortable-js.png'
-heroimage_caption: 'This is how it looks like in the end'
----
+# Drag and Drop with HTMX and Sortable.js
+
+![preview](/media/drag-and-drop-with-htmx-and-sortable-js.png)
 
 I was inspired by [this YouTube video](https://youtu.be/V-f_yYKUJo8?si=eYapxp6itu4fbCtz) to learn some new things about HTMX.
 A sortable drag and drop is always a nice feature to have on your website, so why not get some insight on how it can be implemented in a Django application.

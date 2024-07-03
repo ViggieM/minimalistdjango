@@ -1,32 +1,11 @@
-# VSCode
-
-## TL;DR
-
-### Pros
-
-* lightweight
-* easy to set up debugging
-* free
-* Dev Containers
-
-### Cons
-
-* worse code navigation compared to [PyCharm](pycharm.md)
-* worse tooling for working with git (with free plugins)
-
-### Tips & Tricks
-
-* GitHub has a nice feature when inside a repository. Press the key `.` (period) on your keyboard, to open a VSCode editor of the project inside your Browser
-
-
-## Debug a Django application
+# Debugging with VSCode
 
 Setting up Debugging with VSCode is really easy.
 Whether you have your application locally or inside a Docker container, as long as you can reach the port exposed
 by debugpy, you can connect to it with VSCode.
 I love PyCharm, but I have to admit that VSCode is simpler and more flexible in this regard.
 
-### Install debugpy
+## Install debugpy
 
 To debug with VSCode, you need to add debugpy to your dev requirements with poetry:
 
@@ -40,7 +19,7 @@ and start your django development server with:
 python -m debugpy --listen 0.0.0.0:5678 src/manage.py runserver
 ```
 
-### Configure VSCode
+## Configure VSCode
 
 You can create a preconfigured "launch.json" file inside the `.vscode` directory, or press `F1` or `Ctrl + Shift + P` to open the command palette and search for **"Debug: Add Configuration..."**. Here is how it would look like:
 

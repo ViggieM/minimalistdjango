@@ -13,6 +13,30 @@
 
 * [How to set up a Django project](articles/create-a-django-project.md)
 
+## Topics
+
+* [Performance](topics/performance.md)
+* [Tips & Tricks](articles/tips-and-tricks.md)
+* [FAQs](articles/FAQs.md)
+* [Dependency Management](topics/dependency-management.md)
+* [Meta](articles/meta.md)
+
+## Tools
+
+* [Docker](tools/docker.md)
+* [Supervisor](tools/supervisor.md)
+* [VSCode](tools/vscode.md)
+* [PyCharm](tools/pycharm.md)
+* [SQLite](tools/sqlite.md)
+* [Git](tools/git.md)
+* [HTML](tools/HTML.md)
+* [LLMs](tools/LLMs.md)
+
+## Snippets
+
+* [.editorconfig](snippets/.editorconfig)
+* [.gitignore](snippets/.gitignore)
+* [.pre-commit-config.yaml](snippets/.pre-commit-config.yaml)
 
 ## TIL
 
@@ -20,22 +44,3 @@
 * [Upload media files to an S3 Bucket](TIL/2024-05-24-media-upload-to-s3-bucket.md)
 * [Set up Cloudfront as a CDN to serve media files](TIL/2024-05-27-serve-media-files-from-s3-bucket-through-cloudfront.md)
 * [Create a custom logging filter](TIL/2024-06-05-python-logging-custom-filter.md)
-
-## Tools
-
-* [Docker](pages/docker.md)
-* [Supervisor](pages/supervisor.md)
-* [VSCode](pages/vscode.md)
-* [PyCharm](pages/pycharm.md)
-* [SQLite](pages/sqlite.md)
-* [Git](pages/git.md)
-* [HTML](pages/HTML.md)
-* [LLMs](pages/LLMs.md)
-
-## Topics
-
-* [Performance](pages/performance.md)
-* [Tips & Tricks](pages/tips-and-tricks.md)
-* [FAQs](pages/FAQs)
-* [Dependency Management](pages/dependency-management.md)
-* [Meta](pages/meta.md)

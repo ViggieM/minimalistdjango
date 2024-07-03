@@ -66,7 +66,7 @@ git commit -m "Initial commit"
 
 ### Set up a virtual environment with Pyenv
 
-My recommended way of setting up a Django project is to use [Pyenv](../pages/pyenv.md).
+My recommended way of setting up a Django project is to use [Pyenv](../tools/pyenv.md).
 It has the advantage that it is easily recognized by your IDE and allows you to easily navigate the source code of Django and other third party packages.
 It also creates a `.python-version` file in your project directory which is used by Pyenv, so every time you enter your project directory, the python environment ist automatically active, which I believe is a great feature.
 
