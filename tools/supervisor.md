@@ -15,3 +15,7 @@
 * needs additional installation, in contrast to Systemd, that comes pre-installed on most linux distributions
 * can not bind to privileged ports, smaller than 1024.
   This might be ok if you don't need it, or you place a web server in front of your application, such as [nginx](/tools/nginx.md), but for a truly minimal set up, the *Systemd* "AmbientCapabilities" allows you to bind to port 80 or 443 directly.
+
+### References
+
+- [simpleisbetterthancomplex.com](https://simpleisbetterthancomplex.com/series/2017/10/16/a-complete-beginners-guide-to-django-part-7.html): Django tutorial, that uses Supervisor and nginx to deploy a Django application

@@ -12,7 +12,6 @@
   - add comments to your settings file
   -
 - umbenennen zu lifehacks
-- faq: how should I structure my Django project? 
 
 ## Supervisor setup
 
@@ -41,5 +40,22 @@ After you saved the file, you need to tell *Supervisor* to reload the configurat
 $ sudo supervisorctl reread
 $ sudo supervisorctl update
 ```
+## Set up the python environment
 
+We set up a python environment with pyenv inside the VM:
+
+```bash
+pyenv install 3.11.3
+pyenv virtualenv 3.11.3 <name of virtual environment>
+pyenv activate <name of virtual environment>
+pip install -r requirements.txt
+```
+
+Set the name of the virtual environment to the git commit hash that is being deployed [^deployment-done-right].
+You can get the git hash by running `git rev-parse HEAD` inside your repo.
+
+The advantage of this approach is that you always keep a backup of your dependencies, in case that something goes wrong during the deployment, and you can always return to a previous version of your app.
+The downside is that you have to reinstall the packages every time, for every deploy.
+
+[^deployment-done-right]: I got this from this **Django Con talk in 2015** called [*Django Deployments Done Right*](https://www.youtube.com/watch?v=SUczHTa7WmQ)
 [^srv]: This is the recommended location, according to the [Filesystem Hierarchy Standard](https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html)

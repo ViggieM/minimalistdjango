@@ -12,3 +12,18 @@ Besides, it is tempting to create a lot of mixins and overuse inheritance, which
 >
 > -- *[DreamBerd, the perfect programming language](https://github.com/TodePond/DreamBerd?tab=readme-ov-file#classes)*
 
+## How should I structure my Django project?
+
+```bash
+$ tree -L 1
+.
+├── gunicorn.conf.py
+├── manage.py
+├── config
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── run
+```
