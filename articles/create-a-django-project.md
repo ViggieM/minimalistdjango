@@ -1,7 +1,7 @@
 # How to create a Django Project
 
 <p align="center">
-  <img src="../images/xkcd-startling.png" alt="Startling">
+  <img src="/media/xkcd-startling.png" alt="Startling">
  <br>
   <a href="https://xkcd.com/354/">https://xkcd.com/354/</a>
 </p>
