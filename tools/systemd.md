@@ -4,7 +4,7 @@
 
 - highly customizable
 - ability to bind to ports smaller than 1024 with the `AmbientCapabilities=CAP_NET_BIND_SERVICE` setting
-- [boring technology][https://mcfunley.com/choose-boring-technology]
+- [boring technology](https://mcfunley.com/choose-boring-technology)
 
 ### Cons
 
