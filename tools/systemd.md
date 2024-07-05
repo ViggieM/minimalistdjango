@@ -68,7 +68,7 @@ exec $VIRTUAL_ENV/bin/gunicorn project.wsgi
 * `set -a`, `source .env`, `set +a` allows to read the environment variables from a .env file (see [StackOverflow](https://stackoverflow.com/a/45971167/5540654))
 * By specifying the environment variable `PYTHONPATH` to point to the application's directory, you can specify the path to your `wsgi.py` as a python module path.
 * The `$VIRTUAL_ENV` environment variable points to the folder where your python dependencies are installed
-* `exec` is required, so the program does not daemonize itself. This implies that `exec` will replace the current shell with the command, so any instructions after that line will never be executed. Read [this post][http://veithen.io/2014/11/16/sigterm-propagation.html] for more information.
+* `exec` is required, so the program does not daemonize itself. This implies that `exec` will replace the current shell with the command, so any instructions after that line will never be executed. Read [this post](http://veithen.io/2014/11/16/sigterm-propagation.html) for more information.
 
 Don't forget to make it executable with:
 
