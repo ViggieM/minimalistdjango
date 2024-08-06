@@ -14,16 +14,39 @@ Besides, it is tempting to create a lot of mixins and overuse inheritance, which
 
 ## How should I structure my Django project?
 
-```bash
-$ tree -L 1
-.
-├── gunicorn.conf.py
-├── manage.py
+This is a difficult question, and I have thought about it for a long time.
+I have come to the conclusion that thinking about it too much is a mistake.
+The goal is that it should be easy to change and adapt to a growing project, as well as easy to navigate.
+
+So, in my opinion, this is the project structure I use for every new project that I set up:
+
+```
+├── app
+│   ├── models.py
+│   ├── ...
+│   └── views.py
 ├── config
 │   ├── __init__.py
 │   ├── asgi.py
 │   ├── settings.py
 │   ├── urls.py
 │   └── wsgi.py
-└── run
+├── gunicorn.conf.py
+├── manage.py
+└── run.sh
 ```
+
+And here is why:
+* I use only one **app folder**, because at the beginning I don't know where the models will live and how they will be connected.
+  Besides, I don't have to think about how to name the app, where to place it, etc. The goal is to build a prototype, make it work, and not worry about the details.
+  Artificially placing models in separate apps makes it more complicated to refactor, and most of the time the models are related by foreign keys to each other anyway.
+* I place all the configuration stuff inside a **config folder** (I used to call it *project* before, but I think *config* is more appropriate)
+* The `gunicorn.conf.py` is just a thought. Why not keep the configuration inside the project?
+* The `run.sh` is a shell script that would run the application in "production" mode (i.e. with gunicorn).
+  This makes the setup for [Systemd](/tools/systemd.md) easier.
+
+
+Here are some more resources that talk about (Django) Project structures:
+* [Structuring Your Project — The Hitchhiker's Guide to Python](https://docs.python-guide.org/writing/structure/)
+* [Sensemaking: Django for Startup Founders: A better software architecture for SaaS startups and consumer apps](https://alexkrupp.typepad.com/sensemaking/2021/06/django-for-startup-founders-a-better-software-architecture-for-saas-startups-and-consumer-apps.html?utm_campaign=Django%2BNewsletter&utm_medium=email&utm_source=Django_Newsletter_158)
+* [Two Scoops of Django 3.x](https://www.feldroy.com/two-scoops-press)
