@@ -19,7 +19,7 @@ Or maybe it can be done with the aws-cli, and I might make a follow-up post in t
 
 I created a Cloudfront distribution, selected the S3 Bucket as the Origin Domain Name and set the Cache policy "CachingOptimized" (suggested for S3 Buckets)
 
-![img.png](../images/img.png)
+![img.png](/media/img.png)
 
 After that, you can copy the cloudfront domain for your created distribution, and save it in the app settings, for example:
 
@@ -29,11 +29,11 @@ CLOUDFRONT_DOMAIN = "d3268ld43vues4.cloudfront.net"
 
 Next, I configured the Origin Access Control for the S3 Bucket, since the S3 Bucket I created is not publicly active.
 
-![img_1.png](../images/img_1.png)
+![img_1.png](/media/img_1.png)
 
 Here, I created a new OAC, and copied the policy, which looked like this:
 
-![img_2.png](../images/img_2.png)
+![img_2.png](/media/img_2.png)
 
 I had to add this policy to my S3 Bucket and update the "django-storages" setting:
 
