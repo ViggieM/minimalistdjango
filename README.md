@@ -25,7 +25,7 @@
 
 * [Docker](tools/docker.md)
 * [Supervisor](tools/supervisor.md)
-* [Systemd](tools/systemd.md) 
+* [Systemd](tools/systemd.md)
 * [VSCode](tools/vscode.md)
 * [PyCharm](tools/pycharm.md)
 * [SQLite](tools/sqlite.md)
@@ -33,6 +33,7 @@
 * [HTML](tools/HTML.md)
 * [LLMs](tools/LLMs.md)
 * [Litestream](tools/litestream.md)
+* [Ngrok](tools/ngrok.md)
 
 ## Snippets
 
