@@ -19,7 +19,7 @@ export NGROK_AUTHTOKEN=<your token>
 
 To run it you can either:
 
-1. Install it locally and execute it from command line
+1. [Install](https://ngrok.com/download) it locally and execute it from command line
 
     ```bash
     ngrok config add-authtoken $NGROK_AUTHTOKEN

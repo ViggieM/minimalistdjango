@@ -5,7 +5,9 @@
 * [Dokploy](https://docs.dokploy.com/en/get-started/introduction): self-hosted alternative to Heroku, Fly.io, etc.
 * [Dokku](https://dokku.com/docs/getting-started/installation/): self-hosted alternative to Heroku, Fly.io, etc.
 * [CapRover · Scalable, Free and Self-hosted PaaS!](https://caprover.com/)
+* [Coolify](https://coolify.io/)
 * [Django Deployments Done Right](https://www.youtube.com/watch?v=SUczHTa7WmQ)
+* [Self-Hosted Open Source - Michael Kennedy | Django Chat](https://djangochat.com/episodes/michael-kennedy)
 
 ## Guide
 
