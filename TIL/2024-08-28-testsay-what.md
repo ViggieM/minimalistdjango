@@ -5,3 +5,4 @@ tags:
   - Say what
 date: 2024-08-28
 ---
+\[hello\](/TIL/test.md) there
