@@ -1,16 +1,20 @@
-# How can I force the creation of the Permission objects associated with a model during the migration?
+---
+title: Force the creation of `Permission` objects associated with models during
+  migration
+date: 2024-07-31
+---
+Django models come with default permissions associated with them. Whenever a new Model is created in the database, there are also 4 [default permissions](https://docs.djangoproject.com/en/5.0/topics/auth/default/#default-permissions) that are created in the `auth_permission` table:
 
-Django models come with default permissions associated with them.
-Whenever a new Model is created in the database, there are also 4 [default permissions](https://docs.djangoproject.com/en/5.0/topics/auth/default/#default-permissions) that are created in the `auth_permission` table:
+*   `add_${modelName}`
+    
+*   `change_${modelName}`
+    
+*   `delete_${modelName}`
+    
+*   `view_${modelName}`
+    
 
-* `add_${modelName}`
-* `change_${modelName}`
-* `delete_${modelName}`
-* `view_${modelName}`
-
-These entries in the `auth_permission` table are created **after** the migrations are executed, when the *post_migrate* signal is emmited. 
-Sometimes we need to create data migrations that creates certain Groups, and attaches permissions to them.
-But when no permission objects have been created, we can't select and attach them to groups during the migraion.
+These entries in the `auth_permission` table are created **after** the migrations are executed, when the _post\_migrate_ signal is emmited. Sometimes we need to create data migrations that creates certain Groups, and attaches permissions to them. But when no permission objects have been created, we can't select and attach them to groups during the migraion.
 
 This is where one method in Django comes in handy, `emit_post_migrate_signal`.
 
