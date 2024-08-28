@@ -1,1 +1,11 @@
 media: media
+content:
+  - name: til
+    label: TIL
+    type: collection
+    path: TIL
+    view:
+      fields: [date]
+    fields:
+      - { name: tags, label: Tags, type: string, list: true}
+      - { name: date, label: Date, type: date }
