@@ -1,7 +1,15 @@
 media: media
 content:
+  - name: index
+    label: Index
+    icon: table-of-contents
+    type: file
+    path: README.md
+    fields:
+      - { name: body, label: Body, type: text }
   - name: til
     label: TIL
+    icon: calendar-check-2
     type: collection
     path: TIL
     view:
