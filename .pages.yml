@@ -38,11 +38,4 @@ content:
       - { name: tags, label: Tags, type: string, list: true }
       - name: body
         label: Body
-        type: object
-        fields:
-          - name: description
-            label: Description
-            type: rich-text
-          - name: pros-cons
-            label: Pros & Cons
-            type: rich-text
+        type: text
