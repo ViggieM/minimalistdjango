@@ -1,4 +1,5 @@
 ---
+title: Test new page
 tags:
   - Test
   - Say what
