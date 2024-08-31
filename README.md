@@ -25,6 +25,7 @@
 
 * [VirtualBox](tools/virtualbox.md)
 * [Vagrant](tools/vagrant.md)
+* [Ansible](tools/ansible.md)
 * [Supervisor](tools/supervisor.md)
 * [Systemd](tools/systemd.md)
 * [VSCode](tools/vscode.md)
