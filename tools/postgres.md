@@ -20,6 +20,9 @@ Having said that, it is also a good idea to use SQLite for regular projects, bec
 ## References
 
 * [Playing with Postgres NOTIFY/LISTEN using Python asyncio and psycopg2 | The-Fonz blog](https://the-fonz.gitlab.io/posts/postgres-notify/)
-
+* [DjangoCon Europe 2023 | Tuning PostgreSQL to work even better - YouTube](https://www.youtube.com/watch?v=7CnqVoMxoeo)
+  * [Postgres Tips | Crunchy Data](https://www.crunchydata.com/postgres-tips)
+* [Postgres Views in Django](https://pganalyze.com/blog/postgresql-views-django-python)
+*
 
 [^listennotify]: Here is an example of a package that uses this feature, and can replace the need of a package like Celery: [PaulGilmartin/django-pgpubsub: A distributed task processing framework for Django built on top of the Postgres NOTIFY/LISTEN protocol.](https://github.com/PaulGilmartin/django-pgpubsub)

@@ -50,3 +50,11 @@ Here are some more resources that talk about (Django) Project structures:
 * [Structuring Your Project — The Hitchhiker's Guide to Python](https://docs.python-guide.org/writing/structure/)
 * [Sensemaking: Django for Startup Founders: A better software architecture for SaaS startups and consumer apps](https://alexkrupp.typepad.com/sensemaking/2021/06/django-for-startup-founders-a-better-software-architecture-for-saas-startups-and-consumer-apps.html?utm_campaign=Django%2BNewsletter&utm_medium=email&utm_source=Django_Newsletter_158)
 * [Two Scoops of Django 3.x](https://www.feldroy.com/two-scoops-press)
+
+
+## Where should I host my Django application?
+
+The short answer: [fly.io](https://fly.io/).
+
+But the long answer is: it depends.
+There are a lot of hosting providers that offer good options. Take a look at https://awesomedjango.org/#hosting.
