@@ -40,8 +40,8 @@
 
 ### Running in Production
 * [Ansible](tools/ansible.md)
-* [Supervisor](tools/supervisor.md)
 * [Systemd](tools/systemd.md)
+* [Supervisor](tools/supervisor.md)
 
 ### Utilities
 * [Ngrok](tools/ngrok.md)
