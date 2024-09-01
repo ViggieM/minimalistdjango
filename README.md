@@ -23,6 +23,9 @@
 
 ## Tools
 
+* [HTML](tools/HTML.md)
+* [Git](tools/git.md)
+* [Gunicorn](tools/gunicorn.md)
 * [VirtualBox](tools/virtualbox.md)
 * [Vagrant](tools/vagrant.md)
 * [Ansible](tools/ansible.md)
@@ -31,8 +34,6 @@
 * [VSCode](tools/vscode.md)
 * [PyCharm](tools/pycharm.md)
 * [SQLite](tools/sqlite.md)
-* [Git](tools/git.md)
-* [HTML](tools/HTML.md)
 * [LLMs](tools/LLMs.md)
 * [Litestream](tools/litestream.md)
 * [Ngrok](tools/ngrok.md)
