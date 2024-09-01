@@ -30,3 +30,27 @@ from django.core.management.color import color_style
 
 globals().update(import_objects({"dont_load": [], "quiet_load": False}, color_style()))
 ```
+
+### Keyboard Shortcuts
+
+```
+# create new file in current directory
+strg + alt + einfg
+
+# navigate files
+alt + home
+
+# new line before current
+strg + alt + enter
+
+# navigate definitions
+strg + B
+alt + shift + ← /→
+
+# extend selection
+strg + w
+strg + shift + w
+
+# select same word
+alt + j
+```

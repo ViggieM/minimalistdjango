@@ -13,6 +13,8 @@ I suggest to install Ansible via pipx.
 ```bash
 # execute a playbook
 ansible-playbook -i <inventory name> -e user=<remote username> playbook.yml
+# encrypt variable with ansible-vault
+ansible-vault encrypt_string --encrypt-vault-id ${vaultId} ${variableValue}
 ```
 
 ### Inventory file

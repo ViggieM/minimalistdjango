@@ -43,6 +43,10 @@
 * [.gitignore](snippets/.gitignore)
 * [.pre-commit-config.yaml](snippets/.pre-commit-config.yaml)
 
+### Django
+
+* [Django in one file](snippets/django-onefile-project-template.md)
+
 ### Docker compose
 
 * [simple node service](snippets/docker-compose-node.yaml)
