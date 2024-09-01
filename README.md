@@ -24,6 +24,7 @@
 ## Tools
 
 ### Fundamentals
+* [Python](tools/python.md)
 * [HTML](tools/HTML.md)
 * [Git](tools/git.md)
   * [pre-commit hooks](tools/pre-commit.md)
