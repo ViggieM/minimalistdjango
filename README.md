@@ -23,19 +23,26 @@
 
 ## Tools
 
+### Fundamentals
 * [HTML](tools/HTML.md)
 * [Git](tools/git.md)
+  * [pre-commit hooks](tools/pre-commit.md)
 * [Gunicorn](tools/gunicorn.md)
+* [SQLite](tools/sqlite.md)
+  * [Litestream](tools/litestream.md)
+
+### Development
+* [VSCode](tools/vscode.md)
+* [PyCharm](tools/pycharm.md)
 * [VirtualBox](tools/virtualbox.md)
-* [Vagrant](tools/vagrant.md)
+  * [Vagrant](tools/vagrant.md)
+
+### Running in Production
 * [Ansible](tools/ansible.md)
 * [Supervisor](tools/supervisor.md)
 * [Systemd](tools/systemd.md)
-* [VSCode](tools/vscode.md)
-* [PyCharm](tools/pycharm.md)
-* [SQLite](tools/sqlite.md)
-* [LLMs](tools/LLMs.md)
-* [Litestream](tools/litestream.md)
+
+### Utilities
 * [Ngrok](tools/ngrok.md)
 * [Makefile](tools/makefile.md)
 
