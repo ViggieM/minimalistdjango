@@ -37,6 +37,7 @@
 * [LLMs](tools/LLMs.md)
 * [Litestream](tools/litestream.md)
 * [Ngrok](tools/ngrok.md)
+* [Makefile](tools/makefile.md)
 
 ## Snippets
 
