@@ -61,4 +61,5 @@
 * [Upload media files to an S3 Bucket](TIL/2024-05-24-media-upload-to-s3-bucket.md)
 * [Set up Cloudfront as a CDN to serve media files](TIL/2024-05-27-serve-media-files-from-s3-bucket-through-cloudfront.md)
 * [Create a custom logging filter](TIL/2024-06-05-python-logging-custom-filter.md)
+* [Set up Litestream](TIL/2024-06-15-setup-litestream.md)
 * [How can I force the creation of the Permission objects associated with a model during the migration?](TIL/2024-07-31-emit-post-migrate-signal.md)
