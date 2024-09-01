@@ -51,6 +51,7 @@ Source: [Place to set SQLite PRAGMA option in Django project - Stack Overflow](h
 ## References
 
 * [Sqlite in Production](/TIL/2023-06-18-sqlite-in-production.md) (TIL)
+* [Litestream](/tools/litestream.md)
 * [Django SQLite Production Config](https://blog.pecar.me/sqlite-django-config?utm_campaign=Django%2BNewsletter&utm_medium=email&utm_source=Django_Newsletter_238)
 * [Django SQLite Benchmark](https://blog.pecar.me/django-sqlite-benchmark?utm_campaign=Django%2BNewsletter&utm_medium=email&utm_source=Django_Newsletter_219)
 * [A database for 2022](https://tailscale.com/blog/database-for-2022)
