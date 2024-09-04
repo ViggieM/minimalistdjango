@@ -30,6 +30,23 @@ To enable concurrent writes, you need to activate the Write Ahead Log on databas
 sqlite3 db.sqlite3 'PRAGMA journal_mode=wal; PRAGMA busy_timeout = 5000;'
 ```
 
+The `busy_timeout` setting can also be managed by Django's [database options](https://docs.djangoproject.com/en/5.1/ref/databases/#database-is-locked-errors).
+
+### Immediate transactions
+
+By default, SQLite starts transactions in `DEFFERED` mode that are considered read only. 
+When a write query occurrs within a transaction, it is upgraded to a write transaction.
+Meanwhile, another transaction might have aquired a lock ob the database.
+In that case, the first transaction throws immediately a `SQLITE_BUSY` error, without respecting the `busy_timeout` setting.
+
+To avoid this situation, we start all transactions in `IMMEDIATE` mode, which locks the tables from the beginning.
+This is also the reason why you should avoid using [`ATOMIC_REQUESTS`](https://docs.djangoproject.com/en/5.1/ref/settings/#atomic-requests) with sqlite, since requests would lock the database for an extended period of time.
+
+Source:
+- https://blog.pecar.me/sqlite-django-config?utm_campaign=Django%2BNewsletter&utm_medium=email&utm_source=Django_Newsletter_238#3-fine-tune-your-sqlite-settings
+
+
+
 ### Faster writes
 
 The PRAGMA synchronous setting is applied on the [database connection](https://stackoverflow.com/questions/36308801/sqlite3-pragma-synchronous-not-persistent).
@@ -51,7 +68,7 @@ Source: [Place to set SQLite PRAGMA option in Django project - Stack Overflow](h
 ## References
 
 * [Sqlite in Production](/TIL/2023-06-18-sqlite-in-production.md) (TIL)
-* [Litestream](/tools/litestream.md)
+* [Litestream](/tools/litestream.md): stream Database changes in sqlite to an S3 bucket for backups
 * [Django SQLite Production Config](https://blog.pecar.me/sqlite-django-config?utm_campaign=Django%2BNewsletter&utm_medium=email&utm_source=Django_Newsletter_238)
 * [Django SQLite Benchmark](https://blog.pecar.me/django-sqlite-benchmark?utm_campaign=Django%2BNewsletter&utm_medium=email&utm_source=Django_Newsletter_219)
 * [A database for 2022](https://tailscale.com/blog/database-for-2022)
