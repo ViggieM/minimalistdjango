@@ -3,6 +3,7 @@ tags:
     children:
       - name: tailwindcss
       - name: htmx
+      - name: Alpine.js
   - name: backend
     children:
       - name: htmx

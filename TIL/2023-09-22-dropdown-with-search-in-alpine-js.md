@@ -1,14 +1,9 @@
 ---
-title: "Select dropdown with search"
-date: 2023-09-20
-published: true
-author: victor
 tags:
   - Alpine.js
-categories:
-  - Frontend
-excerpt: "How to crate a select dropdown with a search field to filter options"
 ---
+
+# Custom select dropdown with search in Alpine.js
 
 Styling select dropdowns has always been a hustle in HTML.
 One caveat is that it is possible to style the appearence of the `<select>` element, but not the `<option>`.

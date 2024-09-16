@@ -66,6 +66,7 @@
 
 * [SQLite in Production](TIL/2023-06-18-sqlite-in-production.md)
 * [https://](TIL/2023-07-26-https.md)
+* [Custom select dropdown with search in Alpine.js](TIL/2023-09-22-dropdown-with-search-in-alpine-js.md)
 * [Build a multi-step form with Django and htmx](TIL/2023-09-06-multi-step-form-with-django-and-htmx.md)
 * [Loading spinners for htmx requests](TIL/2023-10-13-htmx-loading-spinners.md)
 * [Keyword search on a list of documents (with scikit-learn)](TIL/2024-04-25-search-documents-with-scikit-learn.ipynb)
