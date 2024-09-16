@@ -1,3 +1,8 @@
+---
+tags:
+  - SQLite
+---
+
 # SQLite in Production
 
 I was inspired by a talk at [_DjangoCon_](https://youtu.be/yTicYJDT1zE) that I attended in 2023, so I decided to look a bit more into SQLite in combination with Django.
