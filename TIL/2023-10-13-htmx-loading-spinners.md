@@ -1,30 +1,21 @@
 ---
-title: "Loading spinners"
-date: 2023-10-13
-published: true
-author: victor
 tags:
   - htmx
   - tailwindcss
-categories:
-  - Frontend
-excerpt: "How to create loading spinners with htmx and tailwindcss"
 ---
 
-Htmx is pretty awesome for [forms]({% link _posts/2023-09-06-django-htmx.md %}) and you can handle some pretty complex things with just a few attributes.
+# Loading spinners for htmx requests
+
+Htmx is pretty awesome for forms (see my [previous article](/TIL/2023-09-06-django-htmx.md) on how to build a form wizard with htmx), and you can handle some pretty complex things with just a few attributes.
 Sometimes when you submit a form, the response comes very fast from the server, and you don't even notice the delay, especially during local development.
 But in production, the response might take a bit longer, either because the processing of the form takes a while, or because there is no available worker to handle the request.
-Therefore you need to let the user know that some kind of processing is happening in the background.
+Therefore, you need to let the user know that some kind of processing is happening in the background.
 
-For this, there is the [**hx-indicator**]() attribute that controls the visibility of some kind of indicator while the request is on flight.
-It adds the class **"htmx-request"** to the element specified by a css selector, or to the element that trigers the htmx request.
+For this, there is the "hx-indicator" attribute that controls the visibility of some kind of indicator while the request is on flight.
+It adds the class **"htmx-request"** to the element specified by a css selector, or to the element that triggers the htmx request.
 In case of a form where the "submit" button is pressed, this will be the form itself.
-This can be used to show some kind of a loading spinner while the request is being processed.
+This can be used to show some kind of loading spinner while the request is being processed.
 There are two ways you can do this.
-
-
-
-
 
 ## Use the "htmx-request" class directly to reduce the opacity of the form
 

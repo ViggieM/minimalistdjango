@@ -66,6 +66,7 @@
 
 * [SQLite in Production](TIL/2023-06-18-sqlite-in-production.md)
 * [https://](TIL/2023-07-26-https.md)
+* [Loading spinners for htmx requests](TIL/2023-10-13-htmx-loading-spinners.md)
 * [Keyword search on a list of documents (with scikit-learn)](TIL/2024-04-25-search-documents-with-scikit-learn.ipynb)
 * [Upload media files to an S3 Bucket](TIL/2024-05-24-media-upload-to-s3-bucket.md)
 * [Set up Cloudfront as a CDN to serve media files](TIL/2024-05-27-serve-media-files-from-s3-bucket-through-cloudfront.md)

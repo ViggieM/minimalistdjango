@@ -1,0 +1,8 @@
+tags:
+  - name: frontend
+    children:
+      - name: tailwindcss
+      - name: htmx
+  - name: backend
+    children:
+      - name: htmx
