@@ -1,3 +1,8 @@
+---
+tags:
+  - JavaScript
+---
+
 # Server Sent Events
 
 I stumbled upon [this video on YouTube](https://youtu.be/MziqE_2Euss?si=6VKstGB2EXUqSEyu) on [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)

@@ -1,3 +1,9 @@
+---
+tags:
+  - localstack
+  - django
+---
+
 # Upload media files to an S3 Bucket
 
 Let's take this Django model:

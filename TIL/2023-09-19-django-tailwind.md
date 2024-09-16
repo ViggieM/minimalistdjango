@@ -1,16 +1,10 @@
 ---
-title: "Include tailwindcss in a Django project"
-date: 2023-09-19
-published: true
-author: victor
 tags:
   - tailwindcss
-  - npm
   - pm2
-categories:
-  - Frontend
-excerpt: "How to include tailwindcss in a Django project with *django-tailwind* and automatically run both npm and runserver during development"
 ---
+
+# Include tailwindcss in a Django project with `django-tailwind`
 
 ## Why django-tailwind?
 

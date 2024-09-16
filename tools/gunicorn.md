@@ -26,5 +26,5 @@ bind = "192.168.x.y:8000"
 
 ## References
 
-* [Understanding Gunicorn](/TIL/2023-06-23-understanding-gunicorn.md)
+* [Understanding Gunicorn](/TIL/_2023-06-23-understanding-gunicorn)
 * [docs.gunicorn.org][https://docs.gunicorn.org/en/stable/index.html]: *Gunicorn* documentation

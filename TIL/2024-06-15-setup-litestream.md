@@ -1,3 +1,7 @@
+---
+tags:
+  - Litestream
+---
 # Set up Litestream
 
 I tried to prove how easy it is to set up [Litestream](/tools/litestream.md) to sync a sqlite database to s3 bucket.

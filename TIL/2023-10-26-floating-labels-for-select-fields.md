@@ -1,14 +1,9 @@
 ---
-title: "Floating labels for select fields"
-date: 2023-10-26
-published: true
-author: victor
 tags:
   - tailwindcss
-categories:
-  - Frontend
-excerpt: "How to create floating labels for select fields"
 ---
+
+# Floating labels for select fields
 
 Generally, select fields are a pain in the ass to style.
 But if you want to keep it simple, and use the default style for the options, but at least have the select field match your style, than you can use following snippet:
@@ -25,7 +20,7 @@ But if you want to keep it simple, and use the default style for the options, bu
 </div>
 ```
 
-And extend the `style.css` used in the main post on [floating labels]({% link _posts/2023-09-21-floating-labels.md %}) with:
+And extend the `style.css` used in the main post on [floating labels](/TIL/2023-09-21-floating-labels.md) with:
 ```css
 select:has([value=""]) ~ label {
   @apply top-4 text-sm

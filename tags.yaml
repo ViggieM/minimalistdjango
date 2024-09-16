@@ -4,7 +4,24 @@ tags:
       - name: tailwindcss
       - name: htmx
       - name: Alpine.js
+      - name: JavaScript
   - name: backend
     children:
       - name: htmx
       - name: django
+  - name: VSCode
+  - name: JavaScript
+    children:
+      - name: Alpine.js
+      - name: node
+        children:
+          - name: npm
+      - name: pm2
+  - name: AWS
+    children:
+      - name: localstack
+  - name: SQLite
+    children:
+      - name: Litestream
+  - name: Docker
+  - name: ssh

@@ -1,3 +1,8 @@
+---
+tags:
+  - VSCode
+---
+
 # Debugging with VSCode
 
 Setting up Debugging with VSCode is really easy.

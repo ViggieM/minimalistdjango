@@ -1,3 +1,9 @@
+---
+tags:
+  - django
+  - AWS
+---
+
 # Set up Cloudfront as a CDN to serve media files
 
 [Previously](/TIL/2024-05-24-media-upload-to-s3-bucket.md) I wrote about how to set up media file upload for a Django application to S3 Bucket.

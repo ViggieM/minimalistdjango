@@ -1,3 +1,8 @@
+---
+tags:
+  - Docker
+  - ssh
+---
 # Use a Docker container for testing deployment scripts
 
 I thought it was funny to try and use a docker container instead of a VM for testing deployment scenarios.
