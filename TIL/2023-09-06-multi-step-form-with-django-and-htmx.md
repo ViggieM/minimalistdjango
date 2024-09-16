@@ -1,20 +1,14 @@
 ---
-title: "Django and HTMX"
-date: 2023-09-06
-published: true
-author: victor
 tags:
   - htmx
-categories:
-  - Frontend
-excerpt: "How to create a form wizard with Django and HTMX, without saving any intermediate data to the database or session"
+  - django
 ---
 
-![django and htmx make my day meme](/images/django-htmx.png)
+# Build a multi-step form with Django and htmx
 
-## The task
-
-> Develop a Django form with customizable fields, implement a view for form editing, display a preview of the form with submitted values upon submission, and offer options to either return to form editing with a "back" button or submit the form for processing.
+I created a form wizard with Django and HTMX, without saving any intermediate data to the database or session.
+Submitted data from earlier steps can be saved as hidden inputs in the next steps.
+At the end, we can provide a preview view, to review the data before submitting and persisting it to the database.
 
 ## Build the edit view
 
@@ -45,7 +39,6 @@ Note the **hx-headers** attribute of the **body** tag in `base.html`.
 This sets the csrf header for HTMX requests.
 
 ```html
-{% raw %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -58,20 +51,28 @@ This sets the csrf header for HTMX requests.
     </div>
   </body>
 </html>
-{% endraw %}
 ```
 
 And this is the `_edit_form.html`.
 It makes use of the **hx-target** attribute to swap the div with the id **awesome-form**
 
 ```html
-{% raw %}
 <form hx-post="{% url 'preview_form' %}" hx-target="#awesome-form">
     ...
     <button>Preview</button>
 </form>
-{% endraw %}
 ```
+
+## Add more steps
+
+Adding more steps to the wizard is simple.
+We simply create a new view, that contains both the form from the previous view as hidden inputs,
+as well as the new form that is visible and can be edited.
+
+The steps can be navigated via POST requests, and every time we have form errors, we can nicely render them with django builtin utility attributes.
+
+![flowchart-2024-09-16-2346-white-bg.png](/media/TIL/2023-09-06-multi-step-form-with-django-and-htmx/flowchart-2024-09-16-2346-white-bg.png)
+
 
 ## Build the preview view
 
@@ -91,7 +92,6 @@ If it _is_ valid, it renders `_preview_form.html`, where instead of input fields
 This form also contains a "Back" button, that simply re-POSTs it's data to the edit view, so we can comfortably re-edit it.
 
 ```html
-{% raw %}
 <form hx-post="{% url 'submit_form' %}" hx-target="#awesome-form">
     ...
     {% for field in form %}
@@ -101,7 +101,6 @@ This form also contains a "Back" button, that simply re-POSTs it's data to the e
     <button hx-post="{% url 'edit_form' %}" hx-target="#awesome-form">Back</button>
     <button>Submit</button>
 </form>
-{% endraw %}
 ```
 
 Finally, when we press the "Submit" button, this truly submits the form to the `submit_form` view.

@@ -6,3 +6,4 @@ tags:
   - name: backend
     children:
       - name: htmx
+      - name: django

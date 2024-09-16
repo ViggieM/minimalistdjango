@@ -6,7 +6,7 @@ tags:
 
 # Loading spinners for htmx requests
 
-Htmx is pretty awesome for forms (see my [previous article](/TIL/2023-09-06-django-htmx.md) on how to build a form wizard with htmx), and you can handle some pretty complex things with just a few attributes.
+Htmx is pretty awesome for forms (see my [previous article](/TIL/2023-09-06-multi-step-form-with-django-and-htmx) on how to build a form wizard with htmx), and you can handle some pretty complex things with just a few attributes.
 Sometimes when you submit a form, the response comes very fast from the server, and you don't even notice the delay, especially during local development.
 But in production, the response might take a bit longer, either because the processing of the form takes a while, or because there is no available worker to handle the request.
 Therefore, you need to let the user know that some kind of processing is happening in the background.
