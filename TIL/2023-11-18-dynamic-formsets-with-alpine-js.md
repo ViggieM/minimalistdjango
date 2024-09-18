@@ -42,13 +42,13 @@ ArticleFormSet = formset_factory(ArticleForm)
 And here is how the formset would be rendered in a django template, without any interaction:
 
 ```html
-{% raw %}<form>
+<form>
     {{ formset.management_form }}
     {% for form in formset %}
         {{ form }}
     {% endfor %}
     <button>Submit</button>
-</form>{% endraw %}
+</form>
 ```
 
 In the following steps we will implement an `addForm` and `deleteForm` method and adjust the html to be able to make the formset interactive.
@@ -58,10 +58,10 @@ In the following steps we will implement an `addForm` and `deleteForm` method an
 Let's initialize the Alpine.js component with the `x-data` attribute on the `<form>` element and add a button that triggers the `addForm` method on click.
 
 ```html
-{% raw %}<form x-data="formset">
+<form x-data="formset">
     <button type="button" @click="addForm()">Add form</button>
     ...
-</form>{% endraw %}
+</form>
 ```
 
 Formsets created with the `formset_factory` have an attribute `empty_form`.
@@ -72,7 +72,7 @@ Afterward we just need to append it inside the `forms` container.
 The HTML would look something like this:
 
 ```html
-{% raw %}<form x-data="formset">
+<form x-data="formset">
     <button type="button" @click="addForm()">Add form</button>
     <template>
         {{ formset.empty_form }}
@@ -83,7 +83,7 @@ The HTML would look something like this:
         {{ form }}
         {% endfor %}
     </div>
-</form>{% endraw %}
+</form>
 ```
 
 And the `addForm` Javascript code would look like this:
@@ -131,29 +131,29 @@ We need to add a delete button for each form that is rendered within the "forms"
 We also need to encompass every form with a "form" `div`, so we are able to select it with the [closest()](https://developer.mozilla.org/en-US/docs/Web/API/Element/closest?retiredLocale=de) method and remove it from the DOM.
 
 ```html
-{% raw %}<form x-data="formset">
+<form x-data="formset">
     <template>
-        <div class="form">
+        <fieldset>
             {{ formset.empty_form }}
             <button type="button" @click="deleteForm()">Delete form</button>
-        </div>
+        </fieldset>
     </template>
     {{ formset.management_form }}
     <div class="forms">
         {% for form in formset %}
-        <div class="form">
+        <fieldset>
             {{ form }}
             <button type="button" @click="deleteForm()">Delete form</button>
-        </div>
+        </fieldset>
         {% endfor %}
     </div>
-</form>{% endraw %}
+</form>
 ```
 
 We could separate the HTML for the form and place it inside a template partial:
 
 ```html
-{% raw %}<form x-data="formset">
+<form x-data="formset">
     <template>
         {% include "form_template.html" with form=formset.empty_form %}
     </template>
@@ -163,7 +163,7 @@ We could separate the HTML for the form and place it inside a template partial:
             {% include "form_template.html" %}
         {% endfor %}
     </div>
-</form>{% endraw %}
+</form>
 ```
 
 After removing a form from the DOM, we need to adjust the IDs of the remaining inputs, so they remain consecutively numbered.
@@ -172,7 +172,7 @@ And don't forget to adjust the management form.
 Here is the corresponding Javascript code:
 
 ```javascript
-this.$el.closest('.form').remove()
+this.$el.closest('fieldset').remove()
 
 // adjust the ids of the remaining inputs
 for (let i = 0; i < this.formsContainer.children.length; i++) {
