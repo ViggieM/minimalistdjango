@@ -1,9 +1,6 @@
----
-title: How to create a Django Project (v1)
----
 # How to create a Django Project
 
-![Startling](/media/xkcd-startling.png)  
+![Startling](/media/xkcd-startling.png)
 [https://xkcd.com/354/](https://xkcd.com/354/)
 
 Projects such as [django-cookiecutter](https://github.com/cookiecutter/cookiecutter-django) are useful, as long as you are comfortable with every single setting that is generated for you. I find it particularly useful as a source of inspiration on how to structure your code. At some point you might want to create your own cookiecutter template, or simply a GitHub repository that you can copy to get you started with a new project.

@@ -1,30 +1,21 @@
 ---
-layout: post
-title: "Static files"
-date: 2023-08-07
-published: true
-author: victor
 tags:
   - css
   - javascript
   - fonts
-categories:
-  - Production deployment
 ---
 
-Static files are JavaScript, CSS and every other files that are served by your web server and are not HTML.
+# Serving static files in production
 
-## Development
+Static files are JavaScript, CSS, fonts, images, etc. that are served by your web server and are not HTML.
 
 During development, the `runserver` command takes care of serving them, as long as `staticfiles` is in your INSTALLED_APPS.
 In the console we can see how the individual files are accessed.
+Sometimes it's totally fine to use "runserver" to serve your application, in case you have low traffic,
+and the application is not publicly accessible, so you are not concerned with security.
 
-## Production
-
-Sometimes it's totally fine to use "runserver" for your application event in production, in case you have low traffic, and the application is not publicly accessible.
-But most of the time, the application will be run by gunicorn, and we need to serve the media and static files by ourselves.
-
-I am aware of three viable options at the time of writing:
+But in most cases, some WSGI server (e.g. gunicorn) will run the application,
+and we need to find out a method to serve the media and static files on our own.
 
 ### Whitenoise
 
