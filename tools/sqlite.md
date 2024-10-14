@@ -74,8 +74,10 @@ class DatabaseWrapper(base.DatabaseWrapper):
         conn.execute("PRAGMA synchronous = NORMAL")
         # keep temporary tables and indices in memory (file by default)
         conn.execute("PRAGMA temp_store = MEMORY")
-        # increase amount of pages kept in memory
-        conn.execute("PRAGMA cache_size = 1000000000")
+        # share memory between connections. set it bigger than your database
+        conn.execute("PRAGMA mmap_size = 2048000000")
+        # cache pages in memory. -2000 is default, but safe to increase
+        conn.execute("PRAGMA cache_size = -2000")
         # enforce foreign key constraints
         conn.execute("PRAGMA foreign_keys = ON")
         return conn
@@ -93,8 +95,8 @@ DATABASES = {
             "init_command": (
                 "PRAGMA synchronous = NORMAL;"
                 "PRAGMA temp_store = MEMORY;"
-                "PRAGMA mmap_size = 2048000000;"  # set it bigger than your database
-                "PRAGMA cache_size = -2000;"  # default, but safe to increase
+                "PRAGMA mmap_size = 2048000000;"
+                "PRAGMA cache_size = -2000;"
                 "PRAGMA foreign_keys=ON;"
                 "PRAGMA journal_mode = WAL;"
                 "PRAGMA busy_timeout = 5000;"
@@ -130,7 +132,7 @@ The synchronous setting needs to be specified on connection level.
 By default, SQLite stores [temporary tables](https://www.sqlite.org/inmemorydb.html#temp_db) and indices in a file.
 Keeping them in memory gives another performance boost.
 
-#### Cache size
+#### Cache size and mmap
 
 The [PRAGMA cache_size](https://www.sqlite.org/pragma.html#pragma_cache_size) setting determines "the maximum number of database disk pages that SQLite will hold in memory at once per open database file".
 This setting, in combination with [mmap_size](https://www.sqlite.org/pragma.html#pragma_mmap_size) setting can have big effects on your query performance.
