@@ -93,7 +93,8 @@ DATABASES = {
             "init_command": (
                 "PRAGMA synchronous = NORMAL;"
                 "PRAGMA temp_store = MEMORY;"
-                "PRAGMA cache_size = 1000000000;"
+                "PRAGMA mmap_size = 2048000000;"  # set it bigger than your database
+                "PRAGMA cache_size = -2000;"  # default, but safe to increase
                 "PRAGMA foreign_keys=ON;"
                 "PRAGMA journal_mode = WAL;"
                 "PRAGMA busy_timeout = 5000;"
@@ -132,14 +133,17 @@ Keeping them in memory gives another performance boost.
 #### Cache size
 
 The [PRAGMA cache_size](https://www.sqlite.org/pragma.html#pragma_cache_size) setting determines "the maximum number of database disk pages that SQLite will hold in memory at once per open database file".
-It is safe to increase this based on your memory usage, to allow faster reads.
+This setting, in combination with [mmap_size](https://www.sqlite.org/pragma.html#pragma_mmap_size) setting can have big effects on your query performance.
+It is a combination of these two values that will make for the best outcome, and they depend on your use case.
+[This article](https://oldmoe.blog/2024/02/03/turn-on-mmap-support-for-your-sqlite-connections/) describes the details on how they are connected.
 
-The value chosen in the snippet above is copied from [this article](https://kerkour.com/sqlite-for-servers), and means 1.000.000.000 * 4kB = 4TB.
-This means basically no limit on how many pages will be kept in memory.
-I don't know if that is a good idea, and probably needs to be adjusted to the system resources.
-But the default cache size is -2000 kibibytes (=2048000 bytes) seems a bit small to me, so it is probably safe to increase it a bit.
+In applications where there is only one database connection, it is safe to increase the cache size to include the entire database.
+That's because there will be no issue with cache invalidation when other connections are writing to the database.
+You can leave the `mmap_size` at the default value of 0, since it will have no effect.
 
-The cache_size setting also needs to be specified on connection level.
+For most use cases, where multiple connections are reading and writing to the database, the OS is more efficient in handling cache invalidation, therefore it is better to increase the mmap size instead of the cache size.
+A cache is still required for caching pages within transactions, but the default cache size of -2000 kibibytes (=2048000 bytes) or something higher would be fine.
+A `cache_size` value that is too big, would use a lot more memory and would not necessarily lead to performance improvements.
 
 #### Enforce foreign keys
 
@@ -170,3 +174,4 @@ This is only applied on creation of tables, and I can't find whether Django appl
 * [Weeknotes: DjangoCon, SQLite in Django, datasette-gunicorn](https://simonwillison.net/2022/Oct/23/datasette-gunicorn/)
 * [Django, SQLite, and the Database is Locked Error](https://blog.pecar.me/django-sqlite-dblock?utm_campaign=Django%2BNewsletter&utm_medium=email&utm_source=Django_Newsletter_215)
 * [A comprehensive guide to SQLite's journal modes, including WAL, DELETE, TRUNCATE, PERSIST, MEMORY, and OFF. Understand the differences, use cases, and how to switch modes to optimize your SQLite database for performance, concurrency, and reliability.](https://gist.github.com/promto-c/531e3d3321f1c2fa66487054b2e040c2)
+* [Turn on mmap support for your SQLite connections – Oldmoe's blog](https://oldmoe.blog/2024/02/03/turn-on-mmap-support-for-your-sqlite-connections/)
