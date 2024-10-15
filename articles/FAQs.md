@@ -58,3 +58,19 @@ The short answer: [fly.io](https://fly.io/).
 
 But the long answer is: it depends.
 There are a lot of hosting providers that offer good options. Take a look at https://awesomedjango.org/#hosting.
+
+## What database should I pick?
+
+[Picking a database should be simple](https://changelog.com/friends/56), but it's not.
+There are a lot of different databases to choose from, and they all handle ACID transactions and data storage differently, depending on their use case.
+Check out the website [Database of Databases](https://dbdb.io/), where you can read about different databases and their implementation details.
+The choice of the database can be crucial for your application's performance.
+
+In case your application does mostly reads, and there are not many users that write concurrently to your database, it is safe to use [SQLite](/tools/sqlite.md), since you will not have to deal with setting up an additional host, and backing it up with [Litestream](/tools/litestream.md) is very easy.
+In case you _do_ have a lot of concurrent reads, [Postgres](/tools/postgres.md) probably offers the most features and flexibility.
+You can do full text search, store json and vector embeddings for [LLMs](/tools/LLMs.md), row level security and so on.
+Django also offers some [utilities](https://docs.djangoproject.com/en/dev/ref/contrib/postgres/) when used with a Postgres database backend.
+If you go with Postgres, you should probably also take a look at [Supabase](/tools/supabase.md) at some point, which is a great platform built on top of Postgres and with a lot of additional features.
+
+In the end, it depends on your level of expertise, personal preference, and your application requirements.
+Don't overthink it. KISS.
