@@ -1,3 +1,7 @@
+---
+title: Makefile
+---
+
 # Makefile
 
 Make is a command-line tool that performs actions as defined in a configuration file called `Makefile`.

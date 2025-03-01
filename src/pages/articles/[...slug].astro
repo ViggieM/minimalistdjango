@@ -1,0 +1,23 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import HeaderImage from '../../components/HeaderImage.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('articles');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout frontmatter={post.data}>
+  <HeaderImage image={post.data.image} />
+  <article class="prose mx-auto">
+    <Content />
+  </article>
+</Layout>

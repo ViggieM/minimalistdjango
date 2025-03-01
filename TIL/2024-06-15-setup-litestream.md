@@ -1,4 +1,5 @@
 ---
+title: Set up Litestream
 tags:
   - Litestream
 ---

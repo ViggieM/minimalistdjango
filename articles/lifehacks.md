@@ -1,3 +1,7 @@
+---
+title: Lifehacks
+---
+
 # Lifehacks
 
 #### Highlight comments in red
@@ -12,7 +16,7 @@ a comment is appropriate, it highlights it as important.
 
 #### Make ASCII Diagrams
 
-Documentation directly next to your code is great. 
+Documentation directly next to your code is great.
 With [ASCIIFlow](https://asciiflow.com/) you can easily draw schemas of your architecture, database, or processes to explain your code better.
 But keep in mind that documentation easily goes out of date.
 

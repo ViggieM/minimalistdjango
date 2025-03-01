@@ -1,3 +1,7 @@
+---
+title: Litestram
+---
+
 # Litestram
 
 > Fully-replicated database with no pain and little cost.

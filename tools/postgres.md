@@ -1,3 +1,7 @@
+---
+title: Postgres
+---
+
 # Postgres
 
 Postgres is just an amazing database, and it has a lot of features, such as fulltext search, which is well [integrated with Django](https://docs.djangoproject.com/en/dev/ref/contrib/postgres/search/).

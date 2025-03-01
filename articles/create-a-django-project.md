@@ -1,3 +1,7 @@
+---
+title: How to create a Django Project
+---
+
 # How to create a Django Project
 
 ![Startling](/media/xkcd-startling.png)

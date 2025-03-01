@@ -1,3 +1,7 @@
+---
+title: Vagrant
+---
+
 # Vagrant
 
 ## Pros

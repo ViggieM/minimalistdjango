@@ -1,3 +1,7 @@
+---
+title: SQLite
+---
+
 # SQLite
 
 > SQLite is a database engine written in the C programming language.

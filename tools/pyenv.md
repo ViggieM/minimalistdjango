@@ -1,7 +1,9 @@
 ---
 title: Pyenv
-heroimage: 'media/xkcd-1987-python-environment.png'
-heroimage_caption: '[https://xkcd.com/1987/](https://xkcd.com/1987/)'
+image:
+  url: 'media/xkcd-1987-python-environment.png'
+  alt: 'https://xkcd.com/1987/'
+  caption: '[https://xkcd.com/1987/](https://xkcd.com/1987/)'
 ---
 
 

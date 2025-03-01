@@ -1,4 +1,5 @@
 ---
+title: Build a multi-step form with Django and htmx
 tags:
   - htmx
   - django

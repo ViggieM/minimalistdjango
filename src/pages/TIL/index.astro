@@ -1,0 +1,14 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Article from '../../components/Article.astro';
+import { getCollection } from 'astro:content';
+const allPosts = await getCollection('TIL');
+const pageTitle = 'TIL';
+---
+
+<Layout pageTitle={pageTitle}>
+  <div class="article-list">
+    <h1 class="mt-10">TIL</h1>
+    {allPosts.map((post: any) => <Article {post} />)}
+  </div>
+</Layout>

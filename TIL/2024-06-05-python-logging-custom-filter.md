@@ -1,4 +1,5 @@
 ---
+title: Create a custom logging filter
 tags:
   - logging
 ---

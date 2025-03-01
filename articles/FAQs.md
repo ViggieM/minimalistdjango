@@ -1,3 +1,10 @@
+---
+title: FAQs
+image:
+    url: "/media/it-are-a-fact.jpg"
+    alt: "It are a fact. I know because of my learnings."
+---
+
 # FAQs
 
 ## Should I use class based views or function based views?

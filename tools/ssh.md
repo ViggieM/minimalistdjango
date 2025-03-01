@@ -1,3 +1,7 @@
+---
+title: SSH
+---
+
 # SSH
 
 ## Cheatsheet

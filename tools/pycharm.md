@@ -1,3 +1,7 @@
+---
+title: PyCharm
+---
+
 # PyCharm
 
 ### Pros
