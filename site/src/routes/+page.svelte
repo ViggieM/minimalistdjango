@@ -1,3 +1,6 @@
+<script lang="ts">
+</script>
+
 <header class="container mx-auto mt-4 mb-16 flex flex-col items-center">
 	<div style="height: 200px; width: 200px; border-radius: 100%; overflow: hidden">
 		<img
