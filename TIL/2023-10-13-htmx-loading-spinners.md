@@ -1,4 +1,5 @@
 ---
+title: Loading spinners for htmx requests
 tags:
   - htmx
   - tailwindcss

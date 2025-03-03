@@ -1,4 +1,5 @@
 ---
+title: Upload media files to an S3 Bucket
 tags:
   - localstack
   - django

@@ -1,4 +1,5 @@
 ---
+title: Force the creation of `Permission` objects associated with models during migration
 tags:
   - django
 ---

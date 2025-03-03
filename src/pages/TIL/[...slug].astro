@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('TIL');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout frontmatter={post.data}>
+  <header class="prose mx-auto my-5 aspect-600/300">
+    <img
+      src="https://picsum.photos/600/300"
+      alt="just a random image from lorem picsum"
+      title="just a random image from lorem picsum"
+    />
+  </header>
+  <article class="prose mx-auto">
+    <Content />
+  </article>
+</Layout>

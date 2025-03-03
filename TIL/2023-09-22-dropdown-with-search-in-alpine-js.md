@@ -1,4 +1,5 @@
 ---
+title: Custom select dropdown with search in Alpine.js
 tags:
   - Alpine.js
 ---

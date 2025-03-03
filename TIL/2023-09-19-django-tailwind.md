@@ -1,4 +1,5 @@
 ---
+title: Include tailwindcss in a Django project with `django-tailwind`
 tags:
   - tailwindcss
   - pm2

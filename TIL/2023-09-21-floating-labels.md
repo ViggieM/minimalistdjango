@@ -1,4 +1,5 @@
 ---
+title: Floating labels with Tailwindcss
 tags:
   - tailwindcss
 ---

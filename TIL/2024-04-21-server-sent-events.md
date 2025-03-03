@@ -1,4 +1,5 @@
 ---
+title: Server Sent Events
 tags:
   - JavaScript
 ---

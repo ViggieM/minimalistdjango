@@ -1,4 +1,5 @@
 ---
+title: Floating labels for select fields
 tags:
   - tailwindcss
 ---

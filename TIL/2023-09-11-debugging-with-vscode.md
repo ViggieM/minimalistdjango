@@ -1,4 +1,5 @@
 ---
+title: Debugging with VSCode
 tags:
   - VSCode
 ---

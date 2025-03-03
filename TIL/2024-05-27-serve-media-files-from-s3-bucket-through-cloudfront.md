@@ -1,4 +1,5 @@
 ---
+title: Set up Cloudfront as a CDN to serve media files
 tags:
   - django
   - AWS

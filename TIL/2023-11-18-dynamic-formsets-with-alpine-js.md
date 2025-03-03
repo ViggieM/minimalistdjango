@@ -1,4 +1,5 @@
 ---
+title: Dynamic formsets with Alpine.js
 tags:
   - Alpine.js
 ---
