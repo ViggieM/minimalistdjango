@@ -4,7 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import HeaderImage from '../../components/HeaderImage.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('TIL');
+  const posts = await getCollection('articles');
   return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },
@@ -13,6 +13,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+console.log(post);
 ---
 
 <Layout frontmatter={post.data}>

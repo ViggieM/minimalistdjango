@@ -10,5 +10,18 @@ const TIL = defineCollection({
     tags: z.array(z.string()),
   }),
 });
+const articles = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './articles' }),
+  schema: z.object({
+    title: z.string(),
+    tags: z.optional(z.array(z.string())),
+    image: z.optional(
+      z.object({
+        url: z.string(),
+        alt: z.string(),
+      }),
+    ),
+  }),
+});
 // Export a single `collections` object to register your collection(s)
-export const collections = { TIL };
+export const collections = { TIL, articles };
