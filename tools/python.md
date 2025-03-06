@@ -1,3 +1,7 @@
+---
+title: Python
+---
+
 # Python
 
 I don't think I have to say much about this, since you are already on a blog about Django.

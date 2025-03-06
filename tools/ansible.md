@@ -1,3 +1,7 @@
+---
+title: Ansible
+---
+
 # Ansible
 
 Ansible is a pretty good tool for provisioning.

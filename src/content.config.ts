@@ -23,5 +23,18 @@ const articles = defineCollection({
     ),
   }),
 });
+const tools = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.md', base: './tools' }),
+  schema: z.object({
+    title: z.string(),
+    tags: z.optional(z.array(z.string())),
+    image: z.optional(
+      z.object({
+        url: z.string(),
+        alt: z.string(),
+      }),
+    ),
+  }),
+});
 // Export a single `collections` object to register your collection(s)
-export const collections = { TIL, articles };
+export const collections = { TIL, articles, tools };

@@ -1,3 +1,7 @@
+---
+title: VirtualBox
+---
+
 # VirtualBox
 
 VirtualBox allows you to spin up virtual hosts on your local computer.

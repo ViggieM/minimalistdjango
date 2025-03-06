@@ -1,3 +1,7 @@
+---
+title: VSCode
+---
+
 # VSCode
 
 ### Pros

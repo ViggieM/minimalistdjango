@@ -1,3 +1,7 @@
+---
+title: Django
+---
+
 # Django
 
 ### Pros

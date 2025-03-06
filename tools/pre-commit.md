@@ -1,3 +1,7 @@
+---
+title: Pre-commit hooks
+---
+
 # Pre-commit hooks
 
 Pre-commit hooks are, as the name says, scripts that are executed, before files are commited to Git.

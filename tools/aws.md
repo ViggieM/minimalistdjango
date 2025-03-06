@@ -1,3 +1,7 @@
+---
+title: aws
+---
+
 ## AWSCLI (v2)
 
 * `aws configure list-profiles` lists the profiles configured in `~/.aws/config`

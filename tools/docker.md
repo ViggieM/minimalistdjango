@@ -1,3 +1,6 @@
+---
+title: Docker
+---
 # Docker
 
 > Docker virtualizes the operating system of the computer on which it is installed and running.

@@ -1,3 +1,6 @@
+---
+title: Systemd
+---
 # Systemd
 
 ## Pros
