@@ -1,6 +1,10 @@
 ---
 title: Define environment variables in a Makefile
+tags:
+  - Makefile
 ---
+
+# Define environment variables in a Makefile
 
 I had to adapt a Makefile of a project.
 Inside this Makefile, there is a command called deploy.

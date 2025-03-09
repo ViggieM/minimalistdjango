@@ -1,18 +1,19 @@
 ---
 title: "Simulate an S3 Bucket locally with LocalStack"
-date: 2023-09-08
-published: true
-author: victor
+image:
+    url: "/media/TIL/2023-09-08-localstack/aws-meme.png"
+    alt: "aws meme, bear trap, fly trap"
 tags:
   - aws
   - serverless
   - s3
+  - localstack
 categories:
   - Development
 excerpt: "How to create an S3 bucket locally and connect it to a Django application"
 ---
 
-![aws meme, bear trap, fly trap](/images/aws-meme.png)
+# Simulate an S3 Bucket locally with LocalStack
 
 ## Install Localstack
 
