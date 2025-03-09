@@ -1,0 +1,13 @@
+---
+const { post } = Astro.props;
+---
+
+<article class="post">
+  <header>
+    <h3>
+      <a href={`/TIL/${post.id}/`} class="">{post.data.title}</a>
+    </h3>
+  </header>
+  <div></div>
+  <footer></footer>
+</article>

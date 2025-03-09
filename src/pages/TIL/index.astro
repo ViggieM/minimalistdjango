@@ -1,19 +1,14 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Article from '../../components/Article.astro';
 import { getCollection } from 'astro:content';
 const allPosts = await getCollection('TIL');
 const pageTitle = 'TIL';
 ---
 
 <Layout pageTitle={pageTitle}>
-  <h1>TIL</h1>
-  <ul>
-    {
-      allPosts.map((post: any) => (
-        <li>
-          <a href={`/TIL/${post.id}/`}>{post.data.title}</a>
-        </li>
-      ))
-    }
-  </ul>
+  <div class="article-list">
+    <h1 class="mt-10">TIL</h1>
+    {allPosts.map((post: any) => <Article {post} />)}
+  </div>
 </Layout>
