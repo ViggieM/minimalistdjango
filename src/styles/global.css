@@ -1,12 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');*/
 
 @import 'tailwindcss';
 
 @plugin '@tailwindcss/typography';
 
+@font-face {
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("fonts/Lora/Lora-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Lora;
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("fonts/Lora/Lora-Italic-VariableFont_wght.ttf") format("truetype");
+}
+
 @theme {
   --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-serif: "Lora", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
