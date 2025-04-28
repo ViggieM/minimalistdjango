@@ -1,5 +1,6 @@
 ---
 title: Custom select dropdown with search in Alpine.js
+pubDate: 2023-09-22
 tags:
   - Alpine.js
 ---

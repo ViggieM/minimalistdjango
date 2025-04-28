@@ -1,5 +1,6 @@
 ---
 title: Set up Litestream
+pubDate: 2024-06-15
 tags:
   - Litestream
 ---

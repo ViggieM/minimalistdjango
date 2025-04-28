@@ -1,5 +1,6 @@
 ---
 title: Floating labels for select fields
+pubDate: 2023-10-26
 tags:
   - tailwindcss
 ---

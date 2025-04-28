@@ -1,5 +1,6 @@
 ---
 title: Drag and Drop with HTMX and Sortable.js
+pubDate: 2024-04-20
 tags:
   - htmx
   - JavaScript

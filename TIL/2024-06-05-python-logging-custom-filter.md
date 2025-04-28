@@ -1,5 +1,6 @@
 ---
 title: Create a custom logging filter
+pubDate: 2024-06-05
 tags:
   - logging
 ---

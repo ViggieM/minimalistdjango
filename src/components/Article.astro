@@ -1,13 +1,32 @@
 ---
 const { post } = Astro.props;
+const type = post.data.type;
+const color = {
+  TIL: 'text-purple-600', // #8d0e9e
+  Article: 'text-blue-700', // #0e439e
+  Snippet: 'text-yellow-500', // #ad6500
+}[type];
 ---
 
-<article class="post">
+<article class="post relative">
   <header>
-    <h3>
-      <a href={`/TIL/${post.id}/`} class="">{post.data.title}</a>
+    <h3 class="mb-2">
+      <a href={`/TIL/${post.id}/`} class="">
+        <span class="absolute inset-0"></span>
+        {post.data.title}</a
+      >
     </h3>
+    <div class="mb-1 flex gap-2 items-baseline">
+      <span class=`font-serif text-sm ${color}`>{post.data.type}</span>
+      <span class="text-sm italic">
+        {post.data.updatedDate ? `updated on ${post.data.updatedDate.toLocaleString('en-US', {month: 'long', day: 'numeric', year: 'numeric'})}` : `posted on ${post.data.pubDate.toLocaleString('en-US', {month: 'long', day: 'numeric', year: 'numeric'})}`}
+      </span>
+    </div>
   </header>
-  <div></div>
+  <div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore iusto
+    magnam nam obcaecati odit quisquam, temporibus veniam! Aperiam dignissimos,
+    ex excepturi inventore, nemo quia quidem quo ratione, saepe sit vero!
+  </div>
   <footer></footer>
 </article>

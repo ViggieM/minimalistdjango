@@ -1,5 +1,6 @@
 ---
 title: Include tailwindcss in a Django project with `django-tailwind`
+pubDate: 2023-09-19
 tags:
   - tailwindcss
   - pm2

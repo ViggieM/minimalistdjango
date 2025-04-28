@@ -1,5 +1,6 @@
 ---
 title: Debugging with VSCode
+pubDate: 2023-09-11
 tags:
   - VSCode
 ---

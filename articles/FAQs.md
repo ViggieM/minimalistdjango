@@ -1,5 +1,7 @@
 ---
 title: FAQs
+pubDate: 2024-06-20
+updatedDate: 2024-10-15
 image:
     url: "/media/it-are-a-fact.jpg"
     alt: "It are a fact. I know because of my learnings."

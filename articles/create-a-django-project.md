@@ -1,5 +1,6 @@
 ---
 title: How to create a Django Project
+pubDate: 2023-06-14
 ---
 
 # How to create a Django Project

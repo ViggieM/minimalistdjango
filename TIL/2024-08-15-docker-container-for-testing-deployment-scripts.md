@@ -1,5 +1,6 @@
 ---
 title: Use a Docker container for testing deployment scripts
+pubDate: 2024-08-15
 tags:
   - Docker
   - ssh

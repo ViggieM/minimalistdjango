@@ -8,6 +8,8 @@ const TIL = defineCollection({
   schema: z.object({
     title: z.string(),
     tags: z.array(z.string()),
+    pubDate: z.date(),
+    updatedDate: z.date().optional(),
     image: z.optional(
       z.object({
         url: z.string(),
@@ -21,6 +23,8 @@ const articles = defineCollection({
   schema: z.object({
     title: z.string(),
     tags: z.optional(z.array(z.string())),
+    pubDate: z.date(),
+    updatedDate: z.date().optional(),
     image: z.optional(
       z.object({
         url: z.string(),

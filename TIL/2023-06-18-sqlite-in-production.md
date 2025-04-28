@@ -1,5 +1,6 @@
 ---
 title: SQLite in Production
+pubDate: 2023-06-18
 tags:
   - SQLite
 ---

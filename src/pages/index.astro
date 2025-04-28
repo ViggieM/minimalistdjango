@@ -1,13 +1,36 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import Article from '../components/Article.astro';
+const allTIL = (await getCollection('TIL')).map((post) => ({
+  ...post,
+  data: {
+    ...post.data,
+    type: 'TIL',
+  },
+}));
+
+const allArticles = (await getCollection('articles')).map((post) => ({
+  ...post,
+  data: {
+    ...post.data,
+    type: 'Article',
+  },
+}));
+
+const allPosts = [...allTIL, ...allArticles].sort(
+  (a, b) =>
+    (b.data.updatedDate || b.data.pubDate).getTime() -
+    (a.data.updatedDate || a.data.pubDate).getTime(),
+);
 ---
 
 <Layout>
   <header class="container mx-auto mt-4 mb-16 flex flex-col items-center">
     <div
-      style="height: 200px; width: 200px; border-radius: 100%; overflow: hidden"
+      style="height: 150px; width: 150px; border-radius: 100%; overflow: hidden"
     >
-      <img width="200" src="/media/django-rocket.svg" alt="django rocket" />
+      <img width="150" src="/media/django-rocket.svg" alt="django rocket" />
     </div>
     <h1 class="my-5 font-serif text-4xl font-semibold">Minimalist Django</h1>
     <cite class="text-center font-serif">
@@ -15,4 +38,10 @@ import Layout from '../layouts/Layout.astro';
       there is nothing left to take away.
     </cite>
   </header>
+  <section class="article-list">
+    <h2 class="mt-12 text-center font-serif text-3xl font-semibold">
+      Latest updates and posts
+    </h2>
+    {allPosts.map((post: any) => <Article {post} />)}
+  </section>
 </Layout>

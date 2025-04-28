@@ -1,5 +1,6 @@
 ---
 title: "Simulate an S3 Bucket locally with LocalStack"
+pubDate: 2023-09-08
 image:
     url: "/media/TIL/2023-09-08-localstack/aws-meme.png"
     alt: "aws meme, bear trap, fly trap"

@@ -1,5 +1,6 @@
 ---
 title: Force the creation of `Permission` objects associated with models during migration
+pubDate: 2024-07-31
 tags:
   - django
 ---

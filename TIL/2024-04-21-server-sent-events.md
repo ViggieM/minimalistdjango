@@ -1,5 +1,6 @@
 ---
 title: Server Sent Events
+pubDate: 2024-04-21
 tags:
   - JavaScript
 ---

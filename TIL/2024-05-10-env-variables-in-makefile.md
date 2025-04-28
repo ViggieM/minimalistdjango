@@ -1,5 +1,6 @@
 ---
 title: Define environment variables in a Makefile
+pubDate: 2024-05-10
 tags:
   - Makefile
 ---

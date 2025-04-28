@@ -1,7 +1,8 @@
 ---
 title: Meta
+pubDate: 2024-06-30
+updatedDate: 2024-08-31
 ---
-# Meta
 
 Topics I find interesting and related to web development in general.
 

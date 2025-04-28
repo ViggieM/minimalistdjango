@@ -1,5 +1,6 @@
 ---
 title: Loading spinners for htmx requests
+pubDate: 2023-10-13
 tags:
   - htmx
   - tailwindcss
@@ -87,31 +88,3 @@ Therefore you can add a backdrop that is initially hidden, and it appears when i
     ...
 </body>
 ```
-
-```css
-@layer components {
-  .backdrop {
-    @apply fixed top-0 bottom-0 left-0 right-0 bg-gray-300 opacity-0 transition-opacity duration-500 -z-10
-  }
-  .backdrop.htmx-request {
-    @apply flex items-center justify-center opacity-80 z-10
-  }
-  .loading-spinner {
-    @apply w-12 h-12 border-4 border-solid border-white border-b-transparent rounded-full animate-spin block
-  }
-}
-```
-
-We don't need here the `animate-spin-translate` class anymore, because we center the loading spinner with flexbox.
-So we can use the default `animate-spin` class from tailwindcss, which is pretty nice.
-
-The only thing left to do, is to specify the "hx-indicator" attribute, every time we want to trigger the backdrop:
-
-```html
-<form hx-indicator=".backdrop">
-    ...
-</form>
-```
-
-What is also nice about the css, is that we make use of the opacity transition `opacity-0 transition-opacity duration-500` to fade in the backdrop.
-This is because the request might be indeed pretty fast, and it is very disturbing for the user if something flickers on the screen every time he submits the form.

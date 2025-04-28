@@ -1,5 +1,6 @@
 ---
 title: Dynamic formsets with Alpine.js
+pubDate: 2023-11-18
 tags:
   - Alpine.js
 ---

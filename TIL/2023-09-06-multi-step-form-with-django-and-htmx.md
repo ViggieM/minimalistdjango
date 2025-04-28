@@ -1,5 +1,6 @@
 ---
 title: Build a multi-step form with Django and htmx
+pubDate: 2023-09-06
 tags:
   - htmx
   - django

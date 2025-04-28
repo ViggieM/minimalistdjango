@@ -1,5 +1,6 @@
 ---
 title: Set up Cloudfront as a CDN to serve media files
+pubDate: 2024-05-27
 tags:
   - django
   - AWS

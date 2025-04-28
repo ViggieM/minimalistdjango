@@ -1,5 +1,6 @@
 ---
 title: How to set up PostgREST with docker compose
+pubDate: 2025-03-17
 tags:
   - Postgres
 ---

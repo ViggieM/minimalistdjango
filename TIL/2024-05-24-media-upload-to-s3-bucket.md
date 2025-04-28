@@ -1,5 +1,6 @@
 ---
 title: Upload media files to an S3 Bucket
+pubDate: 2024-05-24
 tags:
   - localstack
   - django

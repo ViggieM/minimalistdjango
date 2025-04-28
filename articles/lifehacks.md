@@ -1,5 +1,6 @@
 ---
 title: Lifehacks
+pubDate: 2024-07-08
 ---
 
 # Lifehacks
