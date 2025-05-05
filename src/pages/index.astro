@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import Article from '../components/Article.astro';
+import Search from 'astro-pagefind/components/Search';
+
 const allTIL = await getCollection('TIL');
 const allArticles = await getCollection('articles');
 const allSnippets = await getCollection('snippets');
@@ -26,6 +28,11 @@ const allPosts = [...allTIL, ...allArticles, ...allSnippets].sort(
     </cite>
   </header>
   <section class="article-list">
+    <Search
+      id="search"
+      className="pagefind-ui"
+      uiOptions={{ showImages: false }}
+    />
     <h2 class="mt-12 text-center font-serif text-3xl font-semibold">
       Latest updates and posts
     </h2>

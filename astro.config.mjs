@@ -3,11 +3,16 @@ import { defineConfig } from 'astro/config';
 import { visit } from 'unist-util-visit';
 
 import tailwindcss from '@tailwindcss/vite';
+import pagefind from "astro-pagefind";
 
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://minimalistdjango.com/',
+  build: {
+    format: "file",
+  },
+  integrations: [pagefind()],
 
   vite: {
     plugins: [tailwindcss()]
