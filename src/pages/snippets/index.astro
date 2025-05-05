@@ -2,15 +2,15 @@
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import Article from '../../components/Article.astro';
-const allPosts = await getCollection('articles');
-const pageTitle = 'Articles';
+const allPosts = await getCollection('snippets');
+const pageTitle = 'Snippets';
 ---
 
 <Layout pageTitle={pageTitle}>
   <header class="container mx-auto mt-4 mb-16 flex flex-col items-center">
-    <h1 class="my-5 font-serif text-4xl font-semibold">Articles</h1>
+    <h1 class="my-5 font-serif text-4xl font-semibold">Snippets</h1>
     <cite class="text-center font-serif">
-      A collection of articles about Django, Python and web development in general.
+      A collection of snippets about Django, Python and web development in general.
     </cite>
   </header>
   <div class="article-list">

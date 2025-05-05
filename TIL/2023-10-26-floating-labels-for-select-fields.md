@@ -2,7 +2,8 @@
 title: Floating labels for select fields
 pubDate: 2023-10-26
 tags:
-  - tailwindcss
+  - Frontend
+shortDescription: A guide on implementing floating labels for select fields using Tailwind CSS, including HTML structure and CSS styling for proper label positioning.
 ---
 
 # Floating labels for select fields

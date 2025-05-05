@@ -2,7 +2,8 @@
 title: SQLite in Production
 pubDate: 2023-06-18
 tags:
-  - SQLite
+  - Databases
+shortDescription: A comprehensive guide on using SQLite in production with Django, covering performance optimizations, write-ahead logging, and practical configuration steps.
 ---
 
 # SQLite in Production

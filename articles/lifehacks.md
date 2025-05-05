@@ -1,6 +1,7 @@
 ---
 title: Lifehacks
 pubDate: 2024-07-08
+shortDescription: A collection of practical programming tips and development shortcuts to improve your coding workflow.
 ---
 
 # Lifehacks

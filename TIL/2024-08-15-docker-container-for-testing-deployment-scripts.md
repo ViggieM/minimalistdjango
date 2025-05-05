@@ -1,9 +1,9 @@
 ---
 title: Use a Docker container for testing deployment scripts
 pubDate: 2024-08-15
+shortDescription: A guide on setting up a Docker container with SSH access for testing Ansible deployment scripts, including configuration steps and common troubleshooting.
 tags:
-  - Docker
-  - ssh
+  - DevOps
 ---
 # Use a Docker container for testing deployment scripts
 

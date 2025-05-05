@@ -2,7 +2,8 @@
 title: Dynamic formsets with Alpine.js
 pubDate: 2023-11-18
 tags:
-  - Alpine.js
+  - Frontend
+shortDescription: A guide on implementing interactive form management in Django using Alpine.js, allowing users to dynamically add and remove forms while maintaining proper formset functionality.
 ---
 
 # Dynamic formsets with Alpine.js

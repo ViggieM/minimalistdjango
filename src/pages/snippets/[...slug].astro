@@ -4,7 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import HeaderImage from '../../components/HeaderImage.astro';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('tools');
+  const posts = await getCollection('snippets');
   return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },

@@ -1,8 +1,9 @@
 ---
 title: How to set up PostgREST with docker compose
+shortDescription: A guide to setting up PostgREST with Docker Compose, including database configuration, role management, and Swagger UI integration.
 pubDate: 2025-03-17
 tags:
-  - Postgres
+  - Databases
 ---
 
 I just followed the instructions in the docs on [Containerized PostgREST and db with docker-compose](https://docs.postgrest.org/en/v12/explanations/install.html#containerized-postgrest-and-db-with-docker-compose),

@@ -1,6 +1,7 @@
 ---
 title: How to create a Django Project
 pubDate: 2023-06-14
+shortDescription: A comprehensive guide to setting up a Django project from scratch, covering project structure, environment configuration, and essential development tools.
 ---
 
 # How to create a Django Project

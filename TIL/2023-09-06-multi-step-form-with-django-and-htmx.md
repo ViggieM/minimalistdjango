@@ -1,9 +1,9 @@
 ---
 title: Build a multi-step form with Django and htmx
 pubDate: 2023-09-06
+shortDescription: A guide to creating a multi-step form wizard using Django and HTMX, with form data persistence between steps using hidden inputs and a preview step before final submission.
 tags:
-  - htmx
-  - django
+  - Frontend
 ---
 
 # Build a multi-step form with Django and htmx

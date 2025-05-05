@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 
 const { pageTitle } = Astro.props;
 ---
@@ -13,10 +14,13 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  <body>
+  <body class="min-h-screen flex flex-col">
     <Navigation />
-    <!-- slooooooooooooooooooooooooooooooooooooooooooooooot -->
-    <slot />
-    <!-- slooooooooooooooooooooooooooooooooooooooooooooooot -->
+    <main class="flex-grow">
+      <!-- slooooooooooooooooooooooooooooooooooooooooooooooot -->
+      <slot />
+      <!-- slooooooooooooooooooooooooooooooooooooooooooooooot -->
+    </main>
+    <Footer />
   </body>
 </html>

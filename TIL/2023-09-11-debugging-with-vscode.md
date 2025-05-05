@@ -1,8 +1,9 @@
 ---
 title: Debugging with VSCode
 pubDate: 2023-09-11
+shortDescription: A guide to setting up and configuring remote debugging in VSCode for Python/Django applications, including Docker support.
 tags:
-  - VSCode
+  - Developer Experience
 ---
 
 # Debugging with VSCode

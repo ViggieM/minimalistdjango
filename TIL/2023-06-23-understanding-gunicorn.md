@@ -1,8 +1,9 @@
 ---
 title: "Understanding Gunicorn"
 pubDate: 2023-06-23
+shortDescription: "A comprehensive guide to Gunicorn, the Python WSGI HTTP server, covering its basics, configuration, and deployment best practices."
 tags:
-  - gunicorn
+  - Backend
 ---
 
 # Understanding Gunicorn
@@ -43,7 +44,7 @@ def application(environ, start_response):
 Normally during development you use `python manage.py runserver` to start a web server, but it is not the recommended way in production<sup>[[1](https://docs.djangoproject.com/en/dev/ref/django-admin/#runserver)]</sup>.
 Basically it is also a WSGI application that has some additional features such as reloading on code changes, but it has not gone through security audits or performance tests.
 
-Gunicorn stands for **‘Green Unicorn’** and is a Python WSGI HTTP Server for UNIX.
+Gunicorn stands for **'Green Unicorn'** and is a Python WSGI HTTP Server for UNIX.
 It has no dependencies and can be installed with pip:
 
 ```bash

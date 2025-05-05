@@ -6,27 +6,43 @@ const color = {
   Article: 'text-blue-700', // #0e439e
   Snippet: 'text-yellow-500', // #ad6500
 }[type];
+const url = {
+  TIL: `/TIL/${post.id}/`,
+  Article: `/articles/${post.id}/`,
+  Snippet: `/snippets/${post.id}/`,
+}[type];
 ---
 
 <article class="post relative">
   <header>
     <h3 class="mb-2">
-      <a href={`/TIL/${post.id}/`} class="">
+      <a href={url} class="">
         <span class="absolute inset-0"></span>
         {post.data.title}</a
       >
     </h3>
-    <div class="mb-1 flex gap-2 items-baseline">
-      <span class=`font-serif text-sm ${color}`>{post.data.type}</span>
-      <span class="text-sm italic">
-        {post.data.updatedDate ? `updated on ${post.data.updatedDate.toLocaleString('en-US', {month: 'long', day: 'numeric', year: 'numeric'})}` : `posted on ${post.data.pubDate.toLocaleString('en-US', {month: 'long', day: 'numeric', year: 'numeric'})}`}
+    <div class="mb-1 flex items-baseline gap-2">
+      <span class=`font-serif italic font-semibold text-sm ${color}`>{post.data.type}</span>
+      <span class="text-xs italic">
+        {
+          post.data.updatedDate
+            ? `updated on ${post.data.updatedDate.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`
+            : `posted on ${post.data.pubDate.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`
+        }
       </span>
     </div>
   </header>
   <div>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore iusto
-    magnam nam obcaecati odit quisquam, temporibus veniam! Aperiam dignissimos,
-    ex excepturi inventore, nemo quia quidem quo ratione, saepe sit vero!
+    {post.data.shortDescription}
   </div>
-  <footer></footer>
+  <footer>
+    {post.data.tags && (
+      <div class="mt-2 flex gap-2"> 
+        <span class="text-xs text-text-light">Tags:</span>
+        {post.data.tags.map((tag: string) => (
+          <span class="text-xs font-semibold text-[color:var(--color-text)]">{tag}</span>
+        ))}
+      </div>
+    )}
+  </footer>
 </article>

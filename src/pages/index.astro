@@ -2,23 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import Article from '../components/Article.astro';
-const allTIL = (await getCollection('TIL')).map((post) => ({
-  ...post,
-  data: {
-    ...post.data,
-    type: 'TIL',
-  },
-}));
-
-const allArticles = (await getCollection('articles')).map((post) => ({
-  ...post,
-  data: {
-    ...post.data,
-    type: 'Article',
-  },
-}));
-
-const allPosts = [...allTIL, ...allArticles].sort(
+const allTIL = await getCollection('TIL');
+const allArticles = await getCollection('articles');
+const allSnippets = await getCollection('snippets');
+const allPosts = [...allTIL, ...allArticles, ...allSnippets].sort(
   (a, b) =>
     (b.data.updatedDate || b.data.pubDate).getTime() -
     (a.data.updatedDate || a.data.pubDate).getTime(),

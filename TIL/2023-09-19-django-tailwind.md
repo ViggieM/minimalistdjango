@@ -2,8 +2,8 @@
 title: Include tailwindcss in a Django project with `django-tailwind`
 pubDate: 2023-09-19
 tags:
-  - tailwindcss
-  - pm2
+  - Frontend
+shortDescription: A guide to integrating Tailwind CSS into Django projects using django-tailwind, including development setup with hot reload and process management using PM2.
 ---
 
 # Include tailwindcss in a Django project with `django-tailwind`
