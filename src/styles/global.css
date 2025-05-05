@@ -48,6 +48,11 @@
   .nav-item {
     @apply relative text-white text-sm before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1px] before:bg-white before:scale-x-0 before:origin-right before:transition-transform before:duration-300 hover:before:scale-x-100 hover:before:origin-left
   }
+
+  .btn {
+    @apply rounded border border-gray-300 bg-gray-100 px-4 py-2;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  }
 }
 
 @layer components {
