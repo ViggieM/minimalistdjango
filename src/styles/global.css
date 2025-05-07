@@ -7,7 +7,7 @@
   font-style: normal;
   font-weight: 400 700;
   font-display: block;
-  src: url("fonts/Lora/Lora-VariableFont_wght.ttf") format("truetype");
+  src: url("/fonts/Lora/Lora-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {
@@ -15,7 +15,7 @@
   font-style: italic;
   font-weight: 400 700;
   font-display: block;
-  src: url("fonts/Lora/Lora-Italic-VariableFont_wght.ttf") format("truetype");
+  src: url("/fonts/Lora/Lora-Italic-VariableFont_wght.ttf") format("truetype");
 }
 
 @theme {

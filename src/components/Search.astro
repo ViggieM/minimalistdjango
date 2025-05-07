@@ -1,0 +1,108 @@
+<form id="searchForm" class="mx-auto mb-6 flex max-w-sm items-center">
+  <label for="search" class="sr-only">Search</label>
+  <div class="relative w-full">
+    <input
+      type="text"
+      id="search"
+      class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500"
+      placeholder="Search articles..."
+      required
+    />
+  </div>
+</form>
+
+<script>
+  import Fuse from 'fuse.js';
+  
+  const content = await fetch(`/all-content.json`);
+  const { posts } = await content.json();
+
+  const fuse = new Fuse(posts, {
+    threshold: 0.3,
+    keys: [
+      { name: 'title', weight: 1.0 },
+      { name: 'shortDescription', weight: 0.7 },
+      { name: 'tags', weight: 0.5 }
+    ],
+  });
+
+  const form = document.getElementById('searchForm');
+  const search = document.getElementById('search');
+  const searchResults = document.getElementById('search-results');
+  const searchResultsList = document.getElementById('search-results-list');
+  const initialPosts = document.getElementById('initial-posts');
+  const latestHeading = document.getElementById('latest-heading');
+
+  function createArticleHTML(post) {
+    const color = {
+      TIL: 'text-purple-600',
+      Article: 'text-blue-700', 
+      Snippet: 'text-yellow-500',
+    }[post.type];
+
+    const formatDate = (date) => {
+      return new Date(date).toLocaleString('en-US', { 
+        month: 'long', 
+        day: 'numeric', 
+        year: 'numeric' 
+      });
+    };
+
+    const tagsHTML = post.tags && post.tags.length > 0 
+      ? `<div class="mt-2 flex gap-2"> 
+          <span class="text-xs text-text-light">Tags:</span>
+          ${post.tags.map(tag => `<span class="text-xs font-semibold text-[color:var(--color-text)]">${tag}</span>`).join('')}
+        </div>`
+      : '';
+
+    return `
+      <article class="post relative">
+        <header>
+          <h3 class="mb-2">
+            <a href="${post.url}" class="">
+              <span class="absolute inset-0"></span>
+              ${post.title}
+            </a>
+          </h3>
+          <div class="mb-1 flex items-baseline gap-2">
+            <span class="font-serif italic font-semibold text-sm ${color}">${post.type}</span>
+            <span class="text-xs italic">
+              ${post.updatedDate 
+                ? `updated on ${formatDate(post.updatedDate)}` 
+                : `posted on ${formatDate(post.pubDate)}`
+              }
+            </span>
+          </div>
+        </header>
+        <div>
+          ${post.shortDescription}
+        </div>
+        <footer>
+          ${tagsHTML}
+        </footer>
+      </article>
+    `;
+  }
+
+  form?.addEventListener('input', async (e) => {
+    const query = search.value.trim();
+
+    if (query.length === 0) {
+      // Show initial posts, hide search results
+      searchResults.classList.add('hidden');
+      initialPosts.classList.remove('hidden');
+      latestHeading.classList.remove('hidden');
+    } else {
+      // Hide initial posts, show search results
+      initialPosts.classList.add('hidden');
+      latestHeading.classList.add('hidden');
+      searchResults.classList.remove('hidden');
+
+      const results = fuse.search(query);
+      const searchPosts = results.map(result => result.item);
+
+      // Generate HTML for search results
+      searchResultsList.innerHTML = searchPosts.map(post => createArticleHTML(post)).join('');
+    }
+  });
+</script>

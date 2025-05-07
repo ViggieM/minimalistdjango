@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import Article from '../components/Article.astro';
+import Search from '../components/Search.astro';
+
 const allTIL = await getCollection('TIL');
 const allArticles = await getCollection('articles');
 const allSnippets = await getCollection('snippets');
@@ -26,9 +28,16 @@ const allPosts = [...allTIL, ...allArticles, ...allSnippets].sort(
     </cite>
   </header>
   <section class="article-list">
-    <h2 class="mt-12 text-center font-serif text-3xl font-semibold">
+    <Search />
+    <h2 class="mt-12 text-center font-serif text-3xl font-semibold" id="latest-heading">
       Latest updates and posts
     </h2>
-    {allPosts.map((post: any) => <Article {post} />)}
+    <div id="initial-posts">
+      {allPosts.map((post: any) => <Article {post} />)}
+    </div>
+    <div class="mb-10 hidden" id="search-results">
+      <h2 class="mb-6 text-center font-serif text-3xl font-semibold">Search Results</h2>
+      <div id="search-results-list"></div>
+    </div>
   </section>
 </Layout>
