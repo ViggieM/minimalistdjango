@@ -17,6 +17,7 @@ const TIL = defineCollection({
         z.object({
           url: z.string(),
           alt: z.string(),
+          caption: z.string().optional(),
         }),
       ),
     })
@@ -39,6 +40,7 @@ const articles = defineCollection({
         z.object({
           url: z.string(),
           alt: z.string(),
+          caption: z.string().optional(),
         }),
       ),
     })
@@ -61,6 +63,7 @@ const snippets = defineCollection({
         z.object({
           url: z.string(),
           alt: z.string(),
+          caption: z.string().optional(),
         }),
       ),
     })
