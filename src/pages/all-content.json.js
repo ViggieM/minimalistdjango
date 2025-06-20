@@ -1,9 +1,12 @@
 import { getCollection } from 'astro:content';
 
 export const GET = async () => {
+  // retrieve all data sources
   const allTIL = await getCollection('TIL');
   const allArticles = await getCollection('articles');
   const allSnippets = await getCollection('snippets');
+
+  // merge and sort
   const allPosts = [...allTIL, ...allArticles, ...allSnippets].sort(
     (a, b) =>
       (b.data.updatedDate || b.data.pubDate).getTime() -
@@ -14,7 +17,15 @@ export const GET = async () => {
     const {
       id,
       filePath,
-      data: { title, pubDate, updatedDate, shortDescription, tags, keywords, type },
+      data: {
+        title,
+        pubDate,
+        updatedDate,
+        shortDescription,
+        tags,
+        keywords,
+        type,
+      },
     } = data;
 
     const url = {

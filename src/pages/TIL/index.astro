@@ -2,7 +2,11 @@
 import Layout from '../../layouts/Layout.astro';
 import Article from '../../components/Article.astro';
 import { getCollection } from 'astro:content';
-const allPosts = await getCollection('TIL');
+const posts = await getCollection('TIL');
+const allPosts = posts.sort((a, b) => 
+  (b.data.updatedDate || b.data.pubDate).getTime() - 
+  (a.data.updatedDate || a.data.pubDate).getTime()
+);
 const pageTitle = 'TIL';
 ---
 
