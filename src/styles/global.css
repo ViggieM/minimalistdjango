@@ -57,7 +57,7 @@
 
 @layer components {
   .article-list {
-    @apply mx-auto flex flex-col gap-4;
+    @apply mx-auto flex flex-col gap-2;
     max-width: 65ch;
 
     h3 {
@@ -67,7 +67,7 @@
   }
 
   .post {
-    @apply relative my-3;
+    @apply relative first:mt-0 mt-6;
 
     header {
       @apply text-xl

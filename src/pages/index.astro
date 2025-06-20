@@ -15,7 +15,7 @@ const allPosts = [...allTIL, ...allArticles, ...allSnippets].sort(
 ---
 
 <Layout>
-  <header class="container mx-auto mt-4 mb-16 flex flex-col items-center">
+  <header class="container mx-auto mt-4 mb-8 flex flex-col items-center">
     <div
       style="height: 150px; width: 150px; border-radius: 100%; overflow: hidden"
     >
@@ -29,15 +29,22 @@ const allPosts = [...allTIL, ...allArticles, ...allSnippets].sort(
   </header>
   <section class="article-list">
     <Search />
-    <h2 class="mt-12 text-center font-serif text-3xl font-semibold" id="latest-heading">
+    <h2
+      class="mt-4 font-serif text-sm font-semibold text-[var(--text-light)] italic"
+      id="latest-heading"
+    >
       Latest updates and posts
     </h2>
     <div id="initial-posts">
       {allPosts.map((post: any) => <Article {post} />)}
     </div>
-    <div class="mb-10 hidden" id="search-results">
-      <h2 class="mb-6 text-center font-serif text-3xl font-semibold">Search Results</h2>
-      <div id="search-results-list"></div>
+    <div class="hidden" id="search-results">
+      <h2
+        class="mt-4 font-serif text-sm font-semibold text-[var(--text-light)] italic"
+      >
+        Search Results
+      </h2>
+      <div class="mt-2" id="search-results-list"></div>
     </div>
   </section>
 </Layout>
