@@ -1,8 +1,19 @@
 ---
-import { marked } from 'marked';
+import { unified } from 'unified';
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import rehypeStringify from 'rehype-stringify';
 const { post } = Astro.props;
 
-const caption = post.data.image?.caption ? await marked(post.data.image.caption) : '';
+let caption = '';
+if (post.data.image?.caption) {
+  const processor = unified()
+    .use(remarkParse)
+    .use(remarkRehype)
+    .use(rehypeStringify);
+  const result = await processor.process(post.data.image.caption);
+  caption = String(result);
+}
 ---
 
 {
