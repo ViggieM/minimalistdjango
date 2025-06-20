@@ -5,7 +5,6 @@ shortDescription: A guide on setting up a Docker container with SSH access for t
 tags:
   - DevOps
 ---
-# Use a Docker container for testing deployment scripts
 
 I thought it was funny to try and use a docker container instead of a VM for testing deployment scenarios.
 The goal is to create and run a docker container, so I can ssh into it and test Ansible deployment scripts.
@@ -20,7 +19,6 @@ FROM debian:11
 RUN apt-get update && apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
 RUN echo 'root:root123' | chpasswd
-# and / or add a custom user
 ARG USERNAME=alice
 RUN useradd -m $USERNAME && echo "$USERNAME:password" | chpasswd && adduser $USERNAME sudo
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
@@ -57,7 +55,6 @@ And whenever I need a fresh start, I can remove the container with:
 
 ```bash
 docker stop $CONTAINER_ID && docker remove $CONTAINER_ID
-# or
 docker remove -f $CONTAINER_ID
 ```
 

@@ -6,7 +6,6 @@ tags:
 shortDescription: A guide to implementing floating form labels using Tailwind CSS's peer selector, including HTML structure and CSS styling with the tailwind forms plugin.
 ---
 
-# Floating labels with Tailwindcss
 
 Floating labels look amazing. Everybody likes them.
 I am not a designer, and I have no idea about their downsides, but as a developer it is useful to know how to build them.

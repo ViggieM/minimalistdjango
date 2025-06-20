@@ -9,7 +9,6 @@ tags:
   - DevOps
 ---
 
-# Simulate an S3 Bucket locally with LocalStack
 
 ## Install Localstack
 
@@ -34,7 +33,6 @@ npm install -g serverless serverless-deployment-bucket serverless-localstack
 Here is a simplified `serverless.yml` file that sets up an S3 bucket locally:
 
 ```yaml
-# reference: https://www.serverless.com/framework/docs/providers/aws/guide/serverless.yml
 service: my_app
 plugins:
   - serverless-deployment-bucket
@@ -45,7 +43,6 @@ provider:
   stage: ${opt:stage,'local'}
   region: eu-west-1
 
-# https://github.com/localstack/serverless-localstack#configuration-via-serverlessyml
 custom:
   localstack:
     stages: [local]

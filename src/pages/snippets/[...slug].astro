@@ -25,6 +25,7 @@ const { Content } = await render(post);
     )
   }
   <article class="prose mx-auto">
+    <h1>{post.data.title}</h1>
     <Content />
   </article>
 </Layout>

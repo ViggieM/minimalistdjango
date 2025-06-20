@@ -4,8 +4,6 @@ pubDate: 2024-07-08
 shortDescription: A collection of practical programming tips and development shortcuts to improve your coding workflow.
 ---
 
-# Lifehacks
-
 #### Highlight comments in red
 
 I got this from the [Clean Code Lectures](https://www.youtube.com/watch?v=7EmboKQH8lM&list=PLmmYSbUCWJ4x1GO839azG_BBw8rkh-zOj) by *Uncle Bob*.

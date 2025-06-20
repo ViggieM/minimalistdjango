@@ -4,9 +4,6 @@ pubDate: 2024-09-01
 shortDescription: A minimal Django project template in a single file, useful for testing and prototyping
 ---
 
-
-# Django in one file
-
 This is a minimal script that will run Django.
 This can be useful to test new libraries.
 

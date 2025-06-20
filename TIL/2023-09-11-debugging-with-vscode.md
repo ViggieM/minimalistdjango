@@ -6,7 +6,6 @@ tags:
   - Developer Experience
 ---
 
-# Debugging with VSCode
 
 Setting up Debugging with VSCode is really easy.
 Whether you have your application locally or inside a Docker container, as long as you can reach the port exposed

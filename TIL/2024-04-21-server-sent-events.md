@@ -7,7 +7,6 @@ tags:
 shortDescription: A practical exploration of implementing Server Sent Events in Django, including challenges with async servers, event stream formatting, and connection handling.
 ---
 
-# Server Sent Events
 
 I stumbled upon [this video on YouTube](https://youtu.be/MziqE_2Euss?si=6VKstGB2EXUqSEyu) on [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
 with Django's StreamingHttpResponse and HTMX and I decided to give it a try to implement it myself.
@@ -89,9 +88,7 @@ For some reason, this still didn't work.
 After some long debugging, and going through each character line by line, I realized that the "yield" line was missing two new line characters at the end:
 
 ```python
-# before:
 yield f"data: <div>{cow_says}</div>"
-# after:
 yield f"data: <div>{cow_says}</div>\n\n"
 ```
 

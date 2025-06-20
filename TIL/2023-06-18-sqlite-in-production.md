@@ -6,7 +6,6 @@ tags:
 shortDescription: A comprehensive guide on using SQLite in production with Django, covering performance optimizations, write-ahead logging, and practical configuration steps.
 ---
 
-# SQLite in Production
 
 I was inspired by a talk at [_DjangoCon_](https://youtu.be/yTicYJDT1zE) that I attended in 2023, so I decided to look a bit more into SQLite in combination with Django.
 

@@ -6,7 +6,6 @@ tags:
   - Frontend
 ---
 
-# Drag and Drop with HTMX and Sortable.js
 
 ![preview](/media/TIL/2024-04-20-drag-and-drop-with-htmx-and-sortable-js/drag-and-drop-with-htmx-and-sortable-js.png)
 

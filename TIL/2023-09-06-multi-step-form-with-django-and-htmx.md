@@ -6,7 +6,6 @@ tags:
   - Frontend
 ---
 
-# Build a multi-step form with Django and htmx
 
 I created a form wizard with Django and HTMX, without saving any intermediate data to the database or session.
 Submitted data from earlier steps can be saved as hidden inputs in the next steps.

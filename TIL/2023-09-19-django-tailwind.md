@@ -6,7 +6,6 @@ tags:
 shortDescription: A guide to integrating Tailwind CSS into Django projects using django-tailwind, including development setup with hot reload and process management using PM2.
 ---
 
-# Include tailwindcss in a Django project with `django-tailwind`
 
 ## Why django-tailwind?
 

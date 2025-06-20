@@ -8,8 +8,6 @@ image:
     alt: "It are a fact. I know because of my learnings."
 ---
 
-# FAQs
-
 ## Should I use class based views or function based views?
 
 Class based views in Django might seem sexy on first impression, because they are so slim and resemble the basic CRUD operations.

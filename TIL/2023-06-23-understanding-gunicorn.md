@@ -6,7 +6,6 @@ tags:
   - Backend
 ---
 
-# Understanding Gunicorn
 
 When you create a new *Django* project with `django-admin startproject`, it automatically creates a `wsgi.py` file for you.
 This is a module containing a WSGI application object called `application` that can be called by any type of WSGI server.

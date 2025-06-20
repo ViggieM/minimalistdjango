@@ -6,7 +6,6 @@ tags:
   - Frontend
 ---
 
-# Custom select dropdown with search in Alpine.js
 
 Styling select dropdowns has always been a hustle in HTML.
 One caveat is that it is possible to style the appearence of the `<select>` element, but not the `<option>`.

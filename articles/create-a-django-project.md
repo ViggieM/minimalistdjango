@@ -4,8 +4,6 @@ pubDate: 2023-06-14
 shortDescription: A comprehensive guide to setting up a Django project from scratch, covering project structure, environment configuration, and essential development tools.
 ---
 
-# How to create a Django Project
-
 ![Startling](/media/xkcd-startling.png)
 [https://xkcd.com/354/](https://xkcd.com/354/)
 
@@ -40,20 +38,16 @@ django-admin startproject config src
 [Configure your project settings](#configure-project-settings) then continue:
 
 ```bash
-# create .env file
 touch src/.env
 echo "DJANGO_SECRET_KEY='$(openssl rand -base64 35)'" >> src/.env
 echo "DJANGO_DEBUG=1" >> src/.env
 
-# .editorconfig
 curl -O https://raw.githubusercontent.com/ViggieM/minimalistdjango/main/snippets/.editorconfig
 
-# git
 git init
 curl -O https://raw.githubusercontent.com/ViggieM/minimalistdjango/main/snippets/.gitignore
 git add -A
 
-# pre-commit hooks
 curl -O https://raw.githubusercontent.com/ViggieM/minimalistdjango/main/snippets/.pre-commit-config.yaml
 pip install pre-commit
 pre-commit autoupdate

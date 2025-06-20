@@ -6,7 +6,6 @@ tags:
 shortDescription: A guide on implementing floating labels for select fields using Tailwind CSS, including HTML structure and CSS styling for proper label positioning.
 ---
 
-# Floating labels for select fields
 
 Generally, select fields are a pain in the ass to style.
 But if you want to keep it simple, and use the default style for the options, but at least have the select field match your style, than you can use following snippet:

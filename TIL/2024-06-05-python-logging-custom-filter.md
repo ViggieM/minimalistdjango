@@ -6,7 +6,6 @@ tags:
   - Backend
 ---
 
-# Create a custom logging filter
 
 Django's `django.http.response.Http404` exception is a shortcut to return a 404 to the user if a page does not exist.
 

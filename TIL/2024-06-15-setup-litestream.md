@@ -5,7 +5,6 @@ tags:
   - Databases
 shortDescription: A guide to setting up Litestream with Docker Compose for continuous SQLite database replication to S3, including configuration files and startup scripts.
 ---
-# Set up Litestream
 
 I tried to prove how easy it is to set up [Litestream](/tools/litestream.md) to sync a sqlite database to s3 bucket.
 Here is an easy local setup to follow through:
@@ -71,7 +70,6 @@ The entrypoint script makes sure that the database is restored from the S3 Bucke
 #!/bin/sh
 set -e
 
-# Restore the database if it does not already exist.
 if [ -f ${SQLITE_DB} ]; then
   echo "Database already exists, skipping restore"
 else
@@ -79,7 +77,6 @@ else
   litestream restore ${SQLITE_DB}
 fi
 
-# Run litestream with your app as the subprocess.
 exec litestream replicate
 ```
 

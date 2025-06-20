@@ -6,7 +6,6 @@ tags:
 shortDescription: A guide on implementing interactive form management in Django using Alpine.js, allowing users to dynamically add and remove forms while maintaining proper formset functionality.
 ---
 
-# Dynamic formsets with Alpine.js
 
 Django comes with builtin utilities for creating formsets (see [Formsets Django documentation](https://docs.djangoproject.com/en/4.2/topics/forms/formsets/)).
 The disadvantage is that django templates are server side rendered, therefore there is no possibility for the user to add any extra forms interactively.
