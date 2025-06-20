@@ -16,9 +16,9 @@
     <input
       type="text"
       id="search"
+      name="q"
       class="w-full rounded-full border-2 border-gray-200 bg-white py-2 pr-6 pl-12 text-lg transition-all duration-200 placeholder:text-gray-400 focus:border-[var(--link-color)] focus:ring-0 focus:outline-none dark:border-gray-700 dark:bg-gray-900 dark:text-white dark:placeholder:text-gray-500 dark:focus:border-[var(--link-color)]"
       placeholder="Search articles..."
-      required
     />
   </div>
 </form>
@@ -31,8 +31,6 @@
 
   const fuse = new Fuse(posts, {
     threshold: 0.3,
-    minMatchCharLength: 2,
-    ignoreLocation: true,
     keys: [
       { name: 'title', weight: 1.0 },
       { name: 'shortDescription', weight: 0.7 },
@@ -123,5 +121,30 @@
         .map((post) => createArticleHTML(post))
         .join('');
     }
+  });
+
+  // Check for 'q' URL parameter and prefill search
+  const urlParams = new URLSearchParams(window.location.search);
+  const queryParam = urlParams.get('q');
+  if (queryParam) {
+    search.value = queryParam;
+    // Trigger search
+    const inputEvent = new Event('input', { bubbles: true });
+    search.dispatchEvent(inputEvent);
+  }
+
+  // Handle form submission to update URL
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const query = search.value.trim();
+    const url = new URL(window.location);
+
+    if (query) {
+      url.searchParams.set('q', query);
+    } else {
+      url.searchParams.delete('q');
+    }
+
+    window.history.pushState({}, '', url);
   });
 </script>
