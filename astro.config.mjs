@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import { visit } from 'unist-util-visit';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -21,7 +22,8 @@ export default defineConfig({
             node.properties.href = String(node.properties.href).replace(/\.md$/, "")
           }
         });
-      }
+      },
+      rehypeAutolinkHeadings
     ]
   }
 });
