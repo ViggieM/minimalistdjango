@@ -1,8 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import HeaderImage from '../../components/HeaderImage.astro';
-import LoremPicsumHeaderImage from '../../components/LoremPicsumHeaderImage.astro';
+import ArticleHeader from '../../components/ArticleHeader.astro';
 import ArticleMeta from '../../components/ArticleMeta.astro';
 
 export async function getStaticPaths() {
@@ -18,13 +17,7 @@ const { Content } = await render(post);
 ---
 
 <Layout frontmatter={post.data}>
-  {
-    post.data.image ? (
-      <HeaderImage image={post.data.image} />
-    ) : (
-      <LoremPicsumHeaderImage seed={post.id} />
-    )
-  }
+  <ArticleHeader post={post} />
   <article class="prose mx-auto">
     <h1>{post.data.title}</h1>
     <ArticleMeta 
