@@ -4,6 +4,7 @@ pubDate: 2023-09-11
 shortDescription: A guide to setting up and configuring remote debugging in VSCode for Python/Django applications, including Docker support.
 tags:
   - Developer Experience
+keywords: vscode, debugpy, remote debugging, django debugging, docker debugging
 ---
 
 

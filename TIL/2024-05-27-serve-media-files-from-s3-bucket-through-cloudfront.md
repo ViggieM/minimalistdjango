@@ -4,6 +4,7 @@ pubDate: 2024-05-27
 shortDescription: A guide on configuring Cloudfront CDN to serve media files from an S3 bucket in a Django application, including AWS console setup and Django configuration.
 tags:
   - Backend
+keywords: cdn, cloudfront, s3, media serving, performance, aws
 ---
 
 

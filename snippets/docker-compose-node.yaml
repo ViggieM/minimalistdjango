@@ -1,3 +1,11 @@
+---
+title: Docker Compose Configuration for Node.js Development
+shortDescription: Minimal Docker Compose setup for Node.js development with live reload
+tags:
+  - DevOps
+keywords: docker, node.js, development, npm, live reload
+---
+
 # minimal working service that installs dependencies and runs the dev server
 node:
   user: node

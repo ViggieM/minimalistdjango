@@ -3,6 +3,7 @@ title: Set up Litestream
 pubDate: 2024-06-15
 tags:
   - Databases
+keywords: litestream, sqlite backup, s3 replication, docker compose, database backup
 shortDescription: A guide to setting up Litestream with Docker Compose for continuous SQLite database replication to S3, including configuration files and startup scripts.
 ---
 

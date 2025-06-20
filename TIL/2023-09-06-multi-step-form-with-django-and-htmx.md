@@ -4,6 +4,7 @@ pubDate: 2023-09-06
 shortDescription: A guide to creating a multi-step form wizard using Django and HTMX, with form data persistence between steps using hidden inputs and a preview step before final submission.
 tags:
   - Frontend
+keywords: form wizard, htmx, django forms, multi-step, hidden inputs, preview
 ---
 
 

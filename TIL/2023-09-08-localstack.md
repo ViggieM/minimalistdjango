@@ -7,6 +7,7 @@ image:
     alt: "aws meme, bear trap, fly trap"
 tags:
   - DevOps
+keywords: localstack, s3, aws simulation, serverless, boto3, local development
 ---
 
 

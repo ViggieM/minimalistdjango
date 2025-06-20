@@ -4,6 +4,7 @@ pubDate: 2024-04-20
 shortDescription: A tutorial on implementing drag-and-drop functionality in Django using HTMX and Sortable.js, featuring a simple single-file application example.
 tags:
   - Frontend
+keywords: drag and drop, sortable, htmx, interactive ui, sortable.js
 ---
 
 

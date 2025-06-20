@@ -3,6 +3,7 @@ title: Upload media files to an S3 Bucket
 pubDate: 2024-05-24
 tags:
   - DevOps
+keywords: s3, django-storages, file upload, aws, localstack, terraform
 shortDescription: A guide on configuring Django to store media files in S3, including local development setup with Localstack and Terraform.
 ---
 

@@ -4,6 +4,7 @@ shortDescription: A guide on how to use Fuse.js to implement client side search 
 pubDate: 2025-05-07
 tags:
   - Frontend
+keywords: fuse.js, client-side search, astro, static site, javascript search, fuzzy search
 ---
 
 A search for a website can become very complicated.

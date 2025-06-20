@@ -1,7 +1,10 @@
 ---
-title: Lifehacks
+title: Developer Productivity Tips and Programming Lifehacks
 pubDate: 2024-07-08
 shortDescription: A collection of practical programming tips and development shortcuts to improve your coding workflow.
+tags:
+  - Developer Experience
+keywords: productivity, vscode, github tricks, ascii diagrams, console debugging, mobile debugging, choices
 ---
 
 #### Highlight comments in red

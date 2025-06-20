@@ -4,6 +4,7 @@ pubDate: 2023-10-13
 shortDescription: Learn how to implement loading spinners for HTMX requests using Tailwind CSS, with two different approaches for better user feedback during form submissions.
 tags:
   - Frontend
+keywords: htmx, loading indicators, spinners, user feedback, css animations
 ---
 
 

@@ -1,11 +1,15 @@
 ---
-title: How to create a Django Project
+title: Complete Guide to Setting Up a Django Project from Scratch
 pubDate: 2023-06-14
+image:
+    url: "/media/xkcd-startling.png"
+    alt: "It are a fact. I know because of my learnings."
+    caption: "Source: [https://xkcd.com/354/](https://xkcd.com/354/)"
 shortDescription: A comprehensive guide to setting up a Django project from scratch, covering project structure, environment configuration, and essential development tools.
+tags:
+  - Backend
+keywords: django setup, project initialization, pyenv, virtual environment, pre-commit hooks, editorconfig, git
 ---
-
-![Startling](/media/xkcd-startling.png)
-[https://xkcd.com/354/](https://xkcd.com/354/)
 
 Projects such as [django-cookiecutter](https://github.com/cookiecutter/cookiecutter-django) are useful, as long as you are comfortable with every single setting that is generated for you. I find it particularly useful as a source of inspiration on how to structure your code. At some point you might want to create your own cookiecutter template, or simply a GitHub repository that you can copy to get you started with a new project.
 

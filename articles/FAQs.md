@@ -1,8 +1,11 @@
 ---
-title: FAQs
+title: Django Development FAQs
 pubDate: 2024-06-20
 updatedDate: 2024-10-15
 shortDescription: "Common questions and answers about Django development, covering views, project structure, hosting options, and database choices."
+tags:
+  - Backend
+keywords: django, class-based views, function-based views, project structure, hosting, database choice, sqlite, postgres
 image:
     url: "/media/it-are-a-fact.jpg"
     alt: "It are a fact. I know because of my learnings."

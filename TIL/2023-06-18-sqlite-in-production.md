@@ -3,6 +3,7 @@ title: SQLite in Production
 pubDate: 2023-06-18
 tags:
   - Databases
+keywords: sqlite, production, wal, write-ahead logging, performance, backup, litestream
 shortDescription: A comprehensive guide on using SQLite in production with Django, covering performance optimizations, write-ahead logging, and practical configuration steps.
 ---
 

@@ -4,6 +4,7 @@ pubDate: 2023-06-23
 shortDescription: "A comprehensive guide to Gunicorn, the Python WSGI HTTP server, covering its basics, configuration, and deployment best practices."
 tags:
   - Backend
+keywords: wsgi, web server, python, workers, deployment, unix socket
 ---
 
 

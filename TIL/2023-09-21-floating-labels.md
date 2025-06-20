@@ -3,6 +3,7 @@ title: Floating labels with Tailwindcss
 pubDate: 2023-09-21
 tags:
   - Frontend
+keywords: floating labels, tailwind css, peer selector, form styling, ux
 shortDescription: A guide to implementing floating form labels using Tailwind CSS's peer selector, including HTML structure and CSS styling with the tailwind forms plugin.
 ---
 

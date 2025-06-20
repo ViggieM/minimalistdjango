@@ -3,6 +3,7 @@ title: Define environment variables in a Makefile
 pubDate: 2024-05-10
 tags:
   - Developer Experience
+keywords: makefile, environment variables, build automation, deployment, eval
 shortDescription: Learn how to dynamically define environment variables in a Makefile using $(eval) when the variable value depends on files that don't exist yet during Makefile parsing.
 ---
 

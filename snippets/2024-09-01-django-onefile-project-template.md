@@ -1,7 +1,10 @@
 ---
-title: Django in one file
+title: Single-File Django Application Template
 pubDate: 2024-09-01
 shortDescription: A minimal Django project template in a single file, useful for testing and prototyping
+tags:
+  - Backend
+keywords: django, minimal setup, single file, prototyping, testing, manage.py
 ---
 
 This is a minimal script that will run Django.

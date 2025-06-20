@@ -2,7 +2,7 @@
 const { image }: { image: { url: string; alt: string } } = Astro.props;
 ---
 
-<header class="prose mx-auto my-5 aspect-600/300">
+<header class="prose mx-auto my-5 flex aspect-600/300 items-center">
   <img
     src={image?.url ?? 'https://picsum.photos/600/300'}
     alt={image?.alt ?? 'just a random image from lorem picsum'}

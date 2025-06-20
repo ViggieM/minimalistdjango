@@ -1,9 +1,10 @@
 ---
-title: How to set up PostgREST with docker compose
+title: Setting Up PostgREST API with Docker Compose
 shortDescription: A guide to setting up PostgREST with Docker Compose, including database configuration, role management, and Swagger UI integration.
 pubDate: 2025-03-17
 tags:
   - Databases
+keywords: postgrest, api, postgresql, rest api, docker compose, swagger
 ---
 
 I just followed the instructions in the docs on [Containerized PostgREST and db with docker-compose](https://docs.postgrest.org/en/v12/explanations/install.html#containerized-postgrest-and-db-with-docker-compose),

@@ -4,6 +4,7 @@ pubDate: 2023-09-22
 shortDescription: A tutorial on creating a custom select dropdown with search functionality using Alpine.js, including step-by-step implementation and complete code example.
 tags:
   - Frontend
+keywords: custom dropdown, alpine.js, search dropdown, select styling, javascript
 ---
 
 
