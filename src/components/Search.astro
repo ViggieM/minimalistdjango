@@ -14,9 +14,10 @@
         d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
     </svg>
     <input
-      type="text"
+      type="search"
       id="search"
       name="q"
+      autocomplete="off"
       class="w-full rounded-full border-2 border-gray-200 bg-white py-2 pr-6 pl-12 text-lg transition-all duration-200 placeholder:text-gray-400 focus:border-[var(--link-color)] focus:ring-0 focus:outline-none dark:border-gray-700 dark:bg-gray-900 dark:text-white dark:placeholder:text-gray-500 dark:focus:border-[var(--link-color)]"
       placeholder="Search articles..."
     />
@@ -28,6 +29,64 @@
 
   const content = await fetch(`/all-content.json`);
   const { posts } = await content.json();
+
+  // Typing animation for placeholder
+  const placeholderTexts = [
+    'Databases',
+    'Frontend',
+    'Backend',
+    'Security',
+    'Developer Experience',
+  ];
+  let currentTextIndex = 0;
+  let currentCharIndex = 0;
+  let isDeleting = false;
+  let typingTimeout;
+
+  function typeWriter() {
+    const searchInput = document.getElementById('search');
+    const currentText = placeholderTexts[currentTextIndex];
+
+    if (isDeleting) {
+      searchInput.placeholder = currentText.substring(0, currentCharIndex - 1);
+      currentCharIndex--;
+    } else {
+      searchInput.placeholder = currentText.substring(0, currentCharIndex + 1);
+      currentCharIndex++;
+    }
+
+    let typeSpeed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && currentCharIndex === currentText.length) {
+      typeSpeed = 2000; // Pause at end
+      isDeleting = true;
+    } else if (isDeleting && currentCharIndex === 0) {
+      isDeleting = false;
+      currentTextIndex = (currentTextIndex + 1) % placeholderTexts.length;
+      typeSpeed = 500; // Pause before starting new word
+    }
+
+    typingTimeout = setTimeout(typeWriter, typeSpeed);
+  }
+
+  // Start typing animation immediately
+  typeWriter();
+
+  // Stop animation when user focuses on input
+  document.getElementById('search')?.addEventListener('focus', () => {
+    clearTimeout(typingTimeout);
+    document.getElementById('search').placeholder = 'Search';
+  });
+
+  // Restart animation when user leaves input empty
+  document.getElementById('search')?.addEventListener('blur', () => {
+    if (document.getElementById('search').value === '') {
+      currentTextIndex = 0;
+      currentCharIndex = 0;
+      isDeleting = false;
+      typeWriter();
+    }
+  });
 
   const fuse = new Fuse(posts, {
     threshold: 0.3,
