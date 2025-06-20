@@ -1,0 +1,14 @@
+---
+import Layout from './Layout.astro';
+
+const { frontmatter } = Astro.props;
+const title = frontmatter?.title;
+const pageTitle = frontmatter?.pageTitle || 'Minimalist Django';
+---
+
+<Layout pageTitle={pageTitle}>
+  <article class="prose prose-lg mx-auto mt-12">
+    <h1>{title}</h1>
+    <slot />
+  </article>
+</Layout>

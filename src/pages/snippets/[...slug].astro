@@ -1,8 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
-import ArticleHeader from '../../components/ArticleHeader.astro';
-import ArticleMeta from '../../components/ArticleMeta.astro';
+import PageLayout from '../../layouts/PageLayout.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('snippets');
@@ -16,16 +14,6 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Layout frontmatter={post.data}>
-  <ArticleHeader post={post} />
-  <article class="prose mx-auto">
-    <h1>{post.data.title}</h1>
-    <ArticleMeta 
-      pubDate={post.data.pubDate}
-      updatedDate={post.data.updatedDate}
-      tags={post.data.tags}
-      keywords={post.data.keywords}
-    />
-    <Content />
-  </article>
-</Layout>
+<PageLayout post={post}>
+  <Content />
+</PageLayout>

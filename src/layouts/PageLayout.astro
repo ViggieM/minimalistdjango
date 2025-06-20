@@ -1,0 +1,22 @@
+---
+import Layout from './Layout.astro';
+import ArticleHeader from '../components/ArticleHeader.astro';
+import ArticleMeta from '../components/ArticleMeta.astro';
+
+const { post } = Astro.props;
+const pageTitle = `${post.data.title} - Minimalist Django`;
+---
+
+<Layout pageTitle={pageTitle}>
+  <ArticleHeader post={post} />
+  <article class="prose mx-auto">
+    <h1>{post.data.title}</h1>
+    <ArticleMeta 
+      pubDate={post.data.pubDate}
+      updatedDate={post.data.updatedDate}
+      tags={post.data.tags}
+      keywords={post.data.keywords}
+    />
+    <slot />
+  </article>
+</Layout>
