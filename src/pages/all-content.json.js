@@ -14,7 +14,7 @@ export const GET = async () => {
     const {
       id,
       filePath,
-      data: { title, pubDate, updatedDate, shortDescription, tags, type },
+      data: { title, pubDate, updatedDate, shortDescription, tags, keywords, type },
     } = data;
 
     const url = {
@@ -29,6 +29,7 @@ export const GET = async () => {
       type,
       shortDescription,
       tags: tags || [],
+      keywords: keywords || [],
       pubDate,
       updatedDate,
       url,

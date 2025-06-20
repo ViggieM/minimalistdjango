@@ -31,10 +31,13 @@
 
   const fuse = new Fuse(posts, {
     threshold: 0.3,
+    minMatchCharLength: 2,
+    ignoreLocation: true,
     keys: [
       { name: 'title', weight: 1.0 },
       { name: 'shortDescription', weight: 0.7 },
       { name: 'tags', weight: 0.5 },
+      { name: 'keywords', weight: 0.4 },
     ],
   });
 

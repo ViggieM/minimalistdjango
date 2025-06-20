@@ -9,6 +9,7 @@ const TIL = defineCollection({
     .object({
       title: z.string(),
       tags: z.array(z.string()),
+      keywords: z.optional(z.string().transform(str => str ? str.split(',').map(s => s.trim()) : [])),
       pubDate: z.date(),
       updatedDate: z.date().optional(),
       shortDescription: z.string(),
@@ -30,6 +31,7 @@ const articles = defineCollection({
     .object({
       title: z.string(),
       tags: z.optional(z.array(z.string())),
+      keywords: z.optional(z.string().transform(str => str ? str.split(',').map(s => s.trim()) : [])),
       pubDate: z.date(),
       updatedDate: z.date().optional(),
       shortDescription: z.string(),
@@ -51,6 +53,7 @@ const snippets = defineCollection({
     .object({
       title: z.string(),
       tags: z.optional(z.array(z.string())),
+      keywords: z.optional(z.string().transform(str => str ? str.split(',').map(s => s.trim()) : [])),
       pubDate: z.date(),
       updatedDate: z.date().optional(),
       shortDescription: z.string(),
