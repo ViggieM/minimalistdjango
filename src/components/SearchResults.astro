@@ -1,0 +1,93 @@
+---
+import { getContentColor } from '../utils/contentTypes';
+
+export interface Props {
+  showInitially?: boolean;
+}
+
+const { showInitially = false } = Astro.props;
+---
+
+<div class={showInitially ? '' : 'hidden'} id="search-results">
+  <h2
+    class="mt-4 font-serif text-sm font-semibold text-[var(--text-light)] italic"
+  >
+    Search Results
+  </h2>
+  <div class="mt-2" id="search-results-list"></div>
+</div>
+
+<script>
+  import type { SearchPost } from '../utils/search';
+
+  function formatDate(date: string): string {
+    return new Date(date).toLocaleString('en-US', {
+      month: 'long',
+      day: 'numeric',
+      year: 'numeric',
+    });
+  }
+
+  function createArticleHTML(post: SearchPost): string {
+    const colorMap = {
+      TIL: 'text-purple-600',
+      Article: 'text-blue-700',
+      Snippet: 'text-yellow-500',
+    };
+    const color = colorMap[post.type as keyof typeof colorMap] || 'text-gray-600';
+
+    const tagsHTML =
+      post.tags && post.tags.length > 0
+        ? `<div class="mt-2 flex gap-2">
+          <span class="text-xs text-text-light">Tags:</span>
+          ${post.tags.map((tag) => `<span class="text-xs font-semibold text-[color:var(--color-text)]">${tag}</span>`).join('')}
+        </div>`
+        : '';
+
+    return `
+      <article class="post relative">
+        <header>
+          <h3 class="mb-2">
+            <a href="${post.url}" class="">
+              <span class="absolute inset-0"></span>
+              ${post.title}
+            </a>
+          </h3>
+          <div class="mb-1 flex items-baseline gap-2">
+            <span class="font-serif italic font-semibold text-sm ${color}">${post.type}</span>
+            <span class="text-xs italic">
+              ${
+                post.updatedDate
+                  ? `updated on ${formatDate(post.updatedDate)}`
+                  : `posted on ${formatDate(post.pubDate)}`
+              }
+            </span>
+          </div>
+        </header>
+        <div>
+          ${post.shortDescription}
+        </div>
+        <footer>
+          ${tagsHTML}
+        </footer>
+      </article>
+    `;
+  }
+
+  // Export function to be used by parent components
+  window.renderSearchResults = function(posts: SearchPost[]) {
+    const searchResultsList = document.getElementById('search-results-list');
+    if (searchResultsList) {
+      searchResultsList.innerHTML = posts
+        .map((post) => createArticleHTML(post))
+        .join('');
+    }
+  };
+
+  // Type declaration for global function
+  declare global {
+    interface Window {
+      renderSearchResults: (posts: SearchPost[]) => void;
+    }
+  }
+</script>

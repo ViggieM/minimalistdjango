@@ -1,0 +1,71 @@
+---
+export interface Props {
+  placeholder?: string;
+  enableTypewriter?: boolean;
+  typewriterTexts?: string[];
+}
+
+const { 
+  placeholder = "Search articles...", 
+  enableTypewriter = true,
+  typewriterTexts = [
+    'Databases',
+    'Frontend', 
+    'Backend',
+    'Security',
+    'Developer Experience',
+  ]
+} = Astro.props;
+---
+
+<form id="searchForm" class="w-full">
+  <label for="search" class="sr-only">Search</label>
+  <div class="relative w-full">
+    <svg
+      class="absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2 text-gray-400"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+    </svg>
+    <input
+      type="search"
+      id="search"
+      name="q"
+      autocomplete="off"
+      class="w-full rounded-full border-2 border-gray-200 bg-white py-2 pr-6 pl-12 text-lg transition-all duration-200 placeholder:text-gray-400 focus:border-[var(--link-color)] focus:ring-0 focus:outline-none dark:border-gray-700 dark:bg-gray-900 dark:text-white dark:placeholder:text-gray-500 dark:focus:border-[var(--link-color)]"
+      placeholder={placeholder}
+    />
+  </div>
+</form>
+
+<script define:vars={{ enableTypewriter, typewriterTexts }}>
+  if (enableTypewriter) {
+    import('/src/utils/typewriter.js').then(({ TypewriterAnimation }) => {
+      const searchInput = document.getElementById('search');
+      if (searchInput instanceof HTMLInputElement) {
+        const typewriter = new TypewriterAnimation(searchInput, {
+          texts: typewriterTexts,
+        });
+
+        typewriter.start();
+
+        searchInput.addEventListener('focus', () => {
+          typewriter.stop();
+          searchInput.placeholder = 'Search';
+        });
+
+        searchInput.addEventListener('blur', () => {
+          if (searchInput.value === '') {
+            typewriter.restart();
+          }
+        });
+      }
+    });
+  }
+</script>
