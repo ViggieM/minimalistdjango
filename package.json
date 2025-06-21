@@ -7,7 +7,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write ."
+    "format": "prettier --write . --ignore-path-pattern='tools/**' --ignore-path-pattern='TIL/**' --ignore-path-pattern='snippets/**' --ignore-path-pattern='articles/**' --ignore-path-pattern='drafts/**' --ignore-path-pattern='topics/**'"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.11",
