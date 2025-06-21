@@ -2,75 +2,49 @@
 import { glob } from 'astro/loaders';
 // Import utilities from `astro:content`
 import { z, defineCollection } from 'astro:content';
-// Define a `loader` and `schema` for each collection
+
+// Base schema with common fields
+const baseContentSchema = z.object({
+  title: z.string(),
+  keywords: z.optional(z.string().transform(str => str ? str.split(',').map(s => s.trim()) : [])),
+  pubDate: z.date(),
+  updatedDate: z.date().optional(),
+  shortDescription: z.string(),
+  image: z.optional(
+    z.object({
+      url: z.string(),
+      alt: z.string(),
+      caption: z.string().optional(),
+    }),
+  ),
+});
+
+// Helper function to create collection schema with type transformation
+const createCollectionSchema = (type: string, tagsRequired: boolean = false) => {
+  const schema = baseContentSchema.extend({
+    tags: tagsRequired ? z.array(z.string()) : z.optional(z.array(z.string())),
+  });
+  
+  return schema.transform((data) => ({
+    ...data,
+    type,
+  }));
+};
+
+// Define collections using the unified schema
 const TIL = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './TIL' }),
-  schema: z
-    .object({
-      title: z.string(),
-      tags: z.array(z.string()),
-      keywords: z.optional(z.string().transform(str => str ? str.split(',').map(s => s.trim()) : [])),
-      pubDate: z.date(),
-      updatedDate: z.date().optional(),
-      shortDescription: z.string(),
-      image: z.optional(
-        z.object({
-          url: z.string(),
-          alt: z.string(),
-          caption: z.string().optional(),
-        }),
-      ),
-    })
-    .transform((data) => ({
-      ...data,
-      type: 'TIL', // Add a default type value
-    })),
+  schema: createCollectionSchema('TIL', true), // TIL requires tags
 });
+
 const articles = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './articles' }),
-  schema: z
-    .object({
-      title: z.string(),
-      tags: z.optional(z.array(z.string())),
-      keywords: z.optional(z.string().transform(str => str ? str.split(',').map(s => s.trim()) : [])),
-      pubDate: z.date(),
-      updatedDate: z.date().optional(),
-      shortDescription: z.string(),
-      image: z.optional(
-        z.object({
-          url: z.string(),
-          alt: z.string(),
-          caption: z.string().optional(),
-        }),
-      ),
-    })
-    .transform((data) => ({
-      ...data,
-      type: 'Article', // Add a default type value
-    })),
+  schema: createCollectionSchema('Article'), // Articles has optional tags
 });
+
 const snippets = defineCollection({
   loader: glob({ pattern: '**/[^_]*.md', base: './snippets' }),
-  schema: z
-    .object({
-      title: z.string(),
-      tags: z.optional(z.array(z.string())),
-      keywords: z.optional(z.string().transform(str => str ? str.split(',').map(s => s.trim()) : [])),
-      pubDate: z.date(),
-      updatedDate: z.date().optional(),
-      shortDescription: z.string(),
-      image: z.optional(
-        z.object({
-          url: z.string(),
-          alt: z.string(),
-          caption: z.string().optional(),
-        }),
-      ),
-    })
-    .transform((data) => ({
-      ...data,
-      type: 'Snippet', // Add a default type value
-    })),
+  schema: createCollectionSchema('Snippet'), // Snippets has optional tags
 });
 // Export a single `collections` object to register your collection(s)
 export const collections = { TIL, articles, snippets };
