@@ -1,16 +1,10 @@
 ---
+import { getContentColor, getContentUrl } from '../utils/contentTypes';
+
 const { post } = Astro.props;
 const type = post.data.type;
-const color = {
-  TIL: 'text-purple-600', // #8d0e9e
-  Article: 'text-blue-700', // #0e439e
-  Snippet: 'text-yellow-500', // #ad6500
-}[type];
-const url = {
-  TIL: `/TIL/${post.id}/`,
-  Article: `/articles/${post.id}/`,
-  Snippet: `/snippets/${post.id}/`,
-}[type];
+const color = getContentColor(type);
+const url = getContentUrl(type, post.id);
 ---
 
 <article class="post relative">

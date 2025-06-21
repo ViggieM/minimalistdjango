@@ -106,11 +106,12 @@
   const latestHeading = document.getElementById('latest-heading');
 
   function createArticleHTML(post) {
-    const color = {
+    const colorMap = {
       TIL: 'text-purple-600',
       Article: 'text-blue-700',
       Snippet: 'text-yellow-500',
-    }[post.type];
+    };
+    const color = colorMap[post.type];
 
     const formatDate = (date) => {
       return new Date(date).toLocaleString('en-US', {

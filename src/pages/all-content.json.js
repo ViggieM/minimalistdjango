@@ -28,11 +28,12 @@ export const GET = async () => {
       },
     } = data;
 
-    const url = {
-      TIL: `/TIL/${id}/`,
-      Article: `/articles/${id}/`,
-      Snippet: `/snippets/${id}/`,
-    }[type];
+    const urlPrefixMap = {
+      TIL: '/TIL',
+      Article: '/articles',
+      Snippet: '/snippets',
+    };
+    const url = `${urlPrefixMap[type]}/${id}/`;
 
     return {
       id,
