@@ -12,9 +12,9 @@ import SearchResults from './SearchResults.astro';
   let searchEngine;
 
   // Initialize search engine
-  createSearchEngine().then(engine => {
+  createSearchEngine().then((engine) => {
     searchEngine = engine;
-    
+
     // Handle URL parameter prefilling after engine is ready
     const urlParams = new URLSearchParams(window.location.search);
     const queryParam = urlParams.get('q');
@@ -53,7 +53,7 @@ import SearchResults from './SearchResults.astro';
       searchResults?.classList.remove('hidden');
 
       const results = searchEngine.search(query);
-      
+
       // Use the global function from SearchResults component
       if (window.renderSearchResults) {
         window.renderSearchResults(results);

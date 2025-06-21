@@ -15,11 +15,11 @@ function copyMediaPlugin() {
         try {
           mkdirSync(dest, { recursive: true });
           const entries = readdirSync(src);
-          
+
           for (const entry of entries) {
             const srcPath = join(src, entry);
             const destPath = join(dest, entry);
-            
+
             if (statSync(srcPath).isDirectory()) {
               copyDir(srcPath, destPath);
             } else {
@@ -30,9 +30,9 @@ function copyMediaPlugin() {
           console.warn('Could not copy media files:', err.message);
         }
       };
-      
+
       copyDir('./media', './dist/media');
-    }
+    },
   };
 }
 
@@ -41,19 +41,25 @@ export default defineConfig({
   site: 'https://minimalistdjango.com/',
 
   vite: {
-    plugins: [tailwindcss(), copyMediaPlugin()]
+    plugins: [tailwindcss(), copyMediaPlugin()],
   },
 
   markdown: {
     rehypePlugins: [
       () => (tree) => {
-        visit(tree, 'element', function(node, index, parent) {
-          if (node.tagName === 'a' && String(node.properties.href).endsWith('.md')) {
-            node.properties.href = String(node.properties.href).replace(/\.md$/, "")
+        visit(tree, 'element', function (node, index, parent) {
+          if (
+            node.tagName === 'a' &&
+            String(node.properties.href).endsWith('.md')
+          ) {
+            node.properties.href = String(node.properties.href).replace(
+              /\.md$/,
+              '',
+            );
           }
         });
       },
-      rehypeAutolinkHeadings
-    ]
-  }
+      rehypeAutolinkHeadings,
+    ],
+  },
 });

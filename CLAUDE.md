@@ -9,27 +9,31 @@ This is "Minimalist Django" - a static site built with Astro that serves as a do
 ## Development Commands
 
 ### Core Commands
+
 - `pnpm dev` or `npm run dev` - Start development server
 - `pnpm build` or `npm run build` - Build for production
 - `pnpm preview` or `npm run preview` - Preview production build
 - `pnpm format` or `npm run format` - Format code with Prettier
 
 ### Package Management
+
 This project uses pnpm (preferred) but npm also works. Always check `pnpm-lock.yaml` for dependency versions.
 
 ## Architecture
 
 ### Framework Stack
+
 - **Astro 5.x** - Static site generator with component-based architecture
 - **TailwindCSS 4.x** - Utility-first CSS framework with Vite plugin
 - **TypeScript** - Type checking with strict Astro configuration
 - **Fuse.js** - Client-side fuzzy search functionality
 
 ### Content Management
+
 The site uses Astro's Content Collections API with three main collections:
 
 1. **TIL Collection** (`/TIL/`) - Tutorial and learning content
-2. **Articles Collection** (`/articles/`) - Long-form articles  
+2. **Articles Collection** (`/articles/`) - Long-form articles
 3. **Snippets Collection** (`/snippets/`) - Code snippets and templates
 
 Each collection uses glob loaders to automatically discover Markdown files and enforces schemas with frontmatter validation including title, tags, dates, and optional images.
@@ -37,31 +41,37 @@ Each collection uses glob loaders to automatically discover Markdown files and e
 ### Key Architectural Patterns
 
 #### Content Schema
+
 All content collections share a similar Zod schema requiring:
+
 - `title` (string)
-- `pubDate` (date) 
+- `pubDate` (date)
 - `shortDescription` (string)
 - Optional: `tags`, `keywords`, `updatedDate`, `image`
 
 #### Dynamic Routing
+
 - `[...slug].astro` files handle dynamic content routing for each collection
 - Content is automatically processed from Markdown to HTML with remark/rehype plugins
 
 #### Search Implementation
+
 - Client-side search using Fuse.js with weighted scoring across title, description, tags, and keywords
 - Search data is generated at build time via `/all-content.json.js` endpoint
 - Real-time filtering with animated placeholder text
 
 ### Directory Structure
+
 - `src/components/` - Reusable Astro components
 - `src/layouts/` - Page layout templates
-- `src/pages/` - Route definitions and page components  
+- `src/pages/` - Route definitions and page components
 - `src/styles/` - Global CSS
 - `TIL/`, `articles/`, `snippets/` - Content directories (root level)
 - `media/` - Static assets and images
 - `tools/`, `topics/` - Additional documentation
 
 ### Markdown Processing
+
 - Automatic `.md` link conversion to clean URLs
 - Rehype plugins for heading auto-linking
 - Support for image captions and frontmatter metadata
@@ -69,11 +79,13 @@ All content collections share a similar Zod schema requiring:
 ## Code Style
 
 ### Formatting
+
 - Prettier with Astro and TailwindCSS plugins
 - Single quotes preferred
 - Automatic formatting on save recommended
 
 ### Component Conventions
+
 - Astro components use `.astro` extension
 - TailwindCSS classes for styling
 - TypeScript for logic when needed

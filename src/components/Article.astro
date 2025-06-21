@@ -16,7 +16,9 @@ const url = getContentUrl(type, post.id);
       >
     </h3>
     <div class="mb-1 flex items-baseline gap-2">
-      <span class=`font-serif italic font-semibold text-sm ${color}`>{post.data.type}</span>
+      <span class=`font-serif italic font-semibold text-sm ${color}`
+        >{post.data.type}</span
+      >
       <span class="text-xs italic">
         {
           post.data.updatedDate
@@ -30,13 +32,17 @@ const url = getContentUrl(type, post.id);
     {post.data.shortDescription}
   </div>
   <footer>
-    {post.data.tags && (
-      <div class="mt-2 flex gap-2"> 
-        <span class="text-xs text-text-light">Tags:</span>
-        {post.data.tags.map((tag: string) => (
-          <span class="text-xs font-semibold text-[color:var(--color-text)]">{tag}</span>
-        ))}
-      </div>
-    )}
+    {
+      post.data.tags && (
+        <div class="mt-2 flex gap-2">
+          <span class="text-text-light text-xs">Tags:</span>
+          {post.data.tags.map((tag: string) => (
+            <span class="text-xs font-semibold text-[color:var(--color-text)]">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )
+    }
   </footer>
 </article>

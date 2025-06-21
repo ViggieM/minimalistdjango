@@ -23,7 +23,7 @@ export class SearchEngine {
 
   constructor(posts: SearchPost[], options: SearchOptions = {}) {
     this.posts = posts;
-    
+
     const defaultOptions = {
       threshold: 0.3,
       keys: [
@@ -44,7 +44,7 @@ export class SearchEngine {
     }
 
     const results = this.fuse.search(query);
-    return results.map(result => result.item);
+    return results.map((result) => result.item);
   }
 
   getAllPosts(): SearchPost[] {

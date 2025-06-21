@@ -7,7 +7,7 @@
   font-style: normal;
   font-weight: 400 700;
   font-display: block;
-  src: url("/fonts/Lora/Lora-VariableFont_wght.ttf") format("truetype");
+  src: url('/fonts/Lora/Lora-VariableFont_wght.ttf') format('truetype');
 }
 
 @font-face {
@@ -15,21 +15,26 @@
   font-style: italic;
   font-weight: 400 700;
   font-display: block;
-  src: url("/fonts/Lora/Lora-Italic-VariableFont_wght.ttf") format("truetype");
+  src: url('/fonts/Lora/Lora-Italic-VariableFont_wght.ttf') format('truetype');
 }
 
 @theme {
-  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-serif: "Lora", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans:
+    ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif:
+    'Lora', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
 }
 
 @layer base {
   :root {
     /* https://www.djangoproject.com/styleguide/#colors */
-    --green-light: #93D7B7;
-    --link-color: #20AA76;
-    --color-text: #0C3C26;
+    --green-light: #93d7b7;
+    --link-color: #20aa76;
+    --color-text: #0c3c26;
     --text-light: #798780;
   }
 
@@ -46,7 +51,7 @@
 
 @layer utilities {
   .nav-item {
-    @apply relative text-white text-sm before:absolute before:bottom-0 before:left-0 before:w-full before:h-[1px] before:bg-white before:scale-x-0 before:origin-right before:transition-transform before:duration-300 hover:before:scale-x-100 hover:before:origin-left
+    @apply relative text-sm text-white before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full before:origin-right before:scale-x-0 before:bg-white before:transition-transform before:duration-300 hover:before:origin-left hover:before:scale-x-100;
   }
 
   .btn {
@@ -61,16 +66,15 @@
     max-width: 65ch;
 
     h3 {
-      @apply text-2xl font-medium font-serif;
+      @apply font-serif text-2xl font-medium;
     }
-
   }
 
   .post {
-    @apply relative first:mt-0 mt-6;
+    @apply relative mt-6 first:mt-0;
 
     header {
-      @apply text-xl
+      @apply text-xl;
     }
 
     header a:before {

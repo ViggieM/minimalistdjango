@@ -6,7 +6,11 @@ import { z, defineCollection } from 'astro:content';
 // Base schema with common fields
 const baseContentSchema = z.object({
   title: z.string(),
-  keywords: z.optional(z.string().transform(str => str ? str.split(',').map(s => s.trim()) : [])),
+  keywords: z.optional(
+    z
+      .string()
+      .transform((str) => (str ? str.split(',').map((s) => s.trim()) : [])),
+  ),
   pubDate: z.date(),
   updatedDate: z.date().optional(),
   shortDescription: z.string(),
@@ -20,11 +24,14 @@ const baseContentSchema = z.object({
 });
 
 // Helper function to create collection schema with type transformation
-const createCollectionSchema = (type: string, tagsRequired: boolean = false) => {
+const createCollectionSchema = (
+  type: string,
+  tagsRequired: boolean = false,
+) => {
   const schema = baseContentSchema.extend({
     tags: tagsRequired ? z.array(z.string()) : z.optional(z.array(z.string())),
   });
-  
+
   return schema.transform((data) => ({
     ...data,
     type,

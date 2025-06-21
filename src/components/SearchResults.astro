@@ -34,7 +34,8 @@ const { showInitially = false } = Astro.props;
       Article: 'text-blue-700',
       Snippet: 'text-yellow-500',
     };
-    const color = colorMap[post.type as keyof typeof colorMap] || 'text-gray-600';
+    const color =
+      colorMap[post.type as keyof typeof colorMap] || 'text-gray-600';
 
     const tagsHTML =
       post.tags && post.tags.length > 0
@@ -75,7 +76,7 @@ const { showInitially = false } = Astro.props;
   }
 
   // Export function to be used by parent components
-  window.renderSearchResults = function(posts: SearchPost[]) {
+  window.renderSearchResults = function (posts: SearchPost[]) {
     const searchResultsList = document.getElementById('search-results-list');
     if (searchResultsList) {
       searchResultsList.innerHTML = posts

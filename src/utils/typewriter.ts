@@ -57,14 +57,22 @@ export class TypewriterAnimation {
     const currentText = this.texts[this.currentTextIndex];
 
     if (this.isDeleting) {
-      this.element.placeholder = currentText.substring(0, this.currentCharIndex - 1);
+      this.element.placeholder = currentText.substring(
+        0,
+        this.currentCharIndex - 1,
+      );
       this.currentCharIndex--;
     } else {
-      this.element.placeholder = currentText.substring(0, this.currentCharIndex + 1);
+      this.element.placeholder = currentText.substring(
+        0,
+        this.currentCharIndex + 1,
+      );
       this.currentCharIndex++;
     }
 
-    let speed = this.isDeleting ? this.options.deleteSpeed : this.options.typeSpeed;
+    let speed = this.isDeleting
+      ? this.options.deleteSpeed
+      : this.options.typeSpeed;
 
     if (!this.isDeleting && this.currentCharIndex === currentText.length) {
       speed = this.options.pauseEnd;
