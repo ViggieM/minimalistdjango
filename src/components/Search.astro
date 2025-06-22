@@ -75,4 +75,15 @@ import SearchResults from './SearchResults.astro';
 
     window.history.pushState({}, '', url);
   });
+
+  // Handle click on search input to scroll to top
+  search?.addEventListener('click', () => {
+    const searchElement = form || search;
+    if (searchElement) {
+      searchElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
 </script>
