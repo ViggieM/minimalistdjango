@@ -1,17 +1,7 @@
-* [create a django project](/articles/create-a-django-project.md)
-  - `django-extensions` never miss in my django projects
-  - set up Logging
-  - create a requirements.txt
-* environment variables
-  * [Python Project-Local Virtualenv Management Redux](https://hynek.me/articles/python-virtualenv-redux/?utm_campaign=Django%2BNewsletter&utm_medium=email&utm_source=Django_Newsletter_226)
-- dependency management with Poetry
-- static files
-- [tips and tricks]()
-  - simple project structure
-  - split installed apps
-  - add comments to your settings file
-  -
-- umbenennen zu lifehacks
+See also:
+* [systemd.md](/tools/systemd.md)
+
+
 
 ## Supervisor setup
 
@@ -40,6 +30,8 @@ After you saved the file, you need to tell *Supervisor* to reload the configurat
 $ sudo supervisorctl reread
 $ sudo supervisorctl update
 ```
+
+
 ## Set up the python environment
 
 We set up a python environment with pyenv inside the VM:
@@ -58,4 +50,6 @@ The advantage of this approach is that you always keep a backup of your dependen
 The downside is that you have to reinstall the packages every time, for every deploy.
 
 [^deployment-done-right]: I got this from this **Django Con talk in 2015** called [*Django Deployments Done Right*](https://www.youtube.com/watch?v=SUczHTa7WmQ)
+
 [^srv]: This is the recommended location, according to the [Filesystem Hierarchy Standard](https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html)
+

@@ -17,7 +17,7 @@ a comment is appropriate, it highlights it as important.
 
 *GitHub* has a nice feature when inside a repository in the browser. Press the key `.` (period) on your keyboard, to open a VSCode editor of the project inside your browser.
 
-#### Make ASCII Diagrams
+#### Add ASCII Diagrams to your python modules for documentation
 
 Documentation directly next to your code is great.
 With [ASCIIFlow](https://asciiflow.com/) you can easily draw schemas of your architecture, database, or processes to explain your code better.
@@ -38,3 +38,11 @@ This gives you an icon on the bottom right, that opens a console on your phone.
 #### Reffer to the Currently Inspected Element with `$0` in the Console (JavaScript)
 
 Instead of using `document.querySelector` to reference an HTML Element in the Console, you can inspect the HTML in the browser, select the desired element with the inspect tool, and use `$0` to reference it in the console.
+
+#### Keep the number of indentations in your code at a minimum
+
+... or Linus Torwalds will come for you.
+
+> if you need more than 3 levels of indentation, you’re screwed anyway, and should fix your program.
+>
+> -- *[Linux kernel coding style — The Linux Kernel documentation](https://www.kernel.org/doc/html/v4.10/process/coding-style.html)*
