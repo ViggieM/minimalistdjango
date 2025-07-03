@@ -20,5 +20,5 @@ Additionally, there's a principle called 'Learning in Public', which adds anothe
 Trying to explain concepts to others essentially adds a fourth step to Confucius' quote—perhaps something like _I teach and I master_.
 
 Moreover, writing sharpens my thinking, and in the age of LLMs, providing clear instructions yields better results.
-I hope you'll find something useful in these articles. If you'd like to suggest improvements, feel free to [create an issue in the GitHub repo](https://github.com/ViggieM/minimalistdjango).
-The repository for this website is public.
+I hope you'll find something useful in these articles.
+If you'd like to suggest improvements, feel free to [start a discussion on GitHub](https://github.com/ViggieM/minimalistdjango/discussions/3).
