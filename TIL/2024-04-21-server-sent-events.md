@@ -3,7 +3,6 @@ title: Server Sent Events
 pubDate: 2024-04-21
 tags:
   - Backend
-  - Frontend
 keywords: sse, real-time, streaming, django, asyncio, websockets alternative
 shortDescription: A practical exploration of implementing Server Sent Events in Django, including challenges with async servers, event stream formatting, and connection handling.
 ---

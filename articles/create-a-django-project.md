@@ -7,7 +7,7 @@ image:
     caption: "Source: [https://xkcd.com/354/](https://xkcd.com/354/)"
 shortDescription: A comprehensive guide to setting up a Django project from scratch, covering project structure, environment configuration, and essential development tools.
 tags:
-  - Backend
+  - Django
 keywords: django setup, project initialization, pyenv, virtual environment, pre-commit hooks, editorconfig, git
 ---
 

@@ -6,7 +6,6 @@ author: victor
 shortDescription: "Learn how to prevent cumulative layout shift (CLS) when loading images by reserving space with aspect ratios and proper sizing"
 tags:
   - Frontend
-  - Performance
 keywords: layout shift, CLS, images, tailwind css, web performance, aspect ratio
 ---
 
@@ -24,15 +23,15 @@ The key is to reserve the correct amount of space before the image loads using T
 
 ```html
 <!-- Bad: No space reserved, causes layout shift -->
-<img 
-  src="https://picsum.photos/600/300" 
+<img
+  src="https://picsum.photos/600/300"
   alt="Example image"
   class="w-full"
 />
 
 <!-- Good: Space reserved with aspect ratio -->
-<img 
-  src="https://picsum.photos/600/300" 
+<img
+  src="https://picsum.photos/600/300"
   alt="Example image"
   class="w-full h-auto aspect-[600/300] object-cover"
   loading="lazy"
@@ -43,8 +42,8 @@ The key is to reserve the correct amount of space before the image loads using T
 
 ```html
 <figure class="mx-auto max-w-2xl">
-  <img 
-    src="https://picsum.photos/800/400" 
+  <img
+    src="https://picsum.photos/800/400"
     alt="Landscape photo"
     class="w-full h-auto aspect-[2/1] object-cover rounded-lg"
     loading="lazy"
@@ -58,8 +57,8 @@ The key is to reserve the correct amount of space before the image loads using T
 ### Responsive Images with Different Aspect Ratios
 
 ```html
-<img 
-  src="https://picsum.photos/600/400" 
+<img
+  src="https://picsum.photos/600/400"
   alt="Responsive image"
   class="w-full h-auto aspect-[3/2] md:aspect-[16/9] object-cover"
   loading="lazy"
@@ -70,20 +69,20 @@ The key is to reserve the correct amount of space before the image loads using T
 
 ```html
 <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-  <img 
-    src="https://picsum.photos/300/300?random=1" 
+  <img
+    src="https://picsum.photos/300/300?random=1"
     alt="Gallery image 1"
     class="w-full h-auto aspect-square object-cover rounded"
     loading="lazy"
   />
-  <img 
-    src="https://picsum.photos/300/300?random=2" 
+  <img
+    src="https://picsum.photos/300/300?random=2"
     alt="Gallery image 2"
     class="w-full h-auto aspect-square object-cover rounded"
     loading="lazy"
   />
-  <img 
-    src="https://picsum.photos/300/300?random=3" 
+  <img
+    src="https://picsum.photos/300/300?random=3"
     alt="Gallery image 3"
     class="w-full h-auto aspect-square object-cover rounded"
     loading="lazy"
