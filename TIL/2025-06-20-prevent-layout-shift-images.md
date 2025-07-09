@@ -1,8 +1,6 @@
 ---
 title: "Preventing Content Layout Shifts with Images using Tailwind CSS"
 pubDate: 2025-06-20
-published: true
-author: victor
 shortDescription: "Learn how to prevent cumulative layout shift (CLS) when loading images by reserving space with aspect ratios and proper sizing"
 tags:
   - Frontend
