@@ -26,7 +26,7 @@ const {
 
 const siteUrl = 'https://minimalistdjango.com';
 const currentUrl = new URL(Astro.url.pathname, siteUrl).href;
-const defaultOgImage = `${siteUrl}/media/django-rocket.svg`;
+const defaultOgImage = `${siteUrl}/media/django-rocket-og.svg`;
 const ogImageUrl = image?.url ? `${siteUrl}${image.url}` : defaultOgImage;
 const ogImageAlt =
   image?.alt || 'Minimalist Django - Django development tutorials and tips';
