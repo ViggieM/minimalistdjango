@@ -43,9 +43,7 @@
   }
 
   .prose {
-    h1 {
-      text-align: center;
-    }
+    @apply prose-h1:md:text-center prose-h1:text-sm
   }
 }
 

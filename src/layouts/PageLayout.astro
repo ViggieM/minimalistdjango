@@ -9,8 +9,8 @@ const pageTitle = `${post.data.title} - Minimalist Django`;
 
 <Layout pageTitle={pageTitle}>
   <ArticleHeader post={post} />
-  <article class="prose mx-auto">
-    <h1>{post.data.title}</h1>
+  <article class="prose mx-auto p-2 md:p-0">
+    <h1 class="mt-5">{post.data.title}</h1>
     <ArticleMeta
       pubDate={post.data.pubDate}
       updatedDate={post.data.updatedDate}
