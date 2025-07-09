@@ -4,7 +4,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is "Minimalist Django" - a static site built with Astro that serves as a documentation and learning resource for Django development. Despite the name, this is actually an Astro-based static site generator project, not a Django application. The site contains articles, tutorials (TIL - Today I Learned), code snippets, and tool documentation focused on Django and web development.
+This is a static site built with Astro.
+The site contains articles, tutorials (TIL - Today I Learned) and code snippets focused on Django and web development.
 
 ## Development Commands
 
@@ -15,9 +16,27 @@ This is "Minimalist Django" - a static site built with Astro that serves as a do
 - `pnpm preview` or `npm run preview` - Preview production build
 - `pnpm format` or `npm run format` - Format code with Prettier
 
+### Quality Assurance
+
+All code quality is handled programmatically:
+
+- `pnpm quality` - Run full quality check (type-check, lint, format-check)
+- `pnpm build` - Ensure the build succeeds
+- Pre-commit hooks automatically run formatting and linting
+
 ### Package Management
 
 This project uses pnpm (preferred) but npm also works. Always check `pnpm-lock.yaml` for dependency versions.
+
+### Initial Setup
+
+After cloning the repository, install dependencies and set up quality tools:
+
+```bash
+pnpm install
+pre-commit install  # Set up pre-commit hooks
+pnpm quality       # Verify everything works
+```
 
 ## Architecture
 
@@ -36,57 +55,53 @@ The site uses Astro's Content Collections API with three main collections:
 2. **Articles Collection** (`/articles/`) - Long-form articles
 3. **Snippets Collection** (`/snippets/`) - Code snippets and templates
 
-Each collection uses glob loaders to automatically discover Markdown files and enforces schemas with frontmatter validation including title, tags, dates, and optional images.
+Each collection uses glob loaders to automatically discover Markdown files and enforces schemas with frontmatter validation.
 
-### Key Architectural Patterns
+### Component Architecture
 
-#### Content Schema
+### SEO & Meta Tags
 
-All content collections share a similar Zod schema requiring:
+All pages use the centralized SEO component with:
 
-- `title` (string)
-- `pubDate` (date)
-- `shortDescription` (string)
-- Optional: `tags`, `keywords`, `updatedDate`, `image`
+- Dynamic meta tag generation from frontmatter
+- Open Graph protocol support
+- Default fallback to `/media/django-rocket.svg` for OG images
+- Automatic sitemap generation via `/sitemap.xml.js`
 
-#### Dynamic Routing
+### Mobile-First Design
 
-- `[...slug].astro` files handle dynamic content routing for each collection
-- Content is automatically processed from Markdown to HTML with remark/rehype plugins
+- **Responsive headers**: Full-width images on mobile
+- **Typography scaling**: Reduced font sizes for mobile screens
+- **TailwindCSS utilities**: Mobile-first responsive classes
 
-#### Search Implementation
+## Code Quality
 
-- Client-side search using Fuse.js with weighted scoring across title, description, tags, and keywords
-- Search data is generated at build time via `/all-content.json.js` endpoint
-- Real-time filtering with animated placeholder text
+### Automated Tools
 
-### Directory Structure
+Code quality is enforced programmatically through:
 
-- `src/components/` - Reusable Astro components
-- `src/layouts/` - Page layout templates
-- `src/pages/` - Route definitions and page components
-- `src/styles/` - Global CSS
-- `TIL/`, `articles/`, `snippets/` - Content directories (root level)
-- `media/` - Static assets and images
-- `tools/`, `topics/` - Additional documentation
+- **ESLint**: Code linting with `eslint.config.js`
+- **Prettier**: Code formatting with `.prettierrc`
+- **Pre-commit hooks**: Automatic validation before commits
+- **TypeScript**: Strict type checking with `tsconfig.json`
 
-### Markdown Processing
+### Development Workflow
 
-- Automatic `.md` link conversion to clean URLs
-- Rehype plugins for heading auto-linking
-- Support for image captions and frontmatter metadata
-
-## Code Style
-
-### Formatting
-
-- Prettier with Astro and TailwindCSS plugins
-- Single quotes preferred
-- Automatic formatting on save recommended
+1. **Write code** - IDE automatically formats on save
+2. **Commit changes** - Pre-commit hooks validate automatically
+3. **Quality check** - Run `pnpm quality` to verify all checks pass
+4. **Build verification** - `pnpm build` ensures production readiness
 
 ### Component Conventions
 
-- Astro components use `.astro` extension
-- TailwindCSS classes for styling
-- TypeScript for logic when needed
-- Search functionality implemented as inline scripts in components
+- **Astro components**: Use `.astro` extension
+- **TypeScript**: Strict typing for all utilities and interfaces
+- **TailwindCSS**: Utility-first styling with component classes
+- **Event communication**: Use CustomEvents instead of global functions
+- **Error handling**: Graceful fallbacks for external API calls
+
+## Content Guidelines
+
+- **SEO optimization**: Always include title, description, and relevant tags
+- **Mobile responsiveness**: Test all content on mobile devices
+- **Accessibility**: Ensure proper alt text and semantic HTML structure
