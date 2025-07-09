@@ -72,7 +72,7 @@ export async function GET() {
   // Generate URL entries for TIL posts
   const tilEntries = tilPosts.map((post) =>
     generateUrlEntry(
-      `/TIL/${post.slug}/`,
+      `/TIL/${post.id}/`,
       formatDate(post.data.updatedDate || post.data.pubDate),
       'monthly',
       '0.6',
@@ -82,7 +82,7 @@ export async function GET() {
   // Generate URL entries for article posts
   const articleEntries = articlePosts.map((post) =>
     generateUrlEntry(
-      `/articles/${post.slug}/`,
+      `/articles/${post.id}/`,
       formatDate(post.data.updatedDate || post.data.pubDate),
       'monthly',
       '0.7',
@@ -92,7 +92,7 @@ export async function GET() {
   // Generate URL entries for snippet posts
   const snippetEntries = snippetPosts.map((post) =>
     generateUrlEntry(
-      `/snippets/${post.slug}/`,
+      `/snippets/${post.id}/`,
       formatDate(post.data.updatedDate || post.data.pubDate),
       'monthly',
       '0.6',
