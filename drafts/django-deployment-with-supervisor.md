@@ -52,4 +52,3 @@ The downside is that you have to reinstall the packages every time, for every de
 [^deployment-done-right]: I got this from this **Django Con talk in 2015** called [*Django Deployments Done Right*](https://www.youtube.com/watch?v=SUczHTa7WmQ)
 
 [^srv]: This is the recommended location, according to the [Filesystem Hierarchy Standard](https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html)
-

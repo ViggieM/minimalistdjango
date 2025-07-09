@@ -26,4 +26,3 @@ Nothing to add here
 * [Litestream - Streaming SQLite Replication](https://litestream.io/)
 * [Tips & Caveats - Litestream](https://litestream.io/tips/)
 * [Open source, not open contribution with Ben Johnson (Changelog Interviews #433)](https://changelog.com/podcast/433)
-

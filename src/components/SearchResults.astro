@@ -1,6 +1,4 @@
 ---
-import { getContentColor } from '../utils/contentTypes';
-
 export interface Props {
   showInitially?: boolean;
 }
@@ -41,7 +39,12 @@ const { showInitially = false } = Astro.props;
       post.tags && post.tags.length > 0
         ? `<div class="mt-2 flex gap-2">
           <span class="text-xs text-text-light">Tags:</span>
-          ${post.tags.map((tag) => `<span class="text-xs font-semibold text-[color:var(--color-text)]">${tag}</span>`).join('')}
+          ${post.tags
+            .map(
+              (tag) =>
+                `<span class="text-xs font-semibold text-[color:var(--color-text)]">${tag}</span>`,
+            )
+            .join('')}
         </div>`
         : '';
 
@@ -55,7 +58,9 @@ const { showInitially = false } = Astro.props;
             </a>
           </h3>
           <div class="mb-1 flex items-baseline gap-2">
-            <span class="font-serif italic font-semibold text-sm ${color}">${post.type}</span>
+            <span class="font-serif italic font-semibold text-sm ${color}">${
+              post.type
+            }</span>
             <span class="text-xs italic">
               ${
                 post.updatedDate

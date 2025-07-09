@@ -7,9 +7,15 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write . --ignore-path-pattern='tools/**' --ignore-path-pattern='TIL/**' --ignore-path-pattern='snippets/**' --ignore-path-pattern='articles/**' --ignore-path-pattern='drafts/**' --ignore-path-pattern='topics/**'"
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "type-check": "astro check",
+    "quality": "npm run type-check && npm run lint && npm run format:check"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.4",
     "@astrojs/rss": "^4.0.11",
     "@tailwindcss/vite": "^4.0.9",
     "astro": "^5.4.1",
@@ -19,10 +25,13 @@
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.2",
     "tailwindcss": "^4.0.9",
+    "typescript": "^5.8.3",
     "unified": "^11.0.5"
   },
   "devDependencies": {
+    "@eslint/js": "^9.30.1",
     "@tailwindcss/typography": "^0.5.16",
+    "eslint": "^9.30.1",
     "prettier": "3.5.3",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.11",

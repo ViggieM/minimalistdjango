@@ -11,6 +11,10 @@ function copyMediaPlugin() {
   return {
     name: 'copy-media',
     writeBundle() {
+      /**
+       * @param {string} src
+       * @param {string} dest
+       */
       const copyDir = (src, dest) => {
         try {
           mkdirSync(dest, { recursive: true });
@@ -27,7 +31,10 @@ function copyMediaPlugin() {
             }
           }
         } catch (err) {
-          console.warn('Could not copy media files:', err.message);
+          console.warn(
+            'Could not copy media files:',
+            err instanceof Error ? err.message : String(err),
+          );
         }
       };
 
@@ -47,7 +54,7 @@ export default defineConfig({
   markdown: {
     rehypePlugins: [
       () => (tree) => {
-        visit(tree, 'element', function (node, index, parent) {
+        visit(tree, 'element', function (node, _index, _parent) {
           if (
             node.tagName === 'a' &&
             String(node.properties.href).endsWith('.md')

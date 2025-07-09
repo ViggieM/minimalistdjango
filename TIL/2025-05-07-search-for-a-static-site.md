@@ -154,7 +154,7 @@ function createArticleHTML(post) {
 
 form?.addEventListener('input', (e) => {
   const query = search.value.trim();
-  
+
   if (query.length === 0) {
     // Show initial posts, hide search results
     document.getElementById('initial-posts').classList.remove('hidden');
@@ -163,10 +163,10 @@ form?.addEventListener('input', (e) => {
     // Hide initial posts, show search results
     document.getElementById('initial-posts').classList.add('hidden');
     document.getElementById('search-results').classList.remove('hidden');
-    
+
     const results = fuse.search(query);
     const searchPosts = results.map(result => result.item);
-    
+
     // Generate HTML for search results
     const html = searchPosts.map(post => createArticleHTML(post)).join('');
     document.getElementById('search-results-list').innerHTML = html;

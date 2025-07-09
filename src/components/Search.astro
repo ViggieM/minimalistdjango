@@ -9,10 +9,10 @@ import SearchResults from './SearchResults.astro';
 <script>
   import { createSearchEngine } from '../utils/search';
 
-  let searchEngine;
+  let searchEngine: any;
 
   // Initialize search engine
-  createSearchEngine().then((engine) => {
+  createSearchEngine().then((engine: any) => {
     searchEngine = engine;
 
     // Handle URL parameter prefilling after engine is ready
@@ -36,7 +36,7 @@ import SearchResults from './SearchResults.astro';
   const initialPosts = document.getElementById('initial-posts');
   const latestHeading = document.getElementById('latest-heading');
 
-  form?.addEventListener('input', async (e) => {
+  form?.addEventListener('input', async () => {
     if (!searchEngine) return;
 
     const query = (search as HTMLInputElement).value.trim();
@@ -65,7 +65,7 @@ import SearchResults from './SearchResults.astro';
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
     const query = (search as HTMLInputElement).value.trim();
-    const url = new URL(window.location);
+    const url = new URL(window.location.href);
 
     if (query) {
       url.searchParams.set('q', query);

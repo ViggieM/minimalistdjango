@@ -22,8 +22,16 @@ const url = getContentUrl(type, post.id);
       <span class="text-xs italic">
         {
           post.data.updatedDate
-            ? `updated on ${post.data.updatedDate.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`
-            : `posted on ${post.data.pubDate.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`
+            ? `updated on ${post.data.updatedDate.toLocaleString('en-US', {
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric',
+              })}`
+            : `posted on ${post.data.pubDate.toLocaleString('en-US', {
+                month: 'long',
+                day: 'numeric',
+                year: 'numeric',
+              })}`
         }
       </span>
     </div>

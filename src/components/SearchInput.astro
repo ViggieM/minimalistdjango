@@ -50,7 +50,7 @@ const {
 
   const searchInput = document.getElementById('search');
   const typewriterTexts = JSON.parse(
-    searchInput.dataset.typewriterTexts || '[]',
+    searchInput?.dataset.typewriterTexts || '[]',
   );
   if (searchInput instanceof HTMLInputElement) {
     const typewriter = new TypewriterAnimation(searchInput, {

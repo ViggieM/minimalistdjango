@@ -1,11 +1,5 @@
----
-title: Docker Compose Configuration for PostgreSQL with pgAdmin
-shortDescription: Complete Docker Compose setup for PostgreSQL database with pgAdmin interface
-tags:
-  - Databases
-keywords: docker, postgresql, pgadmin, database, development
----
-
+# Docker Compose Configuration for PostgreSQL with pgAdmin
+# keywords: docker, postgresql, pgadmin, database, development
 version: '3.8'
 services:
   db:
