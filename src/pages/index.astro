@@ -12,9 +12,31 @@ const allPosts = [...allTIL, ...allArticles, ...allSnippets].sort(
     (b.data.updatedDate || b.data.pubDate).getTime() -
     (a.data.updatedDate || a.data.pubDate).getTime(),
 );
+
+const pageTitle = 'Minimalist Django';
+const description =
+  'A collection of articles, tutorials, and code snippets focused on Django and web development. Learn through practical examples and minimalist approaches.';
+const keywords = [
+  'Django',
+  'Web Development',
+  'Python',
+  'Programming',
+  'Tutorials',
+  'Code Snippets',
+];
+const image = {
+  url: '/media/django-rocket.svg',
+  alt: 'Django Rocket Logo',
+};
 ---
 
-<Layout>
+<Layout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  image={image}
+  type="website"
+>
   <header class="container mx-auto mt-4 mb-8 flex flex-col items-center">
     <div
       style="height: 150px; width: 150px; border-radius: 100%; overflow: hidden"

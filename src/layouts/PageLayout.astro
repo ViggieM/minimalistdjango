@@ -5,9 +5,24 @@ import ArticleMeta from '../components/ArticleMeta.astro';
 
 const { post } = Astro.props;
 const pageTitle = `${post.data.title} - Minimalist Django`;
+const description = post.data.shortDescription;
+const keywords = post.data.keywords || [];
+const image = post.data.image;
+const pubDate = post.data.pubDate;
+const updatedDate = post.data.updatedDate;
+const tags = post.data.tags;
 ---
 
-<Layout pageTitle={pageTitle}>
+<Layout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  image={image}
+  type="article"
+  pubDate={pubDate}
+  updatedDate={updatedDate}
+  tags={tags}
+>
   <ArticleHeader post={post} />
   <article class="prose mx-auto p-2 md:p-0">
     <h1 class="mt-5">{post.data.title}</h1>

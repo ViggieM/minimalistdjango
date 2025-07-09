@@ -8,10 +8,26 @@ const allPosts = posts.sort(
     (b.data.updatedDate || b.data.pubDate).getTime() -
     (a.data.updatedDate || a.data.pubDate).getTime(),
 );
-const pageTitle = 'Snippets';
+const pageTitle = 'Snippets - Minimalist Django';
+const description =
+  'A collection of snippets about Django, Python and web development in general.';
+const keywords = [
+  'Snippets',
+  'Code Snippets',
+  'Django',
+  'Python',
+  'Web Development',
+  'Programming',
+  'Code Examples',
+];
 ---
 
-<Layout pageTitle={pageTitle}>
+<Layout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  type="website"
+>
   <header class="container mx-auto mt-4 mb-16 flex flex-col items-center">
     <h1 class="my-5 font-serif text-4xl font-semibold">Snippets</h1>
     <cite class="text-center font-serif">

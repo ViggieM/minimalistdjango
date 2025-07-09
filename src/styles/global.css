@@ -43,7 +43,7 @@
   }
 
   .prose {
-    @apply prose-h1:md:text-center prose-h1:text-sm
+    @apply prose-h1:md:text-center prose-h1:text-sm;
   }
 }
 
@@ -60,7 +60,7 @@
 
 @layer components {
   .article-list {
-    @apply mx-auto flex flex-col gap-2;
+    @apply mx-auto flex flex-col gap-2 px-2 sm:px-0;
     max-width: 65ch;
 
     h3 {

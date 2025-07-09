@@ -1,0 +1,123 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  keywords?: string[];
+  image?: {
+    url: string;
+    alt: string;
+  };
+  type?: 'website' | 'article';
+  pubDate?: Date;
+  updatedDate?: Date;
+  tags?: string[];
+}
+
+const {
+  title,
+  description,
+  keywords = [],
+  image,
+  type = 'website',
+  pubDate,
+  updatedDate,
+  tags = [],
+} = Astro.props;
+
+const siteUrl = 'https://minimalistdjango.com';
+const currentUrl = new URL(Astro.url.pathname, siteUrl).href;
+const defaultOgImage = `${siteUrl}/media/django-rocket.svg`;
+const ogImageUrl = image?.url ? `${siteUrl}${image.url}` : defaultOgImage;
+const ogImageAlt =
+  image?.alt || 'Minimalist Django - Django development tutorials and tips';
+
+// Format dates for structured data
+const formatDate = (date: Date) => date.toISOString().split('T')[0];
+
+// Generate structured data for articles
+const generateStructuredData = () => {
+  const baseData = {
+    '@context': 'https://schema.org',
+    '@type': type === 'article' ? 'Article' : 'WebPage',
+    headline: title,
+    description,
+    url: currentUrl,
+    image: {
+      '@type': 'ImageObject',
+      url: ogImageUrl,
+      alt: ogImageAlt,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Minimalist Django',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/media/django-rocket.svg`,
+      },
+    },
+  };
+
+  if (type === 'article' && pubDate) {
+    return {
+      ...baseData,
+      datePublished: formatDate(pubDate),
+      dateModified: formatDate(updatedDate || pubDate),
+      author: {
+        '@type': 'Person',
+        name: 'Victor Movileanu',
+      },
+      keywords: [...keywords, ...tags].join(', '),
+    };
+  }
+
+  return baseData;
+};
+
+const structuredData = generateStructuredData();
+---
+
+<!-- Basic Meta Tags -->
+<title>{title}</title>
+<meta name="description" content={description} />
+{keywords.length > 0 && <meta name="keywords" content={keywords.join(', ')} />}
+<meta name="author" content="Victor Movileanu" />
+<link rel="canonical" href={currentUrl} />
+
+<!-- Open Graph Tags -->
+<meta property="og:type" content={type} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={currentUrl} />
+<meta property="og:image" content={ogImageUrl} />
+<meta property="og:image:alt" content={ogImageAlt} />
+<meta property="og:site_name" content="Minimalist Django" />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter Card Tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageUrl} />
+<meta name="twitter:image:alt" content={ogImageAlt} />
+
+<!-- Article specific tags -->
+{
+  type === 'article' && pubDate && (
+    <>
+      <meta property="article:published_time" content={pubDate.toISOString()} />
+      {updatedDate && (
+        <meta
+          property="article:modified_time"
+          content={updatedDate.toISOString()}
+        />
+      )}
+      <meta property="article:author" content="Victor Movileanu" />
+      {tags.map((tag) => (
+        <meta property="article:tag" content={tag} />
+      ))}
+    </>
+  )
+}
+
+<!-- Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />

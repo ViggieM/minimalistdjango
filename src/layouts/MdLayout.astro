@@ -3,10 +3,26 @@ import Layout from './Layout.astro';
 
 const { frontmatter } = Astro.props;
 const title = frontmatter?.title;
-const pageTitle = frontmatter?.pageTitle || 'Minimalist Django';
+const pageTitle = frontmatter?.pageTitle || title || 'Minimalist Django';
+const description =
+  frontmatter?.shortDescription || `${title} - Minimalist Django`;
+const keywords = frontmatter?.keywords || [];
+const image = frontmatter?.image;
+const pubDate = frontmatter?.pubDate;
+const updatedDate = frontmatter?.updatedDate;
+const tags = frontmatter?.tags;
 ---
 
-<Layout pageTitle={pageTitle}>
+<Layout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  image={image}
+  type="article"
+  pubDate={pubDate}
+  updatedDate={updatedDate}
+  tags={tags}
+>
   <article class="prose prose-lg mx-auto mt-12">
     <h1>{title}</h1>
     <slot />

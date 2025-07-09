@@ -8,10 +8,26 @@ const allPosts = posts.sort(
     (b.data.updatedDate || b.data.pubDate).getTime() -
     (a.data.updatedDate || a.data.pubDate).getTime(),
 );
-const pageTitle = 'TIL';
+const pageTitle = 'TIL - Today I Learned';
+const description =
+  'A collection of small discoveries and learnings about Django, Python and web development in general.';
+const keywords = [
+  'TIL',
+  'Today I Learned',
+  'Django',
+  'Python',
+  'Web Development',
+  'Learning',
+  'Programming',
+];
 ---
 
-<Layout pageTitle={pageTitle}>
+<Layout
+  pageTitle={pageTitle}
+  description={description}
+  keywords={keywords}
+  type="website"
+>
   <header class="container mx-auto mt-4 mb-16 flex flex-col items-center">
     <h1 class="my-5 font-serif text-4xl font-semibold">Today I Learned</h1>
     <cite class="text-center font-serif">

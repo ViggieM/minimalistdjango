@@ -2,6 +2,16 @@
 layout: ../layouts/MdLayout.astro
 title: About
 pageTitle: About - Minimalist Django
+shortDescription: Learn about the Minimalist Django website, a personal learning journey in web development with Django and modern web technologies.
+keywords:
+  [
+    'About',
+    'Django',
+    'Web Development',
+    'Learning',
+    'Programming',
+    'Personal Journey',
+  ]
 ---
 
 This is a website primarily for personal use, where I document my learning journey in web development.
