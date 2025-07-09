@@ -30,4 +30,4 @@ def forward_migrate(apps, schema_editor):
     # now you can select the Permissions from the DB
 ```
 
-I actually had to google how to do it quite a few times, so I decided to make a TIL out of it, so I can find it faster next time.
+I actually had to google how to do it quite a few times, so I decided to make a snippet out of it, so I can find it faster next time.

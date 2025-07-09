@@ -14,10 +14,9 @@ keywords:
   ]
 ---
 
-This is a website primarily for personal use, where I document my learning journey in web development.
-Despite the name _Minimalistdjango_, this site has little to do with the Django web framework.
+This is a personal website where I document my learning journey in web development.
+Despite the name _Minimalist Django_, this site has less to do with the Django web framework than with web development in general.
 However, Django is what sparked my interest in web development and opened up an incredibly broad path into this domain, allowing me to explore different approaches at my own pace.
-There are countless amazing resources online about Django, and I have no intention of competing with those.
 
 Web development is an expansive topic with endless learning opportunities.
 I've discovered that learning by doing is consistently the most effective approach.
