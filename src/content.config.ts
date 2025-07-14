@@ -1,7 +1,8 @@
 // Import the glob loader
-import { glob } from 'astro/loaders';
+
 // Import utilities from `astro:content`
-import { z, defineCollection } from 'astro:content';
+import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
 
 // Base schema with common fields
 const baseContentSchema = z.object({

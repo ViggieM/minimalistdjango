@@ -4,9 +4,9 @@
   "main": "./dist/_worker.js/index.js",
   "assets": {
     "directory": "./dist/client/",
-    "binding": "ASSETS",
+    "binding": "ASSETS"
   },
   "observability": {
-    "enabled": true,
-  },
+    "enabled": true
+  }
 }

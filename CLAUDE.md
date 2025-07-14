@@ -13,8 +13,7 @@ The site contains articles, tutorials (TIL - Today I Learned) and code snippets 
 
 - `pnpm dev` or `npm run dev` - Start development server
 - `pnpm build` or `npm run build` - Build for production
-- `pnpm preview` or `npm run preview` - Preview production build
-- `pnpm format` or `npm run format` - Format code with Prettier
+- `pnpm format` or `npm run format` - Format code with Biome
 
 ### Quality Assurance
 
@@ -80,8 +79,7 @@ All pages use the centralized SEO component with:
 
 Code quality is enforced programmatically through:
 
-- **ESLint**: Code linting with `eslint.config.js`
-- **Prettier**: Code formatting with `.prettierrc`
+- **Biome**: Code linting and formatting with `biome.json`
 - **Pre-commit hooks**: Automatic validation before commits
 - **TypeScript**: Strict type checking with `tsconfig.json`
 

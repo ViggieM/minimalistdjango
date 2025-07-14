@@ -1,13 +1,12 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import { visit } from 'unist-util-visit';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import { copyFileSync, mkdirSync, readdirSync, statSync } from 'fs';
-import { join } from 'path';
 
-import tailwindcss from '@tailwindcss/vite';
-
+import { copyFileSync, mkdirSync, readdirSync, statSync } from 'node:fs';
+import { join } from 'node:path';
 import cloudflare from '@astrojs/cloudflare';
+import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from 'astro/config';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import { visit } from 'unist-util-visit';
 
 function copyMediaPlugin() {
   return {
@@ -61,7 +60,7 @@ export default defineConfig({
   markdown: {
     rehypePlugins: [
       () => (tree) => {
-        visit(tree, 'element', function (node, _index, _parent) {
+        visit(tree, 'element', (node, _index, _parent) => {
           if (
             node.tagName === 'a' &&
             String(node.properties.href).endsWith('.md')

@@ -1,9 +1,10 @@
 ---
 export const prerender = true;
 
-import Layout from '../../layouts/Layout.astro';
-import Article from '../../components/Article.astro';
 import { getCollection } from 'astro:content';
+import Article from '../../components/Article.astro';
+import Layout from '../../layouts/Layout.astro';
+
 const posts = await getCollection('TIL');
 const allPosts = posts.sort(
   (a, b) =>

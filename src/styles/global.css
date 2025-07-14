@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
 
@@ -7,7 +7,7 @@
   font-style: normal;
   font-weight: 400 700;
   font-display: block;
-  src: url('/fonts/Lora/Lora-VariableFont_wght.ttf') format('truetype');
+  src: url("/fonts/Lora/Lora-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {
@@ -15,18 +15,18 @@
   font-style: italic;
   font-weight: 400 700;
   font-display: block;
-  src: url('/fonts/Lora/Lora-Italic-VariableFont_wght.ttf') format('truetype');
+  src: url("/fonts/Lora/Lora-Italic-VariableFont_wght.ttf") format("truetype");
 }
 
 @theme {
   --font-sans:
-    ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol', 'Noto Color Emoji';
+    ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
   --font-serif:
-    'Lora', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+    "Lora", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono:
-    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
-    'Courier New', monospace;
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
 }
 
 @layer base {
@@ -76,7 +76,7 @@
     }
 
     header a:before {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       top: 0;

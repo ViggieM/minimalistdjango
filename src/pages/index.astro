@@ -1,10 +1,10 @@
 ---
 export const prerender = true;
 
-import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import Article from '../components/Article.astro';
 import Search from '../components/Search.astro';
+import Layout from '../layouts/Layout.astro';
 
 const allTIL = await getCollection('TIL');
 const allArticles = await getCollection('articles');
