@@ -9,5 +9,6 @@
   "observability": {
     "enabled": true
   },
+  "compatibility_date": "2025-05-05",
   "compatibility_flags": ["streams_enable_constructors"]
 }
