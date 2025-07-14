@@ -1,0 +1,37 @@
+---
+export const prerender = true;
+
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = 'Page Not Found | Minimalist Django';
+const description = 'The page you are looking for does not exist.';
+---
+
+<Layout pageTitle={pageTitle} description={description} type="website">
+  <div
+    class="container mx-auto flex min-h-96 flex-col items-center justify-center px-4 text-center"
+  >
+    <div class="mb-8">
+      <h1 class="mb-4 font-serif text-6xl font-bold text-[var(--color-text)]">
+        404
+      </h1>
+      <h2
+        class="mb-4 font-serif text-2xl font-semibold text-[var(--color-text)]"
+      >
+        Page Not Found
+      </h2>
+      <p class="max-w-md text-lg text-[var(--text-light)]">
+        The page you are looking for doesn't exist or has been moved.
+      </p>
+    </div>
+
+    <div class="flex flex-col gap-4 sm:flex-row">
+      <a
+        href="/"
+        class="inline-flex items-center rounded-lg bg-[var(--link-color)] px-6 py-3 font-medium text-white transition-colors duration-200 hover:bg-[var(--color-text)]"
+      >
+        Back to Home
+      </a>
+    </div>
+  </div>
+</Layout>

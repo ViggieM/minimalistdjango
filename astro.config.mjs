@@ -51,6 +51,9 @@ export default defineConfig({
   adapter: node({
     mode: 'standalone',
   }),
+  devToolbar: {
+    enabled: true,
+  },
 
   vite: {
     plugins: [tailwindcss(), copyMediaPlugin()],
