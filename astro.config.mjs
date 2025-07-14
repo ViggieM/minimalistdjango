@@ -6,6 +6,7 @@ import { copyFileSync, mkdirSync, readdirSync, statSync } from 'fs';
 import { join } from 'path';
 
 import tailwindcss from '@tailwindcss/vite';
+import node from '@astrojs/node';
 
 function copyMediaPlugin() {
   return {
@@ -38,7 +39,7 @@ function copyMediaPlugin() {
         }
       };
 
-      copyDir('./media', './dist/media');
+      copyDir('./media', './dist/client/media');
     },
   };
 }
@@ -46,6 +47,10 @@ function copyMediaPlugin() {
 // https://astro.build/config
 export default defineConfig({
   site: 'https://minimalistdjango.com/',
+  output: 'server',
+  adapter: node({
+    mode: 'standalone',
+  }),
 
   vite: {
     plugins: [tailwindcss(), copyMediaPlugin()],
