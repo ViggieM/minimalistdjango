@@ -6,7 +6,8 @@ import { copyFileSync, mkdirSync, readdirSync, statSync } from 'fs';
 import { join } from 'path';
 
 import tailwindcss from '@tailwindcss/vite';
-import node from '@astrojs/node';
+
+import cloudflare from '@astrojs/cloudflare';
 
 function copyMediaPlugin() {
   return {
@@ -39,7 +40,7 @@ function copyMediaPlugin() {
         }
       };
 
-      copyDir('./media', './dist/client/media');
+      copyDir('./media', './dist/media');
     },
   };
 }
@@ -48,9 +49,7 @@ function copyMediaPlugin() {
 export default defineConfig({
   site: 'https://minimalistdjango.com/',
   output: 'server',
-  adapter: node({
-    mode: 'standalone',
-  }),
+  adapter: cloudflare(),
   devToolbar: {
     enabled: true,
   },

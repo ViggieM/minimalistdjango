@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "minimalist-django",
+  "main": "./dist/_worker.js/index.js",
+  "assets": {
+    "directory": "./dist/client/",
+    "binding": "ASSETS",
+  },
+  "observability": {
+    "enabled": true,
+  },
+}

@@ -1,5 +1,7 @@
 import { getCollection } from 'astro:content';
 
+export const prerender = true;
+
 export const GET = async () => {
   // retrieve all data sources
   const allTIL = await getCollection('TIL');
