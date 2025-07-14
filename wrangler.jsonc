@@ -8,5 +8,6 @@
   },
   "observability": {
     "enabled": true
-  }
+  },
+  "compatibility_flags": ["streams_enable_constructors"]
 }
