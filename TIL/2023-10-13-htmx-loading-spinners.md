@@ -1,5 +1,5 @@
 ---
-title: Loading spinners for htmx requests
+title: Loading Spinners for HTMX Requests
 pubDate: 2023-10-13
 shortDescription: Learn how to implement loading spinners for HTMX requests using Tailwind CSS, with two different approaches for better user feedback during form submissions.
 tags:

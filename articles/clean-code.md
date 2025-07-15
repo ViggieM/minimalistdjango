@@ -4,7 +4,7 @@ pubDate: 2025-07-15
 shortDescription: "Master code consistency with modern tools like Ruff and Biome. Learn automated formatting, linting, and quality enforcement for Django projects."
 tags:
   - Developer Experience
-keywords: clean code, code formatting, linting tools, ruff python, biome javascript, eslint prettier, code quality automation, developer productivity
+keywords: clean code, code formatting, linting tools, ruff python, biome javascript, ESLint Prettier, code quality automation, developer productivity
 ---
 
 Whether you like tabs over spaces or single quotes over double quotes, it really doesn't matter.
@@ -66,7 +66,7 @@ The more **mature** a project is, the more I prefer to do **strong typing** to a
 ## The Modern Solution
 
 There are various formatters and linters for every programming language. Here, I will focus on **Python** and **JavaScript**, since these are the two languages Django developers most frequently work with.
-Each of them have a **clear winner** (**Ruff** for Python, **Biome** for JavaScript), but older projects might still use the other tools mentioned (black, eslint, prettier, ...).
+Each of them have a **clear winner** (**Ruff** for Python, **Biome** for JavaScript), but older projects might still use the other tools mentioned (black, ESLint, Prettier, ...).
 
 Here is an overview over linters and formatters in Python and JavaScript:
 
@@ -142,7 +142,7 @@ Typical files used to configure are:
 * `.prettierrc`
 * `.prettierignore`
 
-You can install eslint and prettier with pnpm[^pnpm] like this:
+You can install ESLint and Prettier with pnpm[^pnpm] like this:
 
 ```bash
 pnpm install --save-dev eslint prettier eslint-config-prettier
@@ -150,7 +150,7 @@ pnpm install --save-dev eslint prettier eslint-config-prettier
 
 The `eslint-config-prettier` plugin is **required** to turn off rules that conflict with Prettier.
 
-You can now [browse existing eslint configurations](https://github.com/dustinspecker/awesome-eslint) and install them, or write your own `eslint.config.js` like this:
+You can now [browse existing ESLint configurations](https://github.com/dustinspecker/awesome-eslint) and install them, or write your own `eslint.config.js` like this:
 
 ```javascript
 import prettier from "eslint-config-prettier";

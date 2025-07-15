@@ -1,5 +1,5 @@
 ---
-title: Define environment variables in a Makefile
+title: Define Environment Variables in a Makefile
 pubDate: 2024-05-10
 tags:
   - Developer Experience

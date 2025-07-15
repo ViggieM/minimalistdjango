@@ -1,5 +1,5 @@
 ---
-title: Force the creation of `Permission` objects associated with models during migration
+title: Force the Creation of Permission Objects Associated with Models During Migration
 pubDate: 2024-07-31
 shortDescription: How to force Django to create default model permissions during migrations using emit_post_migrate_signal
 tags:

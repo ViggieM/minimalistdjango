@@ -1,5 +1,5 @@
 ---
-title: Floating labels with Tailwindcss
+title: Floating Labels with Tailwind CSS
 pubDate: 2023-09-21
 tags:
   - Frontend

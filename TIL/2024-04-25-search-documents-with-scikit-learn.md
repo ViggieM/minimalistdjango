@@ -1,5 +1,5 @@
 ---
-title: Document Search with Scikit-Learn
+title: Document Search with scikit-learn
 pubDate: 2024-04-25
 shortDescription: Implementing keyword search on documents using scikit-learn's binary CountVectorizer for text analysis
 tags:

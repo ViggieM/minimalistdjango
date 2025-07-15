@@ -1,5 +1,5 @@
 ---
-title: Create a custom logging filter
+title: Create a Custom Logging Filter
 pubDate: 2024-06-05
 shortDescription: Learn how to create a custom logging filter in Django to exclude specific 404 error messages from your logs based on URL patterns.
 tags:

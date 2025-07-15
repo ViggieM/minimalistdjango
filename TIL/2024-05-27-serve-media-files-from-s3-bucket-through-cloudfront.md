@@ -1,5 +1,5 @@
 ---
-title: Set up Cloudfront as a CDN to serve media files
+title: Set up CloudFront as a CDN to Serve Media Files
 pubDate: 2024-05-27
 shortDescription: A guide on configuring Cloudfront CDN to serve media files from an S3 bucket in a Django application, including AWS console setup and Django configuration.
 tags:

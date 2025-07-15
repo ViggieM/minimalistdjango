@@ -1,5 +1,5 @@
 ---
-title: "Simulate an S3 Bucket locally with LocalStack"
+title: "Simulate an S3 Bucket Locally with LocalStack"
 pubDate: 2023-09-08
 shortDescription: "A guide to setting up LocalStack for local S3 development, including serverless configuration and Django integration"
 image:

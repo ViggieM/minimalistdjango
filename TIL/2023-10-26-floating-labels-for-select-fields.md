@@ -1,5 +1,5 @@
 ---
-title: Floating labels for select fields
+title: Floating Labels for Select Fields
 pubDate: 2023-10-26
 tags:
   - Frontend

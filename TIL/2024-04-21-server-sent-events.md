@@ -1,5 +1,5 @@
 ---
-title: Server Sent Events
+title: Server-Sent Events
 pubDate: 2024-04-21
 tags:
   - Backend

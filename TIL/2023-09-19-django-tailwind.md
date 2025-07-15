@@ -1,5 +1,5 @@
 ---
-title: Include tailwindcss in a Django project with `django-tailwind`
+title: Include Tailwind CSS in a Django Project with django-tailwind
 pubDate: 2023-09-19
 tags:
   - Frontend
