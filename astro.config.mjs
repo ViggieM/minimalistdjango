@@ -44,22 +44,6 @@ function copyMediaPlugin() {
   };
 }
 
-function copyAssetsIgnorePlugin() {
-  return {
-    name: 'copy-assetsignore',
-    writeBundle() {
-      try {
-        copyFileSync('./.assetsignore', './dist/.assetsignore');
-      } catch (err) {
-        console.warn(
-          'Could not copy .assetsignore file:',
-          err instanceof Error ? err.message : String(err),
-        );
-      }
-    },
-  };
-}
-
 // https://astro.build/config
 export default defineConfig({
   site: 'https://minimalistdjango.com/',
@@ -70,7 +54,7 @@ export default defineConfig({
   },
 
   vite: {
-    plugins: [tailwindcss(), copyMediaPlugin(), copyAssetsIgnorePlugin()],
+    plugins: [tailwindcss(), copyMediaPlugin()],
   },
 
   markdown: {
