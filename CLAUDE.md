@@ -65,7 +65,6 @@ All pages use the centralized SEO component with:
 - Dynamic meta tag generation from frontmatter
 - Open Graph protocol support
 - Default fallback to `/media/default-og-image.png` for OG images
-- Automatic sitemap generation via `/sitemap.xml.js`
 
 ### Mobile-First Design
 

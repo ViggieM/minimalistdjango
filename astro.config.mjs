@@ -3,6 +3,7 @@
 import { copyFileSync, mkdirSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import cloudflare from '@astrojs/cloudflare';
+import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
@@ -52,6 +53,7 @@ export default defineConfig({
   devToolbar: {
     enabled: true,
   },
+  integrations: [sitemap()],
 
   vite: {
     plugins: [tailwindcss(), copyMediaPlugin()],
