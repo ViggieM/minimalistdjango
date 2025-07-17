@@ -65,6 +65,8 @@ function isDeprecatedUrl(pathname) {
 export const onRequest = defineMiddleware((context, next) => {
   const { pathname } = context.url;
 
+  console.log(context);
+
   if (isDeprecatedUrl(pathname)) {
     // Return 410 Gone response
     return new Response(
