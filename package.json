@@ -10,7 +10,8 @@
     "lint": "biome lint .",
     "lint:fix": "biome lint --write .",
     "type-check": "astro check",
-    "quality": "npm run type-check && npm run lint && npm run format:check"
+    "quality": "npm run type-check && npm run lint && npm run format:check",
+    "preview": "pnpm run build && wrangler dev"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
