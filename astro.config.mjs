@@ -2,7 +2,7 @@
 
 import { copyFileSync, mkdirSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
-import cloudflare from '@astrojs/cloudflare';
+import netlify from '@astrojs/netlify';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
@@ -49,7 +49,7 @@ function copyMediaPlugin() {
 export default defineConfig({
   site: 'https://minimalistdjango.com/',
   output: 'server',
-  adapter: cloudflare(),
+  adapter: netlify(),
   devToolbar: {
     enabled: true,
   },

@@ -59,3 +59,6 @@ out/
 !.vscode/launch.json
 !.vscode/extensions.json
 .history
+
+# Local Netlify folder
+.netlify
