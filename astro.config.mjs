@@ -49,7 +49,9 @@ function copyMediaPlugin() {
 export default defineConfig({
   site: 'https://minimalistdjango.com/',
   output: 'server',
-  adapter: netlify(),
+  adapter: netlify({
+    edgeMiddleware: true,
+  }),
   devToolbar: {
     enabled: true,
   },
