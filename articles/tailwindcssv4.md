@@ -147,23 +147,25 @@ I propose a structured approach using CSS layers to organize your project's styl
 
 ```css
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
 
 @import "./theme.css" layer(theme);
 @import "./base.css" layer(base);
 @import "./components.css" layer(components);
 @import "./utilities.css" layer(utilities);
 
+@custom-variant dark (&:where(.dark, .dark *));
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
 ```
 
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/ViggieM/sandbox/tree/main/tailwindcss-v4)
+
 This architecture accomplishes several key objectives:
 
 - **Foundation Setup**: Establishes Tailwind's base configuration, including Preflight normalization and core utility classes
-- **Variant Management**: Demonstrates custom variant creation (dark mode example) for systematic theming
 - **Layer Organization**: Separates concerns across four distinct CSS layers, enabling clean component extraction and systematic style organization
 - **Scalability**: Provides clear locations for different types of styling rules, preventing the CSS architecture from becoming unwieldy as projects grow
+- **Variant Management**: Demonstrates custom variant creation (dark mode example) for systematic theming
 - **Plugin Integration**: Incorporates essential Tailwind plugins like Forms and Typography to extend base functionality with well-tested, accessible components
 
 ### Theme
@@ -173,27 +175,25 @@ The `theme.css` layer establishes your design system's foundation by defining co
 By constraining color choices to a defined palette, you prevent inconsistencies and maintain brand identity throughout your project:
 
 ```css
-@layer base {
-    :root {
-        --foreground: oklch(0.15 0.01 270); /* Rich dark */
-        --background: oklch(0.99 0.002 270); /* Pure white with hint */
-        --primary: oklch(0.55 0.18 262); /* Rich blue */
-        --secondary: oklch(0.6 0.14 285); /* Purple-blue */
-        --success: oklch(0.7 0.16 142); /* Fresh green */
-        --error: oklch(0.65 0.2 25); /* Vibrant red */
-        --warning: oklch(0.8 0.15 75); /* Warm amber */
-        --muted: oklch(0.55 0.03 270); /* Neutral gray */
+:root {
+    --foreground: oklch(0.15 0.01 270); /* Rich dark */
+    --background: oklch(0.99 0.002 270); /* Pure white with hint */
+    --primary: oklch(0.55 0.18 262); /* Rich blue */
+    --secondary: oklch(0.6 0.14 285); /* Purple-blue */
+    --success: oklch(0.7 0.16 142); /* Fresh green */
+    --error: oklch(0.65 0.2 25); /* Vibrant red */
+    --warning: oklch(0.8 0.15 75); /* Warm amber */
+    --muted: oklch(0.55 0.03 270); /* Neutral gray */
 
-        @variant dark {
-            --foreground: oklch(0.95 0.01 270); /* Near white with warmth */
-            --background: oklch(0.05 0.002 270); /* Deep dark with blue hint */
-            --primary: oklch(0.7 0.15 262); /* Brighter blue for contrast */
-            --secondary: oklch(0.72 0.12 285); /* Lighter purple-blue */
-            --success: oklch(0.75 0.14 142); /* Brighter green */
-            --warning: oklch(0.85 0.13 75); /* Brighter amber */
-            --error: oklch(0.7 0.18 25); /* Softer red */
-            --muted: oklch(0.45 0.02 270); /* Muted gray for dark mode */
-        }
+    @variant dark {
+        --foreground: oklch(0.95 0.01 270); /* Near white with warmth */
+        --background: oklch(0.05 0.002 270); /* Deep dark with blue hint */
+        --primary: oklch(0.7 0.15 262); /* Brighter blue for contrast */
+        --secondary: oklch(0.72 0.12 285); /* Lighter purple-blue */
+        --success: oklch(0.75 0.14 142); /* Brighter green */
+        --warning: oklch(0.85 0.13 75); /* Brighter amber */
+        --error: oklch(0.7 0.18 25); /* Softer red */
+        --muted: oklch(0.45 0.02 270); /* Muted gray for dark mode */
     }
 }
 
