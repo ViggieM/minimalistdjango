@@ -52,14 +52,45 @@ function formatDate(date: Date): string {
 
     {
       keywords && keywords.length > 0 && (
-        <div class="flex flex-wrap items-center space-x-2">
+        <div class="space-y-2">
           <span class="font-semibold">Keywords:</span>
-          <div class="flex flex-wrap gap-1">
+
+          {/* Desktop: show all keywords */}
+          <div class="hidden md:flex flex-wrap gap-1">
             {keywords.map((keyword) => (
               <span class="inline-block rounded-full bg-green-100 px-2 py-1 text-xs text-green-800">
                 {keyword}
               </span>
             ))}
+          </div>
+
+          {/* Mobile: collapsible keywords */}
+          <div class="md:hidden">
+            <details class="group">
+              <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <div class="flex flex-wrap gap-1">
+                  {keywords.slice(0, 3).map((keyword) => (
+                    <span class="inline-block rounded-full bg-green-100 px-2 py-1 text-xs text-green-800">
+                      {keyword}
+                    </span>
+                  ))}
+                  {keywords.length > 3 && (
+                    <span class="inline-block rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-600 group-open:hidden">
+                      +{keywords.length - 3} more
+                    </span>
+                  )}
+                </div>
+              </summary>
+              {keywords.length > 3 && (
+                <div class="flex flex-wrap gap-1 mt-2">
+                  {keywords.slice(3).map((keyword) => (
+                    <span class="inline-block rounded-full bg-green-100 px-2 py-1 text-xs text-green-800">
+                      {keyword}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </details>
           </div>
         </div>
       )

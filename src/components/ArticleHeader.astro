@@ -34,7 +34,7 @@ if (post.data.image?.caption) {
       </figure>
     </header>
   ) : (
-    <header class="prose mx-auto mt-5">
+    <header class="prose mx-auto mt-5 hidden md:block">
       <figure>
         <img
           src={`https://picsum.photos/seed/${post.id}/600/300`}
