@@ -45,6 +45,16 @@
   .prose {
     @apply prose-h1:md:text-center prose-h1:text-sm;
   }
+
+  .prose table {
+    @apply w-full;
+  }
+
+  .prose :where(table):not(:where([class~="not-prose"] *)) {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
 }
 
 @layer utilities {
