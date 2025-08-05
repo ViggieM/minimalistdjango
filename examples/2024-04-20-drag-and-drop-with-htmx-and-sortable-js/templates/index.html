@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django + HTMX + Sortable.js</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <!-- jsDelivr :: Sortable :: Latest (https://www.jsdelivr.com/package/npm/sortablejs) -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@latest/dist/htmx.min.js"
+        integrity="sha384-Akqfrbj/HpNVo8k11SXBb6TlBWmXXlYQrCSqEWmyKJe+hDm3Z/B2WVG4smwBkRVm"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form class="sortable" hx-post="/sort/" hx-trigger="end">
+            {% include "_movies.html" %}
+        </form>
+    </div>
+
+    <script>
+        htmx.onLoad(function (content) {
+            var sortables = content.querySelectorAll(".sortable");
+            for (var i = 0; i < sortables.length; i++) {
+                var sortable = sortables[i];
+                var sortableInstance = new Sortable(sortable, {
+                    animation: 150,
+                    ghostClass: 'blue-background-class',
+
+                    // Make the `.htmx-indicator` unsortable
+                    filter: ".htmx-indicator",
+                    onMove: function (evt) {
+                        return evt.related.className.indexOf('htmx-indicator') === -1;
+                    },
+
+                    // Disable sorting on the `end` event
+                    onEnd: function (evt) {
+                        this.option("disabled", true);
+                    }
+                });
+
+                // Re-enable sorting on the `htmx:afterSwap` event
+                sortable.addEventListener("htmx:afterSwap", function () {
+                    sortableInstance.option("disabled", false);
+                });
+            }
+        })
+    </script>
+</body>
+
+</html>

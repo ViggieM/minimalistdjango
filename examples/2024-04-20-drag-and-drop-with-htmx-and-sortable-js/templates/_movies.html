@@ -1,0 +1,8 @@
+{% csrf_token %}
+<div class="htmx-indicator">Updating...</div>
+{% for movie in movies %}
+    <div class="box has-background-primary-{{ forloop.counter0 }}0 has-text-primary-{{ forloop.counter0 }}0-invert" style="cursor: pointer">
+        <input type='hidden' name='movie' value='{{ forloop.counter0 }}' />
+        {{ movie }}
+    </div>
+{% endfor %}

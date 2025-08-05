@@ -1,17 +1,24 @@
 ---
 title: Drag and Drop with HTMX and SortableJS
 pubDate: 2024-04-20
+updatedDate: 2025-08-05
 shortDescription: A tutorial on implementing drag-and-drop functionality in Django using HTMX and Sortable.js, featuring a simple single-file application example.
 tags:
   - Frontend
 keywords: drag and drop, sortable, htmx, interactive ui, sortable.js
+image:
+    url: "/media/TIL/2024-04-20-drag-and-drop-with-htmx-and-sortable-js/drag-and-drop-with-htmx-and-sortable-js.png"
+    alt: "Screenshot showing colorful movie boxes arranged vertically that can be dragged and dropped to reorder using HTMX and SortableJS"
 ---
 
-
-![preview](/media/TIL/2024-04-20-drag-and-drop-with-htmx-and-sortable-js/drag-and-drop-with-htmx-and-sortable-js.png)
-
 I was inspired by [this YouTube video](https://youtu.be/V-f_yYKUJo8?si=eYapxp6itu4fbCtz) to learn some new things about HTMX.
-A sortable drag and drop is always a nice feature to have on your website, so why not get some insight on how it can be implemented in a Django application.
+A sortable drag and drop is always a nice feature to have on your website, so why not get some insight on how it can be implemented in a Django application using modern tooling with uv and nanodjango.
+
+> **Note**: This article has been updated to reflect the latest developments in the Django community - using [nanodjango](https://nanodjango.readthedocs.io/) for one-off projects and [uv](https://docs.astral.sh/uv/) for Python package management.
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/ViggieM/minimalistdjango/tree/main/examples/2024-04-20-drag-and-drop-with-htmx-and-sortable-js)
+
+*You can explore the file structure in StackBlitz, but note that Python/uv execution isn't supported there - you'll need to run it locally to see the functionality.*
 
 The key takeaways from the video (for me) were:
 
@@ -40,45 +47,51 @@ movies = [
 And implemented the "sort" view as follows:
 
 ```python
+@app.route("/sort/")
 def sort(request):
     global movies
+
+    if request.method != 'POST':
+        return "Method not allowed", 405
 
     new_order = request.POST.getlist("movie")
     new_list = [movies[int(i)] for i in new_order]
     movies = new_list
-    return TemplateResponse(request, "_movies.html", context={"movies": movies})
+    return render(request, "_movies.html", {"movies": movies})
 ```
 
 The rest was just copy-paste from the [htmx Examples](https://htmx.org/examples/sortable/).
 
 And I applied some styling with [Bulma](https://bulma.io/), to make it a bit prettier.
 
-## One File Django Application
+## Single File Django Application with uv + nanodjango
 
-You can create these three files in a folder:
+You can create these files in a folder:
 
-* `manage.py`
-* `index.html`
-* `_movies.html`
+* `sortable_movies.py`
+* `templates/index.html`
+* `templates/_movies.html`
 
 and execute:
 
 ```bash
-python manage.py runserver
+uv run --python 3.12 sortable_movies.py
 ```
 
 in a shell, to get the example running locally.
 
-### `manage.py`
+### `sortable_movies.py`
 
 ```python
-import sys
+#!/usr/bin/env -S uv run --python 3.12
+# /// script
+# dependencies = ["nanodjango"]
+# ///
 
-from django.conf import settings
-from django.core.wsgi import get_wsgi_application
-from django.urls import path
-from django.template.response import TemplateResponse
+from nanodjango import Django
+from django.shortcuts import render
 
+app = Django()
 
 movies = [
     "The Shawshank Redemption",
@@ -93,47 +106,27 @@ movies = [
     "Avatar",
 ]
 
-
+@app.route("/")
 def index(request):
-    return TemplateResponse(request, "index.html", context={"movies": movies})
+    return render(request, "index.html", {"movies": movies})
 
-
+@app.route("/sort/")
 def sort(request):
     global movies
+
+    if request.method != 'POST':
+        return "Method not allowed", 405
 
     new_order = request.POST.getlist("movie")
     new_list = [movies[int(i)] for i in new_order]
     movies = new_list
-    return TemplateResponse(request, "_movies.html", context={"movies": movies})
-
-
-settings.configure(
-    DEBUG=True,
-    ROOT_URLCONF=__name__,
-    SECRET_KEY="don't look me",
-    ALLOWED_HOSTS=["*"],
-    TEMPLATES=[
-        {
-            "BACKEND": "django.template.backends.django.DjangoTemplates",
-            "DIRS": ["."],
-        },
-    ],
-)
-
-urlpatterns = [
-    path("", index),
-    path("sort/", sort),
-]
-
-application = get_wsgi_application()
+    return render(request, "_movies.html", {"movies": movies})
 
 if __name__ == "__main__":
-    from django.core.management import execute_from_command_line
-
-    execute_from_command_line(sys.argv)
+    app.run()
 ```
 
-### `index.html`
+### `templates/index.html`
 
 
 ```html
@@ -147,8 +140,8 @@ if __name__ == "__main__":
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <!-- jsDelivr :: Sortable :: Latest (https://www.jsdelivr.com/package/npm/sortablejs) -->
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
-    <script src="https://unpkg.com/htmx.org@1.9.12"
-        integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2"
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.6/dist/htmx.min.js"
+        integrity="sha384-Akqfrbj/HpNVo8k11SXBb6TlBWmXXlYQrCSqEWmyKJe+hDm3Z/B2WVG4smwBkRVm"
         crossorigin="anonymous"></script>
 </head>
 
@@ -192,9 +185,10 @@ if __name__ == "__main__":
 </html>
 ```
 
-### `_movies.html`
+### `templates/_movies.html`
 
 ```html
+{% csrf_token %}
 <div class="htmx-indicator">Updating...</div>
 {% for movie in movies %}
     <div class="box has-background-primary-{{ forloop.counter0 }}0 has-text-primary-{{ forloop.counter0 }}0-invert" style="cursor: pointer">
