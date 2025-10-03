@@ -46,9 +46,9 @@ const image = {
       <img width="150" src="/media/django-rocket.svg" alt="django rocket" />
     </div>
     <h1 class="my-5 font-serif text-4xl font-semibold">Minimalist Django</h1>
-    <cite class="text-center font-serif">
-      Perfection is achieved, not when there is nothing more to add, <br /> but when
-      there is nothing left to take away.
+    <cite class="text-center font-serif" id="animated-quote">
+      <span id="quote-start">Perfection is achieved</span><span id="quote-middle">, not when there is nothing more to add, <br /> but when
+      there is nothing left to take away</span><span id="quote-end">.</span>
     </cite>
   </header>
   <section class="article-list">
@@ -64,3 +64,113 @@ const image = {
     </div>
   </section>
 </Layout>
+
+<style>
+  @keyframes strikethrough {
+    from {
+      text-decoration: none;
+    }
+    to {
+      text-decoration: line-through;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  #quote-middle.strike {
+    animation: strikethrough 1.5s forwards;
+    text-decoration: line-through;
+  }
+
+  #quote-middle.fade {
+    animation: fadeOut 0.8s forwards;
+  }
+
+  #quote-middle.hidden {
+    display: none;
+  }
+
+  #typed-text {
+    display: inline;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: currentColor;
+    margin-left: 2px;
+    animation: blink 1s step-end infinite;
+  }
+</style>
+
+<script>
+  // Wait for page load
+  window.addEventListener('DOMContentLoaded', () => {
+    const quoteMiddle = document.getElementById('quote-middle');
+    const quoteEnd = document.getElementById('quote-end');
+
+    if (!quoteMiddle || !quoteEnd) return;
+
+    // Step 1: Strikethrough animation (starts after 1s)
+    setTimeout(() => {
+      quoteMiddle.classList.add('strike');
+
+      // Step 2: Fade out (starts after strikethrough completes)
+      setTimeout(() => {
+        quoteMiddle.classList.add('fade');
+
+        // Step 3: Hide and start typing (after fade completes)
+        setTimeout(() => {
+          quoteMiddle.classList.add('hidden');
+
+          // Remove the period and add typing container
+          quoteEnd.textContent = '';
+          const typedSpan = document.createElement('span');
+          typedSpan.id = 'typed-text';
+          const cursor = document.createElement('span');
+          cursor.className = 'cursor';
+
+          quoteEnd.appendChild(typedSpan);
+          quoteEnd.appendChild(cursor);
+
+          // Type out " with Django." after a pause
+          const textToType = ' with Django.';
+          let charIndex = 0;
+
+          const typeChar = () => {
+            if (charIndex < textToType.length) {
+              typedSpan.textContent += textToType[charIndex];
+              charIndex++;
+              setTimeout(typeChar, 100); // 100ms per character
+            } else {
+              // Remove cursor after typing completes
+              setTimeout(() => {
+                cursor.remove();
+              }, 500);
+            }
+          };
+
+          // Add 600ms pause before starting to type
+          setTimeout(typeChar, 600);
+        }, 800); // Wait for fade out
+      }, 1500); // Wait for strikethrough
+    }, 1000); // Initial delay
+  });
+</script>
