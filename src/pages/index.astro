@@ -47,8 +47,11 @@ const image = {
     </div>
     <h1 class="my-5 font-serif text-4xl font-semibold">Minimalist Django</h1>
     <cite class="text-center font-serif" id="animated-quote">
-      <span id="quote-start">Perfection is achieved</span><span id="quote-middle">, not when there is nothing more to add, <br /> but when
-      there is nothing left to take away</span><span id="quote-end">.</span>
+      <span id="quote-start">Perfection is achieved</span><span
+        id="quote-middle"
+        >, not when there is nothing more to add, <br /> but when there is nothing
+        left to take away</span
+      ><span id="quote-end">.</span>
     </cite>
   </header>
   <section class="article-list">
@@ -85,7 +88,8 @@ const image = {
   }
 
   @keyframes blink {
-    0%, 100% {
+    0%,
+    100% {
       opacity: 1;
     }
     50% {
@@ -122,36 +126,36 @@ const image = {
 
 <script>
   // Wait for page load
-  window.addEventListener('DOMContentLoaded', () => {
-    const quoteMiddle = document.getElementById('quote-middle');
-    const quoteEnd = document.getElementById('quote-end');
+  window.addEventListener("DOMContentLoaded", () => {
+    const quoteMiddle = document.getElementById("quote-middle");
+    const quoteEnd = document.getElementById("quote-end");
 
     if (!quoteMiddle || !quoteEnd) return;
 
     // Step 1: Strikethrough animation (starts after 1s)
     setTimeout(() => {
-      quoteMiddle.classList.add('strike');
+      quoteMiddle.classList.add("strike");
 
       // Step 2: Fade out (starts after strikethrough completes)
       setTimeout(() => {
-        quoteMiddle.classList.add('fade');
+        quoteMiddle.classList.add("fade");
 
         // Step 3: Hide and start typing (after fade completes)
         setTimeout(() => {
-          quoteMiddle.classList.add('hidden');
+          quoteMiddle.classList.add("hidden");
 
           // Remove the period and add typing container
-          quoteEnd.textContent = '';
-          const typedSpan = document.createElement('span');
-          typedSpan.id = 'typed-text';
-          const cursor = document.createElement('span');
-          cursor.className = 'cursor';
+          quoteEnd.textContent = "";
+          const typedSpan = document.createElement("span");
+          typedSpan.id = "typed-text";
+          const cursor = document.createElement("span");
+          cursor.className = "cursor";
 
           quoteEnd.appendChild(typedSpan);
           quoteEnd.appendChild(cursor);
 
           // Type out " with Django." after a pause
-          const textToType = ' with Django.';
+          const textToType = " with Django.";
           let charIndex = 0;
 
           const typeChar = () => {

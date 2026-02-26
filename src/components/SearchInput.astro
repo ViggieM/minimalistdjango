@@ -46,11 +46,11 @@ const {
 </form>
 
 <script>
-  import { TypewriterAnimation } from '../utils/typewriter';
+  import { TypewriterAnimation } from "../utils/typewriter";
 
-  const searchInput = document.getElementById('search');
+  const searchInput = document.getElementById("search");
   const typewriterTexts = JSON.parse(
-    searchInput?.dataset.typewriterTexts || '[]',
+    searchInput?.dataset.typewriterTexts || "[]",
   );
   if (searchInput instanceof HTMLInputElement) {
     const typewriter = new TypewriterAnimation(searchInput, {
@@ -59,13 +59,13 @@ const {
 
     typewriter.start();
 
-    searchInput.addEventListener('focus', () => {
+    searchInput.addEventListener("focus", () => {
       typewriter.stop();
-      searchInput.placeholder = 'Search';
+      searchInput.placeholder = "Search";
     });
 
-    searchInput.addEventListener('blur', () => {
-      if (searchInput.value === '') {
+    searchInput.addEventListener("blur", () => {
+      if (searchInput.value === "") {
         typewriter.restart();
       }
     });
