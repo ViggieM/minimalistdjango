@@ -29,7 +29,7 @@ If you are using Windows, I feel sorry for you and you should install WSL.
 
 A few years ago, Pyenv was the way to go for managing python versions and virtual environments, and poetry was used for installation of external packages.
 Since then, uv has taken over the python community and has replaced both tools successfully, making it easy to do all three combined.
-If you plan to manage multiple runtimes, like Node for building your React Frontend (🤢) or Go, you can use proto, but that would go beyond the scope of this article.
+If you plan to manage multiple runtimes, like Node for building your React Frontend (🤢) or Go, you can use [proto](https://moonrepo.dev/proto), but that would go beyond the scope of this article.
 In short, we will stick with UV, since it is the easiest way to work with python and will prove useful along the way in different forms.
 
 ```bash
