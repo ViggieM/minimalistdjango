@@ -29,7 +29,7 @@ If you are using Windows, I feel sorry for you and you should install WSL.
 
 A few years ago, Pyenv was the way to go for managing python versions and virtual environments, and poetry was used for installation of external packages.
 Since then, uv has taken over the python community and has replaced both tools successfully, making it easy to do all three combined.
-If you plan to manage multiple runtimes, like Node for building your React Frontend (🤢) or Go, you can use [proto](https://moonrepo.dev/proto), but that would go beyond the scope of this article.
+If you plan to manage multiple runtimes, like Node for building your React Frontend[^1] or Go, you can use [proto](https://moonrepo.dev/proto), but that would go beyond the scope of this article.
 In short, we will stick with UV, since it is the easiest way to work with python and will prove useful along the way in different forms.
 
 ```bash
@@ -193,3 +193,5 @@ Using [git worktrees](https://incident.io/blog/shipping-faster-with-claude-code-
 Pick one thing at a time and do it well. Build a solid foundation on which your projects can grow.
 
 Happy Coding!
+
+[^1]: You should avoid prematurely picking a specific technology or architecture just because everyone else is doing it. The [Hypermedia](https://hypermedia.systems/) approach covers perfectly well most data-intensive applications without the cognitive overload of an additional paradigm.
