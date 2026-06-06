@@ -60,6 +60,35 @@ uv run python manage.py shell
 uv run python manage.py createsuperuser
 ```
 
+### Django project settings
+
+Keep secrets and environment-specific config out of your codebase by reading them from a `.env` file instead of hardcoding them in `settings.py`.
+
+Make the following adjustments to your `settings.py` files:
+
+```python
+# settings.py
+import os
+from dotenv import load_dotenv
+
+# load .env after BASE_DIR is defined
+load_dotenv(BASE_DIR / ".env")
+# read secrets from .env file
+SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
+DEBUG = int(os.environ.get("DJANGO_DEBUG", default=0))
+ALLOWED_HOSTS = os.environ.get(
+    "DJANGO_ALLOWED_HOSTS", default="localhost 127.0.0.1 0.0.0.0"
+).split()
+```
+
+Create the `.env` file:
+
+```bash
+touch src/.env
+echo "DJANGO_SECRET_KEY='$(openssl rand -base64 35)'" >> src/.env
+echo "DJANGO_DEBUG=1" >> src/.env
+```
+
 ### Debugging
 
 The next thing you need to set up for working with coding agents is a functioning debugging environment.
